@@ -81,5 +81,19 @@ namespace lmvz3
                 return new List<Student>();
             }
         }
+        public static List<Student> findByGroup(List<Student> stud, List<Group> groups){
+            List<Student> rStud = new List<Student>();
+            foreach (Student student in stud)
+            {
+                foreach (Group group in groups)
+                {
+                    if (student.Group== group)
+                    {
+                        rStud.Add(student);
+                    }
+                }
+            }
+            return rStud;
+        }
     }
 }
