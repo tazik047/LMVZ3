@@ -28,33 +28,129 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.homeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.facultyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specialityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.formOfStudyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // dataGridView1
             // 
-            this.button1.Location = new System.Drawing.Point(86, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "main";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.fIODataGridViewTextBoxColumn,
+            this.passDataGridViewTextBoxColumn,
+            this.birthDataGridViewTextBoxColumn,
+            this.homeDataGridViewTextBoxColumn,
+            this.facultyDataGridViewTextBoxColumn,
+            this.specialityDataGridViewTextBoxColumn,
+            this.formOfStudyDataGridViewTextBoxColumn,
+            this.numberDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.studentBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(284, 262);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(lmvz3.Student);
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // fIODataGridViewTextBoxColumn
+            // 
+            this.fIODataGridViewTextBoxColumn.DataPropertyName = "FIO";
+            this.fIODataGridViewTextBoxColumn.HeaderText = "FIO";
+            this.fIODataGridViewTextBoxColumn.Name = "fIODataGridViewTextBoxColumn";
+            // 
+            // passDataGridViewTextBoxColumn
+            // 
+            this.passDataGridViewTextBoxColumn.DataPropertyName = "Pass";
+            this.passDataGridViewTextBoxColumn.HeaderText = "Pass";
+            this.passDataGridViewTextBoxColumn.Name = "passDataGridViewTextBoxColumn";
+            // 
+            // birthDataGridViewTextBoxColumn
+            // 
+            this.birthDataGridViewTextBoxColumn.DataPropertyName = "Birth";
+            this.birthDataGridViewTextBoxColumn.HeaderText = "Birth";
+            this.birthDataGridViewTextBoxColumn.Name = "birthDataGridViewTextBoxColumn";
+            // 
+            // homeDataGridViewTextBoxColumn
+            // 
+            this.homeDataGridViewTextBoxColumn.DataPropertyName = "Home";
+            this.homeDataGridViewTextBoxColumn.HeaderText = "Home";
+            this.homeDataGridViewTextBoxColumn.Name = "homeDataGridViewTextBoxColumn";
+            // 
+            // facultyDataGridViewTextBoxColumn
+            // 
+            this.facultyDataGridViewTextBoxColumn.DataPropertyName = "Faculty";
+            this.facultyDataGridViewTextBoxColumn.HeaderText = "Faculty";
+            this.facultyDataGridViewTextBoxColumn.Name = "facultyDataGridViewTextBoxColumn";
+            // 
+            // specialityDataGridViewTextBoxColumn
+            // 
+            this.specialityDataGridViewTextBoxColumn.DataPropertyName = "Speciality";
+            this.specialityDataGridViewTextBoxColumn.HeaderText = "Speciality";
+            this.specialityDataGridViewTextBoxColumn.Name = "specialityDataGridViewTextBoxColumn";
+            // 
+            // formOfStudyDataGridViewTextBoxColumn
+            // 
+            this.formOfStudyDataGridViewTextBoxColumn.DataPropertyName = "FormOfStudy";
+            this.formOfStudyDataGridViewTextBoxColumn.HeaderText = "FormOfStudy";
+            this.formOfStudyDataGridViewTextBoxColumn.Name = "formOfStudyDataGridViewTextBoxColumn";
+            // 
+            // numberDataGridViewTextBoxColumn
+            // 
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn.HeaderText = "Number";
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Main";
             this.Text = "Main";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource studentBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fIODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn homeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn facultyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn specialityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn formOfStudyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
+
     }
 }

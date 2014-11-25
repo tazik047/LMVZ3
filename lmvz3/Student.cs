@@ -10,7 +10,7 @@ namespace lmvz3
     {
         string fio; //ФИО
         string pass; //Номер пасспотра
-        string id; //Идентификационный номер
+        int id; //Идентификационный номер
         string home;//место проживания 
         DateTime birth;//дата рождения
         string faculty; //Факультет
@@ -22,7 +22,7 @@ namespace lmvz3
             get { return fio; }
             set { fio = value; }
         }
-        public string ID //Код
+        public int ID //Код
         {
             get { return id; }
             set { id = value; }
@@ -67,7 +67,7 @@ namespace lmvz3
         public Student()
         {
         }
-        public Student(string fio,string pass,  string id, string home, DateTime birth, string faculty,string speciality, string formOfStudy, int number)
+        public Student(string fio,string pass,  int id, string home, DateTime birth, string faculty,string speciality, string formOfStudy, int number)
         {
             fio = FIO;
             pass = Pass;
