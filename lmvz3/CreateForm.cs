@@ -14,13 +14,15 @@ namespace lmvz3
     {
         private bool cancel;
         private Func<string, bool> check;
+        private string errorMes;
 
-        public CreateForm(String mess, Func<string,bool> check)
+        public CreateForm(String mess, Func<string,bool> check, string er)
         {
             InitializeComponent();
             label1.Text = mess;
             cancel = false;
             this.check = check;
+            errorMes = er;
         }
 
         public string WrittenName
@@ -48,7 +50,7 @@ namespace lmvz3
             }
             else if (!check(textBox1.Text))
             {
-                MessageBox.Show("Такой факультет уже присутствует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorMes, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
