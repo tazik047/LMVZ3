@@ -29,5 +29,10 @@ namespace lmvz3
             FacultiesId = facultiesId;
             GroupId = id;
         }
+
+        public override string ToString()
+        {
+            return Title;
+        }
     }
 }
