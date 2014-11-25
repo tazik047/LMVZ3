@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,12 +39,14 @@
             this.specialityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.formOfStudyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -62,66 +63,77 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(284, 262);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(lmvz3.Student);
             // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fIODataGridViewTextBoxColumn
             // 
             this.fIODataGridViewTextBoxColumn.DataPropertyName = "FIO";
             this.fIODataGridViewTextBoxColumn.HeaderText = "FIO";
             this.fIODataGridViewTextBoxColumn.Name = "fIODataGridViewTextBoxColumn";
+            this.fIODataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // passDataGridViewTextBoxColumn
             // 
             this.passDataGridViewTextBoxColumn.DataPropertyName = "Pass";
             this.passDataGridViewTextBoxColumn.HeaderText = "Pass";
             this.passDataGridViewTextBoxColumn.Name = "passDataGridViewTextBoxColumn";
+            this.passDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // birthDataGridViewTextBoxColumn
             // 
             this.birthDataGridViewTextBoxColumn.DataPropertyName = "Birth";
             this.birthDataGridViewTextBoxColumn.HeaderText = "Birth";
             this.birthDataGridViewTextBoxColumn.Name = "birthDataGridViewTextBoxColumn";
+            this.birthDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // homeDataGridViewTextBoxColumn
             // 
             this.homeDataGridViewTextBoxColumn.DataPropertyName = "Home";
             this.homeDataGridViewTextBoxColumn.HeaderText = "Home";
             this.homeDataGridViewTextBoxColumn.Name = "homeDataGridViewTextBoxColumn";
+            this.homeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // facultyDataGridViewTextBoxColumn
             // 
             this.facultyDataGridViewTextBoxColumn.DataPropertyName = "Faculty";
             this.facultyDataGridViewTextBoxColumn.HeaderText = "Faculty";
             this.facultyDataGridViewTextBoxColumn.Name = "facultyDataGridViewTextBoxColumn";
+            this.facultyDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // specialityDataGridViewTextBoxColumn
             // 
             this.specialityDataGridViewTextBoxColumn.DataPropertyName = "Speciality";
             this.specialityDataGridViewTextBoxColumn.HeaderText = "Speciality";
             this.specialityDataGridViewTextBoxColumn.Name = "specialityDataGridViewTextBoxColumn";
+            this.specialityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // formOfStudyDataGridViewTextBoxColumn
             // 
             this.formOfStudyDataGridViewTextBoxColumn.DataPropertyName = "FormOfStudy";
             this.formOfStudyDataGridViewTextBoxColumn.HeaderText = "FormOfStudy";
             this.formOfStudyDataGridViewTextBoxColumn.Name = "formOfStudyDataGridViewTextBoxColumn";
+            this.formOfStudyDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // numberDataGridViewTextBoxColumn
             // 
             this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
             this.numberDataGridViewTextBoxColumn.HeaderText = "Number";
             this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
+            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(lmvz3.Student);
             // 
             // Main
             // 
