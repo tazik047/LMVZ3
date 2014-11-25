@@ -61,6 +61,10 @@ namespace lmvz3
                 {
                     MessageBox.Show(String.Format("Вы выбрали факультет - {0}", n.Text), "Click");
                 }
+                else
+                {
+                    MessageBox.Show(String.Format("Вы выбрали группу - {0}", n.Text), "Click");
+                }
             }
             if(e.Button == MouseButtons.Right)
             {
@@ -75,41 +79,19 @@ namespace lmvz3
 
         private bool checkGroup(string title)
         {
-            return faculties.Count(f => f.Groups.Count(g => g.Title.Equals(title)) == 0) == 0;
-        }
-
-        private void sortTree()
-        {
-            var nodes = new List<TreeNode>();
-            foreach(TreeNode i in treeView1.Nodes)
+            for (int i = 0; i < faculties.Count; i++)
             {
-                nodes.Add(i);
+                if (faculties[i].Groups.Count(g => g.Title.Equals(title)) != 0)
+                    return false;
             }
-            treeView1.Nodes.Clear();
-            treeView1.Nodes.AddRange(nodes.OrderBy(t => t.Text).ToArray());
-        }
-
-        private void удалитьФакультетToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show(string.Format("Вы собираетесь удалить факультет {0}\nЭто действие"
-                + " нельзя будет отменить. \nБудут утеряны все данный связанные с этим факультетом.", selectedNode.Text),
-                "Вы уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                for(int i = 0;i<faculties.Count; i++)
-                    if (faculties[i].Title.Equals(selectedNode.Text))
-                    {
-                        faculties.RemoveAt(i);
-                        break;
-                    }
-                treeView1.Nodes.Remove(selectedNode);
-            }
+            return true;
         }
 
         private void добавитьФакультетToolStripMenuItem1_MouseUp(object sender, MouseEventArgs e)
         {
             if(e.Button== MouseButtons.Left)
             {
-                CreateForm c = new CreateForm("Введите название нового факультета:", checkFac);
+                CreateForm c = new CreateForm("Введите название нового факультета:", checkFac, "Такой факультет уже присутствует");
                 c.ShowDialog();
                 if (c.WrittenName != "")
                 {
@@ -118,9 +100,76 @@ namespace lmvz3
                     var n = new TreeNode(f.Title);
                     n.ContextMenuStrip = contextMenuStripFac;
                     treeView1.Nodes.Add(n);
-                    //sortTree();
                     treeView1.Sort();
                 }
+            }
+        }
+
+        private void добавитьГруппуToolStripMenuItem_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                CreateForm c = new CreateForm("Введите название новой группы:", checkGroup, "Такая группа уже присутствует");
+                c.ShowDialog();
+                if (c.WrittenName != "")
+                {
+                    var g = new Group(c.WrittenName, 0);
+                    //faculties.Add(f);
+                    var n = new TreeNode(g.Title);
+                    n.ContextMenuStrip = contextMenuStripGroup;
+                    string title;
+                    if (selectedNode.Parent == null)
+                    {
+                        selectedNode.Nodes.Add(n);
+                        title = selectedNode.Text;
+                    }
+                    else
+                    {
+                        selectedNode.Parent.Nodes.Add(n);
+                        title = selectedNode.Parent.Text;
+                    }
+                    faculties.Where(f => f.Title.Equals(title)).First().Groups.Add(g);
+                    treeView1.Sort();
+                }
+            }
+        }
+
+        private void удалитьГруппуToolStripMenuItem_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (MessageBox.Show(string.Format("Вы собираетесь удалить группу {0}\nЭто действие"
+                + " нельзя будет отменить. \nБудут утеряны все данный связанные с этой группой.", selectedNode.Text),
+                "Вы уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                for (int i = 0; i < faculties.Count; i++)
+                    if (faculties[i].Title.Equals(selectedNode.Parent.Text))
+                    {
+                        for (int j = 0; j < faculties[i].Groups.Count; j++)
+                        {
+                            if (faculties[i].Groups[j].Title.Equals(selectedNode.Text))
+                            {
+                                faculties[i].Groups.RemoveAt(j);
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                selectedNode.Remove();
+            }
+        }
+
+        private void удалитьФакультетToolStripMenuItem_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (MessageBox.Show(string.Format("Вы собираетесь удалить факультет {0}\nЭто действие"
+                + " нельзя будет отменить. \nБудут утеряны все данный связанные с этим факультетом.", selectedNode.Text),
+                "Вы уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                for (int i = 0; i < faculties.Count; i++)
+                    if (faculties[i].Title.Equals(selectedNode.Text))
+                    {
+                        faculties.RemoveAt(i);
+                        break;
+                    }
+                treeView1.Nodes.Remove(selectedNode);
             }
         }
     }

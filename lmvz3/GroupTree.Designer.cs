@@ -81,12 +81,14 @@
             this.добавитьГруппуToolStripMenuItem1.Name = "добавитьГруппуToolStripMenuItem1";
             this.добавитьГруппуToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
             this.добавитьГруппуToolStripMenuItem1.Text = "Добавить группу";
+            this.добавитьГруппуToolStripMenuItem1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.добавитьГруппуToolStripMenuItem_MouseUp);
             // 
             // удалитьГруппуToolStripMenuItem
             // 
             this.удалитьГруппуToolStripMenuItem.Name = "удалитьГруппуToolStripMenuItem";
             this.удалитьГруппуToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.удалитьГруппуToolStripMenuItem.Text = "Удалить группу";
+            this.удалитьГруппуToolStripMenuItem.MouseUp += new System.Windows.Forms.MouseEventHandler(this.удалитьГруппуToolStripMenuItem_MouseUp);
             // 
             // contextMenuStripFac
             // 
@@ -95,7 +97,7 @@
             this.удалитьФакультетToolStripMenuItem,
             this.добавитьГруппуToolStripMenuItem});
             this.contextMenuStripFac.Name = "contextMenuStripFac";
-            this.contextMenuStripFac.Size = new System.Drawing.Size(186, 70);
+            this.contextMenuStripFac.Size = new System.Drawing.Size(186, 92);
             // 
             // добавитьФакультетToolStripMenuItem1
             // 
@@ -109,13 +111,14 @@
             this.удалитьФакультетToolStripMenuItem.Name = "удалитьФакультетToolStripMenuItem";
             this.удалитьФакультетToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.удалитьФакультетToolStripMenuItem.Text = "Удалить факультет";
-            this.удалитьФакультетToolStripMenuItem.Click += new System.EventHandler(this.удалитьФакультетToolStripMenuItem_Click);
+            this.удалитьФакультетToolStripMenuItem.MouseUp += new System.Windows.Forms.MouseEventHandler(this.удалитьФакультетToolStripMenuItem_MouseUp);
             // 
             // добавитьГруппуToolStripMenuItem
             // 
             this.добавитьГруппуToolStripMenuItem.Name = "добавитьГруппуToolStripMenuItem";
             this.добавитьГруппуToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.добавитьГруппуToolStripMenuItem.Text = "Добавить группу";
+            this.добавитьГруппуToolStripMenuItem.MouseUp += new System.Windows.Forms.MouseEventHandler(this.добавитьГруппуToolStripMenuItem_MouseUp);
             // 
             // GroupTree
             // 
