@@ -30,16 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Group = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.homeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.facultyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specialityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.formOfStudyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -51,12 +51,12 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
+            this.Group,
             this.fIODataGridViewTextBoxColumn,
             this.passDataGridViewTextBoxColumn,
             this.birthDataGridViewTextBoxColumn,
             this.homeDataGridViewTextBoxColumn,
             this.facultyDataGridViewTextBoxColumn,
-            this.specialityDataGridViewTextBoxColumn,
             this.formOfStudyDataGridViewTextBoxColumn,
             this.numberDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.studentBindingSource;
@@ -68,12 +68,23 @@
             this.dataGridView1.Size = new System.Drawing.Size(284, 262);
             this.dataGridView1.TabIndex = 0;
             // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(lmvz3.Student);
+            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Group
+            // 
+            this.Group.DataPropertyName = "Group";
+            this.Group.HeaderText = "Group";
+            this.Group.Name = "Group";
+            this.Group.ReadOnly = true;
             // 
             // fIODataGridViewTextBoxColumn
             // 
@@ -110,13 +121,6 @@
             this.facultyDataGridViewTextBoxColumn.Name = "facultyDataGridViewTextBoxColumn";
             this.facultyDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // specialityDataGridViewTextBoxColumn
-            // 
-            this.specialityDataGridViewTextBoxColumn.DataPropertyName = "Speciality";
-            this.specialityDataGridViewTextBoxColumn.HeaderText = "Speciality";
-            this.specialityDataGridViewTextBoxColumn.Name = "specialityDataGridViewTextBoxColumn";
-            this.specialityDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // formOfStudyDataGridViewTextBoxColumn
             // 
             this.formOfStudyDataGridViewTextBoxColumn.DataPropertyName = "FormOfStudy";
@@ -130,10 +134,6 @@
             this.numberDataGridViewTextBoxColumn.HeaderText = "Number";
             this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
             this.numberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(lmvz3.Student);
             // 
             // Main
             // 
@@ -154,13 +154,14 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource studentBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn specialityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Group;
         private System.Windows.Forms.DataGridViewTextBoxColumn fIODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn birthDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn homeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn facultyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn specialityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn formOfStudyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
 

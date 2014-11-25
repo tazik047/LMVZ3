@@ -23,8 +23,13 @@ namespace lmvz3
             {
                 var ns = new TreeNode[faculties[i].Groups.Count];
                 for (int j = 0; j < faculties[i].Groups.Count; j++)
+                {
                     ns[j] = new TreeNode(faculties[i].Groups[j].Title);
-                treeView1.Nodes.Add(new TreeNode(faculties[i].Title, ns));
+                    ns[j].ContextMenuStrip = contextMenuStripGroup;
+                }
+                var n = new TreeNode(faculties[i].Title, ns);
+                n.ContextMenuStrip = contextMenuStripFac;
+                treeView1.Nodes.Add(n);
             }
             treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(filter);
         }
@@ -51,6 +56,11 @@ namespace lmvz3
                     MessageBox.Show(String.Format("Вы выбрали факультет - {0}", n.Text), "Click");
                 }
             }
+        }
+
+        private void добавитьФакультетToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

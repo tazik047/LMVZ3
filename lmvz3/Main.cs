@@ -34,7 +34,7 @@ namespace lmvz3
                 s.ID = i;
                 s.Number = 0953123838;
                 s.Pass = "AX000000";
-                s.Speciality = "kl;sdfjsdklj";
+                s.Group = new Group("fsdf", 1);
                 students.Add(s);
 
             }
