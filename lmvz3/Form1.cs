@@ -38,12 +38,12 @@ namespace lmvz3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            groups = new GroupTree();
+            mainTable = new Main();
+
+            groups = new GroupTree(mainTable.filter);
             groups.MdiParent = this;
             groups.Show();
 
-
-            mainTable = new Main();
             mainTable.MdiParent = this;
             mainTable.Show();
 

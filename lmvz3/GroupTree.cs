@@ -14,7 +14,7 @@ namespace lmvz3
     {
         List<Faculty> faculties;
 
-        public GroupTree()
+        public GroupTree(Action<Object, TreeNodeMouseClickEventArgs> filter)
         {
             InitializeComponent();
             //faculties = IOClass.LoadFaculty();
@@ -26,6 +26,7 @@ namespace lmvz3
                     ns[j] = new TreeNode(faculties[i].Groups[j].Title);
                 treeView1.Nodes.Add(new TreeNode(faculties[i].Title, ns));
             }
+            treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(filter);
         }
 
         private void create()
@@ -47,7 +48,7 @@ namespace lmvz3
                 var n = e.Node;
                 if (n.Parent == null)
                 {
-                    MessageBox.Show(String.Format("Вы выбрали факультет - {0}",n.Text),"Click");
+                    MessageBox.Show(String.Format("Вы выбрали факультет - {0}", n.Text), "Click");
                 }
             }
         }

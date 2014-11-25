@@ -39,5 +39,20 @@ namespace lmvz3
 
             }
         }
+
+
+        public void filter(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            /*
+            if (e.Button == MouseButtons.Left)
+            {
+                var n = e.Node;
+                if (n.Parent == null)
+                {
+                    MessageBox.Show(String.Format("Вы выбрали факультет - {0}", n.Text), "Click");
+                }
+            }*/
+            studentBindingSource.DataSource = students.Where(s => s.ID % 2 == 0).ToList();
+        }
     }
 }
