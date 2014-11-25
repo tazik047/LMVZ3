@@ -33,12 +33,12 @@
             this.contextMenuStripMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.добавитьФакультетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripGroup = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.добавитьГруппуToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьГруппуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripFac = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.добавитьФакультетToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьФакультетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьГруппуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьГруппуToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалитьГруппуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripMain.SuspendLayout();
             this.contextMenuStripGroup.SuspendLayout();
             this.contextMenuStripFac.SuspendLayout();
@@ -59,14 +59,14 @@
             this.contextMenuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавитьФакультетToolStripMenuItem});
             this.contextMenuStripMain.Name = "contextMenuStripMain";
-            this.contextMenuStripMain.Size = new System.Drawing.Size(186, 48);
+            this.contextMenuStripMain.Size = new System.Drawing.Size(186, 26);
             // 
             // добавитьФакультетToolStripMenuItem
             // 
             this.добавитьФакультетToolStripMenuItem.Name = "добавитьФакультетToolStripMenuItem";
             this.добавитьФакультетToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.добавитьФакультетToolStripMenuItem.Text = "Добавить факультет";
-            this.добавитьФакультетToolStripMenuItem.Click += new System.EventHandler(this.добавитьФакультетToolStripMenuItem_Click);
+            this.добавитьФакультетToolStripMenuItem.MouseUp += new System.Windows.Forms.MouseEventHandler(this.добавитьФакультетToolStripMenuItem1_MouseUp);
             // 
             // contextMenuStripGroup
             // 
@@ -75,6 +75,18 @@
             this.удалитьГруппуToolStripMenuItem});
             this.contextMenuStripGroup.Name = "contextMenuStripGroup";
             this.contextMenuStripGroup.Size = new System.Drawing.Size(168, 48);
+            // 
+            // добавитьГруппуToolStripMenuItem1
+            // 
+            this.добавитьГруппуToolStripMenuItem1.Name = "добавитьГруппуToolStripMenuItem1";
+            this.добавитьГруппуToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
+            this.добавитьГруппуToolStripMenuItem1.Text = "Добавить группу";
+            // 
+            // удалитьГруппуToolStripMenuItem
+            // 
+            this.удалитьГруппуToolStripMenuItem.Name = "удалитьГруппуToolStripMenuItem";
+            this.удалитьГруппуToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.удалитьГруппуToolStripMenuItem.Text = "Удалить группу";
             // 
             // contextMenuStripFac
             // 
@@ -90,30 +102,20 @@
             this.добавитьФакультетToolStripMenuItem1.Name = "добавитьФакультетToolStripMenuItem1";
             this.добавитьФакультетToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
             this.добавитьФакультетToolStripMenuItem1.Text = "Добавить факультет";
+            this.добавитьФакультетToolStripMenuItem1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.добавитьФакультетToolStripMenuItem1_MouseUp);
             // 
             // удалитьФакультетToolStripMenuItem
             // 
             this.удалитьФакультетToolStripMenuItem.Name = "удалитьФакультетToolStripMenuItem";
             this.удалитьФакультетToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.удалитьФакультетToolStripMenuItem.Text = "Удалить факультет";
+            this.удалитьФакультетToolStripMenuItem.Click += new System.EventHandler(this.удалитьФакультетToolStripMenuItem_Click);
             // 
             // добавитьГруппуToolStripMenuItem
             // 
             this.добавитьГруппуToolStripMenuItem.Name = "добавитьГруппуToolStripMenuItem";
             this.добавитьГруппуToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.добавитьГруппуToolStripMenuItem.Text = "Добавить группу";
-            // 
-            // добавитьГруппуToolStripMenuItem1
-            // 
-            this.добавитьГруппуToolStripMenuItem1.Name = "добавитьГруппуToolStripMenuItem1";
-            this.добавитьГруппуToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
-            this.добавитьГруппуToolStripMenuItem1.Text = "Добавить группу";
-            // 
-            // удалитьГруппуToolStripMenuItem
-            // 
-            this.удалитьГруппуToolStripMenuItem.Name = "удалитьГруппуToolStripMenuItem";
-            this.удалитьГруппуToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.удалитьГруппуToolStripMenuItem.Text = "Удалить группу";
             // 
             // GroupTree
             // 
