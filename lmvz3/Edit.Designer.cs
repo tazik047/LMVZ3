@@ -57,6 +57,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.Save = new System.Windows.Forms.Button();
+            this.cancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // fio
@@ -331,11 +333,33 @@
             this.label12.TabIndex = 32;
             this.label12.Text = "Например: Потемкин Константин Юрьевич";
             // 
+            // Save
+            // 
+            this.Save.Location = new System.Drawing.Point(57, 538);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(75, 23);
+            this.Save.TabIndex = 33;
+            this.Save.Text = "Сохранить";
+            this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
+            // 
+            // cancel
+            // 
+            this.cancel.Location = new System.Drawing.Point(151, 538);
+            this.cancel.Name = "cancel";
+            this.cancel.Size = new System.Drawing.Size(75, 23);
+            this.cancel.TabIndex = 34;
+            this.cancel.Text = "Отменить";
+            this.cancel.UseVisualStyleBackColor = true;
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
+            // 
             // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 525);
+            this.ClientSize = new System.Drawing.Size(317, 585);
+            this.Controls.Add(this.cancel);
+            this.Controls.Add(this.Save);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -404,6 +428,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button Save;
+        private System.Windows.Forms.Button cancel;
 
     }
 }

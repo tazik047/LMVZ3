@@ -14,6 +14,7 @@ namespace lmvz3
     public partial class Edit : Form
     {
         List<Control> textboxes = new List<Control>();
+        Student studen = new Student();
         public void Basic()
         {
             textboxes.Add(textBox1);
@@ -27,6 +28,7 @@ namespace lmvz3
             foreach (Control controls in textboxes)
                 controls.Enabled = false;
             textBox1.BringToFront();
+
             object sender = new object();
             EventArgs e = new EventArgs();
             faculties(sender, e);
@@ -34,6 +36,7 @@ namespace lmvz3
 
         public void EditStud(Student stud) 
         {
+            this.studen = stud;
             textBox1.Text = stud.FIO;
             maskedTextBox1.Text = stud.ID;
             maskedTextBox2.Text = stud.Pass;
@@ -72,11 +75,31 @@ namespace lmvz3
         }
         public void groups(object sender, EventArgs e)
         {
+            comboBox2.Items.Clear();
             comboBox2.Items.AddRange(((Faculty)comboBox1.SelectedItem).Groups.ToArray());
         }
         public void faculties(object sender, EventArgs e)
         {
+            comboBox1.Items.Clear();
             comboBox1.Items.AddRange(StaticData.faculties.ToArray());
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            Student stud = new Student();
+            stud.FIO = textBox1.Text;
+            stud.ID = maskedTextBox1.Text;
+            stud.Pass = maskedTextBox2.Text;
+            stud.Number = Int32.Parse(maskedTextBox3.Text);
+            stud.Birth = dateTimePicker1.Value;
+            stud.Faculty = (Faculty)comboBox1.SelectedItem;
+            stud.Group = (Group)comboBox2.SelectedItem;
+            stud.FormOfStudy = comboBox3.SelectedItem.ToString();
+        }
+
+        private void cancel_Click(object sender, EventArgs e)
+        {
+            EditStud(this.studen);
         }
             
   }
