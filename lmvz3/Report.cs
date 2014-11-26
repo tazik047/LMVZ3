@@ -104,11 +104,11 @@ namespace lmvz3
         private void otherCriter()
         {
             if (radioButton1.Checked)
-                studentBindingSource.DataSource = students;
+                studentBindingSource.DataSource = students.Where(s => s.Birth < dateTimePicker1.Value).ToList();
             else if (radioButton3.Checked)
-                studentBindingSource.DataSource = students.Where(s => s.FormOfStudy.ToLower() == "бюджет" && s.Birth < dateTimePicker1.Value);
+                studentBindingSource.DataSource = students.Where(s => s.FormOfStudy.ToLower() == "бюджет" && s.Birth < dateTimePicker1.Value).ToList();
             else
-                studentBindingSource.DataSource = students.Where(s => s.FormOfStudy.ToLower() == "контракт" && s.Birth < dateTimePicker1.Value);
+                studentBindingSource.DataSource = students.Where(s => s.FormOfStudy.ToLower() == "контракт" && s.Birth < dateTimePicker1.Value).ToList();
             dataGridView1.AutoResizeColumns();
         }
 
