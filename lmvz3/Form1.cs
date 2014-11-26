@@ -38,7 +38,7 @@ namespace lmvz3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            mainTable = new Main();
+            mainTable = new Main(dataGridView1_SelectionChanged);
 
             groups = new GroupTree(mainTable.filter);
             groups.MdiParent = this;
@@ -53,6 +53,22 @@ namespace lmvz3
 
 
             Form1_Resize(this, EventArgs.Empty);
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+        }
+
+        private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //var create = new Edit();
+        }
+
+        private void печатьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var r = new Report();
+            r.ShowDialog();
         }
     }
 }

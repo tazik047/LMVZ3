@@ -87,7 +87,7 @@ namespace lmvz3
             {
                 foreach (Group group in groups)
                 {
-                    if (student.Group== group)
+                    if (student.Group.Title.Equals(group.Title))
                     {
                         rStud.Add(student);
                     }
@@ -102,7 +102,7 @@ namespace lmvz3
             {
                 foreach (Faculty faculty in faculties)
                 {
-                    if (student.Faculty == faculty)
+                    if (student.Faculty.Title.Equals(faculty.Title))
                     {
                         rStud.Add(student);
                     }

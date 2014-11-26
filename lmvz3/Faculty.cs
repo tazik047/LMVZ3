@@ -18,6 +18,11 @@ namespace lmvz3
             Groups = groups;
             Title = title;
 		}
+
+        public override string ToString()
+        {
+            return Title;
+        }
 	}
 }
 

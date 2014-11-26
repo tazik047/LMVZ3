@@ -12,7 +12,6 @@ namespace lmvz3
 {
     public partial class GroupTree : Form
     {
-        List<Faculty> faculties;
         TreeNode selectedNode;
 
         public GroupTree(Action<Object, TreeNodeMouseClickEventArgs> filter)
@@ -26,15 +25,15 @@ namespace lmvz3
 
         private void CreateNodes()
         {
-            for (int i = 0; i < faculties.Count; i++)
+            for (int i = 0; i < StaticData.faculties.Count; i++)
             {
-                var ns = new TreeNode[faculties[i].Groups.Count];
-                for (int j = 0; j < faculties[i].Groups.Count; j++)
+                var ns = new TreeNode[StaticData.faculties[i].Groups.Count];
+                for (int j = 0; j < StaticData.faculties[i].Groups.Count; j++)
                 {
-                    ns[j] = new TreeNode(faculties[i].Groups[j].Title);
+                    ns[j] = new TreeNode(StaticData.faculties[i].Groups[j].Title);
                     ns[j].ContextMenuStrip = contextMenuStripGroup;
                 }
-                var n = new TreeNode(faculties[i].Title, ns);
+                var n = new TreeNode(StaticData.faculties[i].Title, ns);
                 n.ContextMenuStrip = contextMenuStripFac;
                 treeView1.Nodes.Add(n);
             }
@@ -42,19 +41,19 @@ namespace lmvz3
 
         private void create()
         {
-            faculties = new List<Faculty>();
+            StaticData.faculties = new List<Faculty>();
             for (int i = 0; i < 10; i++)
             {
                 var gs = new List<Group>();
                 for (int j = 0; j < 10; j++)
                     gs.Add(new Group(String.Format("Fac{0}-Group{1}", i, j), i));
-                faculties.Add(new Faculty(i, String.Format("Fac{0}", i), gs));
+                StaticData.faculties.Add(new Faculty(i, String.Format("Fac{0}", i), gs));
             }
         }
 
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            /*if (e.Button == MouseButtons.Left)
             {
                 var n = e.Node;
                 if (n.Parent == null)
@@ -65,7 +64,7 @@ namespace lmvz3
                 {
                     MessageBox.Show(String.Format("Вы выбрали группу - {0}", n.Text), "Click");
                 }
-            }
+            }*/
             if(e.Button == MouseButtons.Right)
             {
                 selectedNode = e.Node;
@@ -74,14 +73,14 @@ namespace lmvz3
 
         private bool checkFac(string title)
         {
-            return faculties.Count(f => f.Title.Equals(title)) == 0;
+            return StaticData.faculties.Count(f => f.Title.Equals(title)) == 0;
         }
 
         private bool checkGroup(string title)
         {
-            for (int i = 0; i < faculties.Count; i++)
+            for (int i = 0; i < StaticData.faculties.Count; i++)
             {
-                if (faculties[i].Groups.Count(g => g.Title.Equals(title)) != 0)
+                if (StaticData.faculties[i].Groups.Count(g => g.Title.Equals(title)) != 0)
                     return false;
             }
             return true;
@@ -96,7 +95,7 @@ namespace lmvz3
                 if (c.WrittenName != "")
                 {
                     var f = new Faculty(0, c.WrittenName, new List<Group>());
-                    faculties.Add(f);
+                    StaticData.faculties.Add(f);
                     var n = new TreeNode(f.Title);
                     n.ContextMenuStrip = contextMenuStripFac;
                     treeView1.Nodes.Add(n);
@@ -128,7 +127,7 @@ namespace lmvz3
                         selectedNode.Parent.Nodes.Add(n);
                         title = selectedNode.Parent.Text;
                     }
-                    faculties.Where(f => f.Title.Equals(title)).First().Groups.Add(g);
+                    StaticData.faculties.Where(f => f.Title.Equals(title)).First().Groups.Add(g);
                     treeView1.Sort();
                 }
             }
@@ -140,14 +139,14 @@ namespace lmvz3
                 + " нельзя будет отменить. \nБудут утеряны все данный связанные с этой группой.", selectedNode.Text),
                 "Вы уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                for (int i = 0; i < faculties.Count; i++)
-                    if (faculties[i].Title.Equals(selectedNode.Parent.Text))
+                for (int i = 0; i < StaticData.faculties.Count; i++)
+                    if (StaticData.faculties[i].Title.Equals(selectedNode.Parent.Text))
                     {
-                        for (int j = 0; j < faculties[i].Groups.Count; j++)
+                        for (int j = 0; j < StaticData.faculties[i].Groups.Count; j++)
                         {
-                            if (faculties[i].Groups[j].Title.Equals(selectedNode.Text))
+                            if (StaticData.faculties[i].Groups[j].Title.Equals(selectedNode.Text))
                             {
-                                faculties[i].Groups.RemoveAt(j);
+                                StaticData.faculties[i].Groups.RemoveAt(j);
                                 break;
                             }
                         }
@@ -163,10 +162,10 @@ namespace lmvz3
                 + " нельзя будет отменить. \nБудут утеряны все данный связанные с этим факультетом.", selectedNode.Text),
                 "Вы уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                for (int i = 0; i < faculties.Count; i++)
-                    if (faculties[i].Title.Equals(selectedNode.Text))
+                for (int i = 0; i < StaticData.faculties.Count; i++)
+                    if (StaticData.faculties[i].Title.Equals(selectedNode.Text))
                     {
-                        faculties.RemoveAt(i);
+                        StaticData.faculties.RemoveAt(i);
                         break;
                     }
                 treeView1.Nodes.Remove(selectedNode);
