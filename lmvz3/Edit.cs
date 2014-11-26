@@ -67,12 +67,18 @@ namespace lmvz3
                 label1.Text = "Режим просмотра";
                 foreach (Control controls in textboxes)
                     controls.Enabled = false;
+                Save.Hide();
+                cancel.Hide();
+                delete.Hide();
             }
             else
             {
                 label1.Text = "Режим редактирования";
                 foreach (Control controls in textboxes)
                     controls.Enabled = true;
+                Save.Show();
+                cancel.Show();
+                delete.Show();
             }
         }
 
@@ -206,6 +212,9 @@ namespace lmvz3
             foreach (Control control in this.constrols)
                 control.Show();
             label15.Hide();
+            Save.Hide();
+            cancel.Hide();
+            delete.Hide();
         }
 
         private void delete_Click(object sender, EventArgs e)
