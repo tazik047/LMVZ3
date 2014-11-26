@@ -52,6 +52,7 @@ namespace lmvz3
             studen.Group = (Group)comboBox2.SelectedItem;
             studen.FormOfStudy = comboBox3.SelectedItem.ToString();
             StaticData.students.Add(studen);
+            IOClass.Save(StaticData.students);
         }
     }
 }

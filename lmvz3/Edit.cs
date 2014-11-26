@@ -94,6 +94,7 @@ namespace lmvz3
             this.studen.Faculty = (Faculty)comboBox1.SelectedItem;
             this.studen.Group = (Group)comboBox2.SelectedItem;
             this.studen.FormOfStudy = comboBox3.SelectedItem.ToString();
+            IOClass.Save(StaticData.students);
         }
 
         private void cancel_Click(object sender, EventArgs e)
