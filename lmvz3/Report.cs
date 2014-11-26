@@ -115,7 +115,8 @@ namespace lmvz3
             //Creating iTextSharp Table from the DataTable data
             PdfPTable pdfTable = new PdfPTable(dataGridView1.ColumnCount);
             pdfTable.DefaultCell.Padding = 3;
-            pdfTable.WidthPercentage = 30;
+            pdfTable.WidthPercentage = 100;
+            pdfTable.HeaderRows = 2;
             pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
             pdfTable.DefaultCell.BorderWidth = 1;
             BaseFont font = BaseFont.CreateFont(@"C:\Windows\Fonts\arial.ttf", "Identity-H", false); 
@@ -144,8 +145,10 @@ namespace lmvz3
             using (FileStream stream = new FileStream("DataGridViewExport.pdf", FileMode.Create))
             {
                 Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
+                pdfDoc.AddHeader("Отчет", "по группам, по тдавлдподлвпорвдлпрвлдопр");
                 PdfWriter.GetInstance(pdfDoc, stream);
                 pdfDoc.Open();
+                //pdfDoc.aDDP
                 pdfDoc.Add(pdfTable);
                 pdfDoc.Close();
             }

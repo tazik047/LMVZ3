@@ -99,7 +99,7 @@ namespace lmvz3
             dataGridView1.ClearSelection();
         }
 
-        public void Refresh(object sender, EventArgs e)
+        public void RefreshData(object sender, EventArgs e)
         {
             studentBindingSource.ResetBindings(true);
         }
