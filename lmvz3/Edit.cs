@@ -14,6 +14,7 @@ namespace lmvz3
     public partial class Edit : Form
     {
         List<Control> textboxes = new List<Control>();
+        List<Control> constrols = new List<Control>();
         Student studen = new Student();
         public void Basic()
         {
@@ -53,6 +54,8 @@ namespace lmvz3
         {
             InitializeComponent();
             Basic();
+            Add3();
+            Hide2();
         }
         
          
@@ -150,6 +153,56 @@ namespace lmvz3
                 else maske.BackColor = Color.White;
             }
             return check;
+        }
+        public void Add3() 
+        {
+           
+            this.constrols.Add(this.label14);
+            this.constrols.Add(this.textBox2);
+            this.constrols.Add(this.label13);
+            this.constrols.Add(this.cancel);
+            this.constrols.Add(this.Save);
+            this.constrols.Add(this.label12);
+            this.constrols.Add(this.label11);
+            this.constrols.Add(this.label10);
+            this.constrols.Add(this.label9);
+            this.constrols.Add(this.label8);
+            this.constrols.Add(this.label7);
+            this.constrols.Add(this.label6);
+            this.constrols.Add(this.label5);
+            this.constrols.Add(this.label4);
+            this.constrols.Add(this.label3);
+            this.constrols.Add(this.maskedTextBox3);
+            this.constrols.Add(this.label2);
+            this.constrols.Add(this.maskedTextBox2);
+            this.constrols.Add(this.maskedTextBox1);
+            this.constrols.Add(this.trackBar1);
+            this.constrols.Add(this.comboBox3);
+            this.constrols.Add(this.comboBox2);
+            this.constrols.Add(this.comboBox1);
+            this.constrols.Add(this.dateTimePicker1);
+            this.constrols.Add(this.textBox1);
+            this.constrols.Add(this.label1);
+            this.constrols.Add(this.number);
+            this.constrols.Add(this.formStudy);
+            this.constrols.Add(this.group);
+            this.constrols.Add(this.faculty);
+            this.constrols.Add(this.birth);
+            this.constrols.Add(this.pass);
+            this.constrols.Add(this.id);
+            this.constrols.Add(this.fio);
+        }
+        public void Hide2()
+        {
+            foreach (Control control in this.constrols)
+                control.Hide();
+            label15.Show();
+        }
+        public void Show2()
+        {
+            foreach (Control control in this.constrols)
+                control.Show();
+            label15.Hide();
         }
   }
 }

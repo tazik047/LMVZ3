@@ -62,6 +62,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // fio
@@ -388,11 +389,22 @@
             this.label14.TabIndex = 37;
             this.label14.Text = "Например: 61023, Г. Харьков, Ул. Иванова 23, кв .14";
             // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label15.Location = new System.Drawing.Point(56, 222);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(203, 140);
+            this.label15.TabIndex = 38;
+            this.label15.Text = "Выберите студента для просмотра или редактирования";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(317, 638);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label13);
@@ -471,6 +483,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
 
     }
 }
