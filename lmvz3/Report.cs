@@ -123,17 +123,21 @@ namespace lmvz3
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
                 PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                cell.Width = column.Width;
                 cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
                 pdfTable.AddCell(cell);
             }
+
+            string fg = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "Fradm.TTF");
+            BaseFont fgBaseFont = BaseFont.CreateFont(fg, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+            iTextSharp.text.Font fgFont = new iTextSharp.text.Font(fgBaseFont, 14, iTextSharp.text.Font.NORMAL,
+                iTextSharp.text.Color.BLACK);
 
             //Adding DataRow
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    pdfTable.AddCell(cell.Value.ToString());
+                    pdfTable.AddCell(new Phrase(cell.Value.ToString(), fgFont));
                 }
             }
 

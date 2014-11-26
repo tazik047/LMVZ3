@@ -60,8 +60,11 @@ namespace lmvz3
             var d = sender as DataGridView;
             var source = d.DataSource as BindingSource;
             var s = source.Current as Student;
-            if (edit != null && s!=null)
+            if (edit != null && s != null)
+            {
                 edit.EditStud(s);
+                edit.Show2();
+            }
         }
 
         private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
