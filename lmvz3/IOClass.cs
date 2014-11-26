@@ -21,15 +21,15 @@ namespace lmvz3
             get 
             {
                 PrepareBoforeStart();
-                return Path.Combine(_defaultPath, "Справка.chm");
+                return "Справка.chm";
             }
         }
 
         /// <summary>
         /// Задает путь к основной папке, в которой будут храниться данные программы.
         /// </summary>
-        private static string _defaultPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-            "Notebook", "Resources");
+        /*private static string _defaultPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+            "Notebook", "Resources");*/
 
        
         /// <summary>
@@ -37,14 +37,12 @@ namespace lmvz3
         /// </summary>
         public static void PrepareBoforeStart()
         {
-            if (!Directory.Exists(_defaultPath))
-                Directory.CreateDirectory(_defaultPath);
 
-            if (!File.Exists(Path.Combine(_defaultPath, "Справка.chm")) ||
+            if (!File.Exists("Справка.chm") ||
                 // Проверяет массивы байт на равенство.
-                !File.ReadAllBytes(Path.Combine(_defaultPath, "Справка.chm")).
+                !File.ReadAllBytes("Справка.chm").
                 SequenceEqual(Properties.Resources.Справка))
-                File.WriteAllBytes(Path.Combine(_defaultPath, "Справка.chm"), Properties.Resources.Справка);
+                File.WriteAllBytes("Справка.chm", Properties.Resources.Справка);
         }
 
         /// <summary>
@@ -54,7 +52,8 @@ namespace lmvz3
         public static void Save(List<Student> notebook)
         {
             PrepareBoforeStart();
-            using(FileStream f = new FileStream(Path.Combine(_defaultPath,"database.dat"),FileMode.Create))
+            notebook = notebook.OrderBy(s => s.FIO).ToList();
+            using(FileStream f = new FileStream("database.dat",FileMode.Create))
             {
                 BinaryFormatter b = new BinaryFormatter();
                 b.Serialize(f, notebook);
@@ -65,11 +64,11 @@ namespace lmvz3
         /// Загружает список Persone из файла database.dat по пути defaultPath.
         /// </summary>
         /// <returns>Загруженный список.</returns>
-        public static List<Student> Load()
+        public static List<Student> LoadStudent()
         {
             try
             {
-                using (FileStream f = new FileStream(Path.Combine(_defaultPath, "database.dat"), FileMode.Open))
+                using (FileStream f = new FileStream("database.dat", FileMode.Open))
                 {
                     BinaryFormatter b = new BinaryFormatter();
                     return b.Deserialize(f) as List<Student>;
@@ -77,10 +76,51 @@ namespace lmvz3
             }
             catch
             {
-                File.Create(Path.Combine(_defaultPath, "database.dat")).Close();
+                File.Create("database.dat").Close();
                 return new List<Student>();
             }
         }
+
+        /// <summary>
+        /// Сохраняет переданный список в файл database.dat по пути defaultPath.
+        /// </summary>
+        /// <param name="notebook">Сохраняемый список.</param>
+        public static void Save(List<Faculty> notebook)
+        {
+            PrepareBoforeStart();
+            notebook = notebook.OrderBy(f => f.Title).ToList();
+            foreach(var f in notebook)
+            {
+                f.Groups = f.Groups.OrderBy(g => g.Title).ToList();
+            }
+            using (FileStream f = new FileStream("databaseFac.dat", FileMode.Create))
+            {
+                BinaryFormatter b = new BinaryFormatter();
+                b.Serialize(f, notebook);
+            }
+        }
+
+        /// <summary>
+        /// Загружает список Persone из файла database.dat по пути defaultPath.
+        /// </summary>
+        /// <returns>Загруженный список.</returns>
+        public static List<Faculty> LoadFac()
+        {
+            try
+            {
+                using (FileStream f = new FileStream("databaseFac.dat", FileMode.Open))
+                {
+                    BinaryFormatter b = new BinaryFormatter();
+                    return b.Deserialize(f) as List<Faculty>;
+                }
+            }
+            catch
+            {
+                File.Create("databaseFac.dat").Close();
+                return new List<Faculty>();
+            }
+        }
+
         public static List<Student> findByGroup(List<Student> stud, List<Group> groups){
             List<Student> rStud = new List<Student>();
             foreach (Student student in stud)

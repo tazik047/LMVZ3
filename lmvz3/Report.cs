@@ -79,7 +79,17 @@ namespace lmvz3
 
         private void checkedListBox2_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-
+            List<Group> groups = new List<Group>();
+            for (int i = 0; i < checkedListBox2.Items.Count; i++)
+            {
+                if (checkedListBox2.GetItemChecked(i))
+                    groups.Add(new Group() { Title = checkedListBox2.Items[i].ToString() });
+            }
+            if (e.NewValue == CheckState.Checked)
+                groups.Add(new Group() { Title = checkedListBox2.Items[e.Index].ToString() });
+            else
+                groups = groups.Where(g => g.Title.Equals(checkedListBox2.Items[e.Index].ToString())).ToList();
+            studentBindingSource.DataSource = IOClass.findByGroup(StaticData.students, groups);
         }
     }
 }
