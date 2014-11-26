@@ -26,8 +26,10 @@ namespace lmvz3
             textboxes.Add(comboBox3);
             foreach (Control controls in textboxes)
                 controls.Enabled = false;
-            comboBox1.Items.AddRange(StaticData.faculties.ToArray());
             textBox1.BringToFront();
+            object sender = new object();
+            EventArgs e = new EventArgs();
+            faculties(sender, e);
         }
 
         public void EditStud(Student stud) 
@@ -66,10 +68,16 @@ namespace lmvz3
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
-            
+            groups(sender, e);
+        }
+        public void groups(object sender, EventArgs e)
+        {
             comboBox2.Items.AddRange(((Faculty)comboBox1.SelectedItem).Groups.ToArray());
         }
-
-
+        public void faculties(object sender, EventArgs e)
+        {
+            comboBox1.Items.AddRange(StaticData.faculties.ToArray());
+        }
+            
   }
 }
