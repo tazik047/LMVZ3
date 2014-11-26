@@ -212,9 +212,12 @@ namespace lmvz3
             foreach (Control control in this.constrols)
                 control.Show();
             label15.Hide();
-            Save.Hide();
-            cancel.Hide();
-            delete.Hide();
+            if (trackBar1.Value == 0)
+            {
+                Save.Hide();
+                cancel.Hide();
+                delete.Hide();
+            }
         }
 
         private void delete_Click(object sender, EventArgs e)
