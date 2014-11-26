@@ -12,6 +12,7 @@ namespace lmvz3
 {
     public partial class newStud : Form
     {
+        public event EventHandler Refresh;
         public newStud()
         {
             InitializeComponent();
@@ -56,6 +57,8 @@ namespace lmvz3
                 studen.Home = textBox2.Text;
                 StaticData.students.Add(studen);
                 IOClass.Save(StaticData.students);
+                if (Refresh != null)
+                    Refresh(studen, EventArgs.Empty);
             }
             
         }

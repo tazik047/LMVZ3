@@ -212,7 +212,7 @@ namespace lmvz3
         {
             StaticData.students.Remove(this.studen);
             IOClass.Save(StaticData.students);
-            
+            this.Refresh(sender, e);
 
         }
   }

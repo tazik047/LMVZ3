@@ -15,7 +15,7 @@ namespace lmvz3
         GroupTree groups;
         Main mainTable;
         Edit edit;
-
+        newStud newstud;
         public Form1()
         {
             InitializeComponent();
@@ -50,8 +50,11 @@ namespace lmvz3
             edit = new Edit();
             edit.MdiParent = this;
             edit.Show();
+            newstud = new newStud();
 
+            newstud.MdiParent = this;
             edit.Refresh += mainTable.Refresh;
+            newstud.Refresh += mainTable.Refresh;
             groups.UpdateFaculties += edit.faculties;
             Form1_Resize(this, EventArgs.Empty);
         }
