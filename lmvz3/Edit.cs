@@ -25,6 +25,8 @@ namespace lmvz3
             textboxes.Add(comboBox1);
             textboxes.Add(comboBox2);
             textboxes.Add(comboBox3);
+            textboxes.Add(textBox2);
+
             foreach (Control controls in textboxes)
                 controls.Enabled = false;
             textBox1.BringToFront();
@@ -45,6 +47,7 @@ namespace lmvz3
             comboBox1.SelectedItem = stud.Faculty;
             comboBox2.SelectedItem = stud.Group;
             comboBox3.SelectedItem = stud.FormOfStudy;
+            textBox2.Text = stud.Home;
         }
         public Edit()
         {
@@ -96,6 +99,7 @@ namespace lmvz3
                 this.studen.Faculty = (Faculty)comboBox1.SelectedItem;
                 this.studen.Group = (Group)comboBox2.SelectedItem;
                 this.studen.FormOfStudy = comboBox3.SelectedItem.ToString();
+                this.studen.Home = textBox2.Text;
                 IOClass.Save(StaticData.students);
             }
         }
@@ -113,6 +117,12 @@ namespace lmvz3
                 check = false;
             }
             else textBox1.BackColor = Color.White;
+            if (textBox2.Text == null || textBox2.Text == "")
+            {
+                textBox2.BackColor = Color.Red;
+                check = false;
+            }
+            else textBox2.BackColor = Color.White;
             List<MaskedTextBox> masked = new List<MaskedTextBox>();
             masked.Add(maskedTextBox1);
             masked.Add(maskedTextBox2);

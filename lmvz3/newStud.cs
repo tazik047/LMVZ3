@@ -53,6 +53,7 @@ namespace lmvz3
                 studen.Faculty = (Faculty)comboBox1.SelectedItem;
                 studen.Group = (Group)comboBox2.SelectedItem;
                 studen.FormOfStudy = comboBox3.SelectedItem.ToString();
+                studen.Home = textBox2.Text;
                 StaticData.students.Add(studen);
                 IOClass.Save(StaticData.students);
             }
@@ -67,6 +68,12 @@ namespace lmvz3
                 check = false;
             }
             else textBox1.BackColor = Color.White;
+            if (textBox2.Text == null || textBox2.Text == "")
+            {
+                textBox2.BackColor = Color.Red;
+                check = false;
+            }
+            else textBox2.BackColor = Color.White;
             List<MaskedTextBox> masked = new List<MaskedTextBox>();
             masked.Add(maskedTextBox1);
             masked.Add(maskedTextBox2);

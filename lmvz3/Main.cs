@@ -37,7 +37,7 @@ namespace lmvz3
                 s.FormOfStudy = i % 2 == 0 ? "Бюджет" : "Контракт";
                 s.Home = "sfgkljdflgk";
                 s.ID = Guid.NewGuid().ToString();
-                s.Number = 0953123838;
+                s.Number = "0953123838";
                 s.Pass = "AX000000";
                 s.Group = new Group("fsdf", 1);
                 StaticData.students.Add(s);
