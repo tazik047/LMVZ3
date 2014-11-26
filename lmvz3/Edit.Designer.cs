@@ -42,7 +42,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.trackBar1 = new MB.Controls.ColorSlider();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -63,6 +62,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.trackBar1 = new MB.Controls.ColorSlider();
+            this.delete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // fio
@@ -203,25 +204,6 @@
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 16;
             // 
-            // trackBar1
-            // 
-            this.trackBar1.BackColor = System.Drawing.Color.Transparent;
-            this.trackBar1.BarInnerColor = System.Drawing.Color.DeepSkyBlue;
-            this.trackBar1.BorderRoundRectSize = new System.Drawing.Size(20, 40);
-            this.trackBar1.ElapsedInnerColor = System.Drawing.Color.Transparent;
-            this.trackBar1.ElapsedOuterColor = System.Drawing.Color.Transparent;
-            this.trackBar1.LargeChange = ((uint)(1u));
-            this.trackBar1.Location = new System.Drawing.Point(259, 29);
-            this.trackBar1.Maximum = 1;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(43, 30);
-            this.trackBar1.SmallChange = ((uint)(1u));
-            this.trackBar1.TabIndex = 18;
-            this.trackBar1.ThumbRoundRectSize = new System.Drawing.Size(8, 20);
-            this.trackBar1.ThumbSize = 20;
-            this.trackBar1.Value = 0;
-            this.trackBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.colorSlider1_Scroll);
-            // 
             // maskedTextBox1
             // 
             this.maskedTextBox1.Location = new System.Drawing.Point(12, 202);
@@ -345,7 +327,7 @@
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(60, 606);
+            this.Save.Location = new System.Drawing.Point(17, 606);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(75, 23);
             this.Save.TabIndex = 33;
@@ -355,7 +337,7 @@
             // 
             // cancel
             // 
-            this.cancel.Location = new System.Drawing.Point(154, 606);
+            this.cancel.Location = new System.Drawing.Point(114, 606);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(75, 23);
             this.cancel.TabIndex = 34;
@@ -399,11 +381,41 @@
             this.label15.Text = "Выберите студента для просмотра или редактирования";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // trackBar1
+            // 
+            this.trackBar1.BackColor = System.Drawing.Color.Transparent;
+            this.trackBar1.BarInnerColor = System.Drawing.Color.DeepSkyBlue;
+            this.trackBar1.BorderRoundRectSize = new System.Drawing.Size(20, 40);
+            this.trackBar1.ElapsedInnerColor = System.Drawing.Color.Transparent;
+            this.trackBar1.ElapsedOuterColor = System.Drawing.Color.Transparent;
+            this.trackBar1.LargeChange = ((uint)(1u));
+            this.trackBar1.Location = new System.Drawing.Point(259, 29);
+            this.trackBar1.Maximum = 1;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(43, 30);
+            this.trackBar1.SmallChange = ((uint)(1u));
+            this.trackBar1.TabIndex = 18;
+            this.trackBar1.ThumbRoundRectSize = new System.Drawing.Size(8, 20);
+            this.trackBar1.ThumbSize = 20;
+            this.trackBar1.Value = 0;
+            this.trackBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.colorSlider1_Scroll);
+            // 
+            // delete
+            // 
+            this.delete.Location = new System.Drawing.Point(223, 606);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(75, 23);
+            this.delete.TabIndex = 39;
+            this.delete.Text = "Удалить";
+            this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
+            // 
             // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(317, 638);
+            this.Controls.Add(this.delete);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textBox2);
@@ -484,6 +496,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button delete;
 
     }
 }

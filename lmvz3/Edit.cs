@@ -204,5 +204,13 @@ namespace lmvz3
                 control.Show();
             label15.Hide();
         }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            StaticData.students.Remove(this.studen);
+            IOClass.Save(StaticData.students);
+            
+
+        }
   }
 }
