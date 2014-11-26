@@ -31,7 +31,7 @@ namespace lmvz3
                 s.FIO = "ghklfh flghjf lfjhlkf";
                 s.FormOfStudy = i % 2 == 0 ? "Бюджет" : "Контракт";
                 s.Home = "sfgkljdflgk";
-                s.ID = i;
+                s.ID = Guid.NewGuid().ToString();
                 s.Number = 0953123838;
                 s.Pass = "AX000000";
                 s.Group = new Group("fsdf", 1);
@@ -52,7 +52,11 @@ namespace lmvz3
                     MessageBox.Show(String.Format("Вы выбрали факультет - {0}", n.Text), "Click");
                 }
             }*/
-            studentBindingSource.DataSource = students.Where(s => s.ID % 2 == 0).ToList();
+            if (e.Node.Parent == null)
+            {
+                label1.Text = string.Format("Вы просматриваете студентов из факультета {0}", e.Node.Text);
+            }
+            //studentBindingSource.DataSource = students.Where(s => s.ID  == 0).ToList();
         }
     }
 }
