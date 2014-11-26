@@ -84,9 +84,9 @@ namespace lmvz3
             combos.Add(comboBox1);
             combos.Add(comboBox2);
             combos.Add(comboBox3);
-            foreach (ComboBox maske in combos)
+            foreach (ComboBox maske in combos)  
             {
-                if (maske.SelectedText == null || maske.SelectedText == "")
+                if (maske.SelectedItem == null && maske.Text == "")
                 {
                     maske.BackColor = Color.Red;
                     check = false;
