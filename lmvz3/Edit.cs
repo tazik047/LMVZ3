@@ -14,6 +14,8 @@ namespace lmvz3
     public partial class Edit : Form
     {
         public event EventHandler RefreshData;
+        public event EventHandler DelStud;
+
         List<Control> textboxes = new List<Control>();
         List<Control> constrols = new List<Control>();
         Student studen = new Student();
@@ -224,7 +226,7 @@ namespace lmvz3
         {
             StaticData.students.Remove(this.studen);
             IOClass.Save(StaticData.students);
-            this.RefreshData(sender, e);
+            this.DelStud(null, e);
 
         }
   }

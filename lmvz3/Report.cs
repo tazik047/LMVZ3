@@ -23,6 +23,7 @@ namespace lmvz3
             InitializeComponent();
             checkedListBox1.Items.AddRange(StaticData.faculties.ToArray());
             studentBindingSource.DataSource = StaticData.students;
+            studentBindingSource.Sort = "FIO";
             label4_Click(this, EventArgs.Empty);
         }
 
@@ -105,9 +106,9 @@ namespace lmvz3
             if (radioButton1.Checked)
                 studentBindingSource.DataSource = students;
             else if (radioButton3.Checked)
-                studentBindingSource.DataSource = students.Where(s => s.FormOfStudy.ToLower() == "бюджет");
+                studentBindingSource.DataSource = students.Where(s => s.FormOfStudy.ToLower() == "бюджет" && s.Birth < dateTimePicker1.Value);
             else
-                studentBindingSource.DataSource = students.Where(s => s.FormOfStudy.ToLower() == "контракт");
+                studentBindingSource.DataSource = students.Where(s => s.FormOfStudy.ToLower() == "контракт" && s.Birth < dateTimePicker1.Value);
             dataGridView1.AutoResizeColumns();
         }
 
@@ -173,6 +174,11 @@ namespace lmvz3
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            otherCriter();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             otherCriter();
         }
