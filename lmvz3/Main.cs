@@ -18,7 +18,8 @@ namespace lmvz3
         public Main(Action<object,EventArgs> select)
         {
             InitializeComponent();
-            create();
+            //create();
+            StaticData.students = IOClass.LoadStudent();
             studentBindingSource.DataSource = StaticData.students;
             currentStud = StaticData.students;
             dataGridView1.SelectionChanged += new System.EventHandler(select);
