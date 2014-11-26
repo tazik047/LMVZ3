@@ -51,6 +51,7 @@ namespace lmvz3
             edit.MdiParent = this;
             edit.Show();
 
+            edit.Refresh += mainTable.Refresh;
             groups.UpdateFaculties += edit.faculties;
             Form1_Resize(this, EventArgs.Empty);
         }

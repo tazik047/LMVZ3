@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -61,6 +61,24 @@
             this.dataGridView1.Size = new System.Drawing.Size(527, 379);
             this.dataGridView1.TabIndex = 0;
             // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fIODataGridViewTextBoxColumn
+            // 
+            this.fIODataGridViewTextBoxColumn.DataPropertyName = "FIO";
+            this.fIODataGridViewTextBoxColumn.HeaderText = "ФИО";
+            this.fIODataGridViewTextBoxColumn.Name = "fIODataGridViewTextBoxColumn";
+            this.fIODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(lmvz3.Student);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -82,24 +100,6 @@
             this.textBox1.TabIndex = 5;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fIODataGridViewTextBoxColumn
-            // 
-            this.fIODataGridViewTextBoxColumn.DataPropertyName = "FIO";
-            this.fIODataGridViewTextBoxColumn.HeaderText = "ФИО";
-            this.fIODataGridViewTextBoxColumn.Name = "fIODataGridViewTextBoxColumn";
-            this.fIODataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(lmvz3.Student);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -111,6 +111,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Main";
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.Resize += new System.EventHandler(this.Main_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();

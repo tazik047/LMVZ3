@@ -93,5 +93,15 @@ namespace lmvz3
             studentBindingSource.DataSource = currentStud.Where(s => s.FIO.ToLower()
                     .Contains(textBox1.Text.ToLower())).ToList();
         }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            dataGridView1.ClearSelection();
+        }
+
+        public void Refresh(object sender, EventArgs e)
+        {
+            studentBindingSource.ResetBindings(true);
+        }
     }
 }

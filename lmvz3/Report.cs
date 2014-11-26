@@ -118,19 +118,18 @@ namespace lmvz3
             pdfTable.WidthPercentage = 30;
             pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
             pdfTable.DefaultCell.BorderWidth = 1;
-
+            BaseFont font = BaseFont.CreateFont(@"C:\Windows\Fonts\arial.ttf", "Identity-H", false); 
+            iTextSharp.text.Font fgFont = new iTextSharp.text.Font(font, 14, iTextSharp.text.Font.NORMAL,
+                iTextSharp.text.Color.BLACK);
             //Adding Header row
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
-                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, fgFont));
                 cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
                 pdfTable.AddCell(cell);
             }
 
-            string fg = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "Fradm.TTF");
-            BaseFont fgBaseFont = BaseFont.CreateFont(fg, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-            iTextSharp.text.Font fgFont = new iTextSharp.text.Font(fgBaseFont, 14, iTextSharp.text.Font.NORMAL,
-                iTextSharp.text.Color.BLACK);
+            
 
             //Adding DataRow
             foreach (DataGridViewRow row in dataGridView1.Rows)

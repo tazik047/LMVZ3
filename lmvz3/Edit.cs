@@ -13,6 +13,7 @@ namespace lmvz3
 {
     public partial class Edit : Form
     {
+        public event EventHandler Refresh;
         List<Control> textboxes = new List<Control>();
         List<Control> constrols = new List<Control>();
         Student studen = new Student();
@@ -104,6 +105,8 @@ namespace lmvz3
                 this.studen.FormOfStudy = comboBox3.SelectedItem.ToString();
                 this.studen.Home = textBox2.Text;
                 IOClass.Save(StaticData.students);
+                if (Refresh != null)
+                    Refresh(this.studen, EventArgs.Empty);
             }
         }
 
