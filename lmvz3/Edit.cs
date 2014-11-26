@@ -31,6 +31,7 @@ namespace lmvz3
             object sender = new object();
             EventArgs e = new EventArgs();
             faculties(sender, e);
+            
         }
 
         public void EditStud(Student stud) 
@@ -85,22 +86,60 @@ namespace lmvz3
 
         private void Save_Click(object sender, EventArgs e)
         {
-            
-            this.studen.FIO = textBox1.Text;
-            this.studen.ID = maskedTextBox1.Text;
-            this.studen.Pass = maskedTextBox2.Text;
-            this.studen.Number = Int32.Parse(maskedTextBox3.Text);
-            this.studen.Birth = dateTimePicker1.Value;
-            this.studen.Faculty = (Faculty)comboBox1.SelectedItem;
-            this.studen.Group = (Group)comboBox2.SelectedItem;
-            this.studen.FormOfStudy = comboBox3.SelectedItem.ToString();
-            IOClass.Save(StaticData.students);
+            if (Check())
+            {
+                this.studen.FIO = textBox1.Text;
+                this.studen.ID = maskedTextBox1.Text;
+                this.studen.Pass = maskedTextBox2.Text;
+                this.studen.Number = Int32.Parse(maskedTextBox3.Text);
+                this.studen.Birth = dateTimePicker1.Value;
+                this.studen.Faculty = (Faculty)comboBox1.SelectedItem;
+                this.studen.Group = (Group)comboBox2.SelectedItem;
+                this.studen.FormOfStudy = comboBox3.SelectedItem.ToString();
+                IOClass.Save(StaticData.students);
+            }
         }
 
         private void cancel_Click(object sender, EventArgs e)
         {
             EditStud(this.studen);
         }
-            
+        public bool Check()
+        {
+            bool check = true;
+            if (textBox1.Text == null || textBox1.Text == "")
+            {
+                textBox1.BackColor = Color.Red;
+                check = false;
+            }
+            else textBox1.BackColor = Color.White;
+            List<MaskedTextBox> masked = new List<MaskedTextBox>();
+            masked.Add(maskedTextBox1);
+            masked.Add(maskedTextBox2);
+            masked.Add(maskedTextBox3);
+            foreach (MaskedTextBox maske in masked)
+            {
+                if (maske.MaskFull == false)
+                {
+                    maske.BackColor = Color.Red;
+                    check = false;
+                }
+                else maske.BackColor = Color.White;
+            }
+            List<ComboBox> combos = new List<ComboBox>();
+            combos.Add(comboBox1);
+            combos.Add(comboBox2);
+            combos.Add(comboBox3);
+            foreach (ComboBox maske in combos)
+            {
+                if (maske.SelectedText == null || maske.SelectedText == "")
+                {
+                    maske.BackColor = Color.Red;
+                    check = false;
+                }
+                else maske.BackColor = Color.White;
+            }
+            return check;
+        }
   }
 }
