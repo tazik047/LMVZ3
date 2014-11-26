@@ -145,10 +145,20 @@ namespace lmvz3
             using (FileStream stream = new FileStream("DataGridViewExport.pdf", FileMode.Create))
             {
                 Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
-                pdfDoc.AddHeader("Отчет", "по группам, по тдавлдподлвпорвдлпрвлдопр");
+                //pdfDoc.AddHeader("Отчет", "по группам, по тдавлдподлвпорвдлпрвлдопр");
                 PdfWriter.GetInstance(pdfDoc, stream);
                 pdfDoc.Open();
+                //da
+                string res = "Список студентов из групп: ";
+                foreach (var i in students.Select(s => s.Group.Title).Distinct())
+                    res += i+", ";
+                res = res.Substring(0, res.Length - 2) + ".\n";
+                res += "Форма обчения: " + (radioButton1.Checked ? "любая.\n" : (radioButton2.Checked ? "контрактная.\n" : "бюджетная.\n"));
+                res += "Студенты старше: " + dateTimePicker1.Value.ToShortDateString() + "\n \n ";
+                
+                Paragraph p = new Paragraph(res, fgFont);
                 //pdfDoc.aDDP
+                pdfDoc.Add(p);
                 pdfDoc.Add(pdfTable);
                 pdfDoc.Close();
             }
