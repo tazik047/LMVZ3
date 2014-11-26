@@ -125,5 +125,10 @@ namespace lmvz3
             }
             studentBindingSource.ResetBindings(true);
         }
+
+        internal void RefreshAfterDel(object sender, EventArgs e)
+        {
+            studentBindingSource.ResetBindings(true);
+        }
     }
 }

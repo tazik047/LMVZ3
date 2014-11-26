@@ -51,6 +51,7 @@ namespace lmvz3
             edit.Show();
 
             edit.RefreshData += mainTable.RefreshData;
+            edit.DelStud += mainTable.RefreshAfterDel;
             groups.UpdateFaculties += edit.faculties;
             groups.RefreshData += mainTable.RefreshData;
             Form1_Resize(this, EventArgs.Empty);
