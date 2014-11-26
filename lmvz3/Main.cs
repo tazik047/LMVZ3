@@ -15,11 +15,14 @@ namespace lmvz3
 
         private List<Student> currentStud;
 
+        private TreeNode currentNode;
+
         public Main(Action<object,EventArgs> select)
         {
             InitializeComponent();
             //create();
             StaticData.students = IOClass.LoadStudent();
+            studentBindingSource.Sort = "FIO";
             studentBindingSource.DataSource = StaticData.students;
             currentStud = StaticData.students;
             dataGridView1.SelectionChanged += new System.EventHandler(select);
@@ -57,6 +60,7 @@ namespace lmvz3
                     MessageBox.Show(String.Format("Вы выбрали факультет - {0}", n.Text), "Click");
                 }
             }*/
+            currentNode = e.Node;
             if (e.Node.Parent == null && e.Node.Text == "Все факультеты")
             {
                 studentBindingSource.DataSource = StaticData.students;
@@ -101,6 +105,16 @@ namespace lmvz3
 
         public void RefreshData(object sender, EventArgs e)
         {
+            studentBindingSource.ResetBindings(true);
+            if (!studentBindingSource.DataSource.Equals(StaticData.students))
+            {
+                var s = (Student)sender;
+                if (currentNode.Parent == null && currentNode.Text == s.Faculty.Title)
+                    currentStud.Add(s);
+                else if (currentNode.Parent != null && currentNode.Text == s.Group.Title)
+                    currentStud.Add(s);
+                studentBindingSource.DataSource = currentStud.OrderBy(st => st.FIO).ToList();
+            }
             studentBindingSource.ResetBindings(true);
         }
     }
