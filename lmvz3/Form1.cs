@@ -51,13 +51,16 @@ namespace lmvz3
             edit.MdiParent = this;
             edit.Show();
 
-
+            groups.UpdateFaculties += edit.faculties;
             Form1_Resize(this, EventArgs.Empty);
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            //throw new NotImplementedException();
+            var d = sender as DataGridView;
+            var source = d.DataSource as BindingSource;
+            var s = source.Current as Student;
+
         }
 
         private void создатьToolStripMenuItem_Click(object sender, EventArgs e)

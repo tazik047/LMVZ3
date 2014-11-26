@@ -14,6 +14,8 @@ namespace lmvz3
     {
         TreeNode selectedNode;
 
+        public event EventHandler UpdateFaculties;
+
         public GroupTree(Action<Object, TreeNodeMouseClickEventArgs> filter)
         {
             InitializeComponent();
@@ -90,6 +92,8 @@ namespace lmvz3
                     treeView1.Sort();
                 }
                 IOClass.Save(StaticData.faculties);
+                if (UpdateFaculties != null)
+                    UpdateFaculties(this, EventArgs.Empty);
             }
         }
 
@@ -120,6 +124,8 @@ namespace lmvz3
                     treeView1.Sort();
                 }
                 IOClass.Save(StaticData.faculties);
+                if (UpdateFaculties != null)
+                    UpdateFaculties(this, EventArgs.Empty);
             }
         }
 
@@ -144,6 +150,8 @@ namespace lmvz3
                     }
                 selectedNode.Remove();
                 IOClass.Save(StaticData.faculties);
+                if (UpdateFaculties != null)
+                    UpdateFaculties(this, EventArgs.Empty);
             }
         }
 
@@ -161,6 +169,8 @@ namespace lmvz3
                     }
                 treeView1.Nodes.Remove(selectedNode);
                 IOClass.Save(StaticData.faculties);
+                if (UpdateFaculties != null)
+                    UpdateFaculties(this, EventArgs.Empty);
             }
         }
     }
