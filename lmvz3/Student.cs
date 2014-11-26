@@ -18,6 +18,8 @@ namespace lmvz3
         Group group; //Группа
         string formOfStudy;//форма обучения
         string number;//номер телефона
+        DateTime Start { get; set; }//дата поступления
+        DateTime End { get; set; }//дата окончания
         public string FIO //ФИО
         {
             get { return fio; }
@@ -68,7 +70,7 @@ namespace lmvz3
         public Student()
         {
         }
-        public Student(string fio, string pass, string id, string home, DateTime birth, Faculty faculty, Group group, string formOfStudy, string number)
+        public Student(string fio, string pass, string id, string home, DateTime birth, Faculty faculty, Group group, string formOfStudy, string number, DateTime start, DateTime end)
         {
             FIO = fio;
             Pass = pass;
@@ -79,6 +81,8 @@ namespace lmvz3
             Group = group;
             FormOfStudy = formOfStudy;
             Number = number;
+            Start = start;
+            End = end;
         }
     }
 }
