@@ -13,12 +13,23 @@ namespace lmvz3
     public partial class newStud : Form
     {
         public event EventHandler RefreshData;
+        List<Control> textboxes = new List<Control>();
         public newStud()
         {
             InitializeComponent();
             object sender = new object();
             EventArgs e = new EventArgs();
             faculties(sender, e);
+            textboxes.Add(textBox1);
+            textboxes.Add(maskedTextBox1);
+            textboxes.Add(maskedTextBox2);
+            textboxes.Add(maskedTextBox3);
+            textboxes.Add(dateTimePicker1);
+            textboxes.Add(comboBox1);
+            textboxes.Add(comboBox2);
+            textboxes.Add(comboBox3);
+            textboxes.Add(textBox2);
+
         }
         public void groups(object sender, EventArgs e)
         {
@@ -33,7 +44,8 @@ namespace lmvz3
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
-            groups(sender, e);
+            if (!(comboBox1.SelectedItem == null))
+                groups(sender, e);
         }
 
         private void cancel_Click(object sender, EventArgs e)
@@ -43,23 +55,49 @@ namespace lmvz3
 
         private void Save_Click(object sender, EventArgs e)
         {
-            if (Check())
+            if (MessageBox.Show("Вы уверены?", "Сохранение клиента", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Student studen = new Student();
-                studen.FIO = textBox1.Text;
-                studen.ID = maskedTextBox1.Text;
-                studen.Pass = maskedTextBox2.Text;
-                studen.Number = maskedTextBox3.Text;
-                studen.Birth = dateTimePicker1.Value;
-                studen.Faculty = (Faculty)comboBox1.SelectedItem;
-                studen.Group = (Group)comboBox2.SelectedItem;
-                studen.FormOfStudy = comboBox3.SelectedItem.ToString();
-                studen.Home = textBox2.Text;
-                StaticData.students.Add(studen);
-                IOClass.Save(StaticData.students);
-                if (RefreshData != null)
-                    RefreshData(studen, EventArgs.Empty);
+                if (Check())
+                {
+                    Student studen = new Student();
+                    studen.FIO = textBox1.Text;
+                    studen.ID = maskedTextBox1.Text;
+                    studen.Pass = maskedTextBox2.Text;
+                    studen.Number = maskedTextBox3.Text;
+                    studen.Birth = dateTimePicker1.Value;
+                    studen.Faculty = (Faculty)comboBox1.SelectedItem;
+                    studen.Group = (Group)comboBox2.SelectedItem;
+                    studen.FormOfStudy = comboBox3.SelectedItem.ToString();
+                    studen.Home = textBox2.Text;
+                    StaticData.students.Add(studen);
+                    IOClass.Save(StaticData.students);
+                    if (RefreshData != null)
+                        RefreshData(studen, EventArgs.Empty);
+                }
+                if (MessageBox.Show("Желаете продолжить добавление студентов?", "Новый студент", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    
+                    foreach (Control textbox in textboxes)
+                    {
+                        textbox.Text = "";
+                        if (textbox == comboBox1)
+                        {
+                            comboBox1.SelectedItem = null;
+                            faculties(sender, e);
+                        }
+                        if (textbox == comboBox2)
+                        {
+                            comboBox2.SelectedItem = null;
+                            comboBox2.Items.Clear();
+                        }
+                        if (textbox == comboBox3)
+                        {
+                            comboBox3.SelectedItem = null;
+                        }
+                    }
+                }
             }
+
             
         }
         public bool Check()
