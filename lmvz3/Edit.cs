@@ -28,7 +28,6 @@ namespace lmvz3
             foreach (Control controls in textboxes)
                 controls.Enabled = false;
             textBox1.BringToFront();
-
             object sender = new object();
             EventArgs e = new EventArgs();
             faculties(sender, e);
@@ -86,15 +85,15 @@ namespace lmvz3
 
         private void Save_Click(object sender, EventArgs e)
         {
-            Student stud = new Student();
-            stud.FIO = textBox1.Text;
-            stud.ID = maskedTextBox1.Text;
-            stud.Pass = maskedTextBox2.Text;
-            stud.Number = Int32.Parse(maskedTextBox3.Text);
-            stud.Birth = dateTimePicker1.Value;
-            stud.Faculty = (Faculty)comboBox1.SelectedItem;
-            stud.Group = (Group)comboBox2.SelectedItem;
-            stud.FormOfStudy = comboBox3.SelectedItem.ToString();
+            
+            this.studen.FIO = textBox1.Text;
+            this.studen.ID = maskedTextBox1.Text;
+            this.studen.Pass = maskedTextBox2.Text;
+            this.studen.Number = Int32.Parse(maskedTextBox3.Text);
+            this.studen.Birth = dateTimePicker1.Value;
+            this.studen.Faculty = (Faculty)comboBox1.SelectedItem;
+            this.studen.Group = (Group)comboBox2.SelectedItem;
+            this.studen.FormOfStudy = comboBox3.SelectedItem.ToString();
         }
 
         private void cancel_Click(object sender, EventArgs e)

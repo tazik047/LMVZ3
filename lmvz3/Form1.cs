@@ -66,7 +66,8 @@ namespace lmvz3
 
         private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //var create = new Edit();
+            newStud create = new newStud();
+            create.ShowDialog();
         }
 
         private void печатьToolStripMenuItem_Click(object sender, EventArgs e)

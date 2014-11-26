@@ -186,8 +186,8 @@
             // 
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
-            "Дневная",
-            "Заочная"});
+            "Бюджет",
+            "Контракт"});
             this.comboBox3.Location = new System.Drawing.Point(12, 411);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
