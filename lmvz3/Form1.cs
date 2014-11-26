@@ -75,5 +75,10 @@ namespace lmvz3
             var r = new Report();
             r.ShowDialog();
         }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

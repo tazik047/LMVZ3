@@ -27,6 +27,9 @@ namespace lmvz3
 
         private void CreateNodes()
         {
+            var t = new TreeNode("Все факультеты");
+            t.ContextMenu = null;
+            treeView1.Nodes.Add(t);
             for (int i = 0; i < StaticData.faculties.Count; i++)
             {
                 var ns = new TreeNode[StaticData.faculties[i].Groups.Count];
