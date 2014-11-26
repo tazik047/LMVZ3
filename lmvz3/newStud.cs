@@ -48,7 +48,7 @@ namespace lmvz3
                 studen.FIO = textBox1.Text;
                 studen.ID = maskedTextBox1.Text;
                 studen.Pass = maskedTextBox2.Text;
-                studen.Number = Int32.Parse(maskedTextBox3.Text);
+                studen.Number = maskedTextBox3.Text;
                 studen.Birth = dateTimePicker1.Value;
                 studen.Faculty = (Faculty)comboBox1.SelectedItem;
                 studen.Group = (Group)comboBox2.SelectedItem;

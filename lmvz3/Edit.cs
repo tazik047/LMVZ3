@@ -91,7 +91,7 @@ namespace lmvz3
                 this.studen.FIO = textBox1.Text;
                 this.studen.ID = maskedTextBox1.Text;
                 this.studen.Pass = maskedTextBox2.Text;
-                this.studen.Number = Int32.Parse(maskedTextBox3.Text);
+                this.studen.Number = maskedTextBox3.Text;
                 this.studen.Birth = dateTimePicker1.Value;
                 this.studen.Faculty = (Faculty)comboBox1.SelectedItem;
                 this.studen.Group = (Group)comboBox2.SelectedItem;
