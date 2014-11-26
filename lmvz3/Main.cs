@@ -105,6 +105,14 @@ namespace lmvz3
 
         public void RefreshData(object sender, EventArgs e)
         {
+
+            if(sender==null)
+            {
+                studentBindingSource.DataSource = StaticData.students;
+                label1.Text = "Все студенты";
+                studentBindingSource.ResetBindings(true);
+                return;
+            }
             studentBindingSource.ResetBindings(true);
             if (!studentBindingSource.DataSource.Equals(StaticData.students))
             {

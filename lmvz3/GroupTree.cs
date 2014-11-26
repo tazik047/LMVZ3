@@ -12,6 +12,8 @@ namespace lmvz3
 {
     public partial class GroupTree : Form
     {
+        public event EventHandler RefreshData;
+
         TreeNode selectedNode;
 
         public event EventHandler UpdateFaculties;
@@ -151,10 +153,16 @@ namespace lmvz3
                         }
                         break;
                     }
+                string title = selectedNode.Text;
                 selectedNode.Remove();
                 IOClass.Save(StaticData.faculties);
                 if (UpdateFaculties != null)
                     UpdateFaculties(this, EventArgs.Empty);
+
+                IOClass.Save(StaticData.students.Where(s => s.Group.Title != title).ToList());
+                if (RefreshData != null)
+                    RefreshData(null, EventArgs.Empty);
+                
             }
         }
 
@@ -170,10 +178,15 @@ namespace lmvz3
                         StaticData.faculties.RemoveAt(i);
                         break;
                     }
+                string title = selectedNode.Text;
                 treeView1.Nodes.Remove(selectedNode);
                 IOClass.Save(StaticData.faculties);
                 if (UpdateFaculties != null)
                     UpdateFaculties(this, EventArgs.Empty);
+
+                IOClass.Save(StaticData.students.Where(s => s.Faculty.Title != title).ToList());
+                if (RefreshData != null)
+                    RefreshData(null, EventArgs.Empty);
             }
         }
     }
