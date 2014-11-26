@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
 using System.IO;
+using System.Diagnostics;
 
 namespace lmvz3
 {
@@ -93,7 +94,7 @@ namespace lmvz3
             if (e.NewValue == CheckState.Checked)
                 groups.Add(new Group() { Title = checkedListBox2.Items[e.Index].ToString() });
             else
-                groups = groups.Where(g => g.Title.Equals(checkedListBox2.Items[e.Index].ToString())).ToList();
+                groups = groups.Where(g => !g.Title.Equals(checkedListBox2.Items[e.Index].ToString())).ToList();
             students = IOClass.findByGroup(StaticData.students, groups);
             studentBindingSource.DataSource = students;
             otherCriter();
@@ -162,6 +163,8 @@ namespace lmvz3
                 pdfDoc.Add(pdfTable);
                 pdfDoc.Close();
             }
+            try { Process.Start("DataGridViewExport.pdf"); }
+            catch { }
         }
 
         private void Report_Load(object sender, EventArgs e)
