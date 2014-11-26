@@ -12,11 +12,15 @@ namespace lmvz3
 {
     public partial class Main : Form
     {
+
+        private List<Student> currentStud;
+
         public Main(Action<object,EventArgs> select)
         {
             InitializeComponent();
             create();
             studentBindingSource.DataSource = StaticData.students;
+            currentStud = StaticData.students;
             dataGridView1.SelectionChanged += new System.EventHandler(select);
         }
 
@@ -64,6 +68,7 @@ namespace lmvz3
                 studentBindingSource.DataSource = IOClass.findByGroup(StaticData.students,
                     new List<Group>() {new Group() { Title = e.Node.Text }});
             }
+            currentStud = (List<Student>)studentBindingSource.DataSource;
             //studentBindingSource.DataSource = students.Where(s => s.ID  == 0).ToList();
         }
 
@@ -75,6 +80,12 @@ namespace lmvz3
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            studentBindingSource.DataSource = currentStud.Where(s => s.FIO.ToLower()
+                    .Contains(textBox1.Text.ToLower())).ToList();
         }
     }
 }
