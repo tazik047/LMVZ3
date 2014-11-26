@@ -78,6 +78,7 @@
             this.Save.TabIndex = 62;
             this.Save.Text = "Сохранить";
             this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // label12
             // 

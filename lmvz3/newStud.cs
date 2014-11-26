@@ -39,5 +39,19 @@ namespace lmvz3
         {
             this.Close();
         }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            Student studen = new Student();
+            studen.FIO = textBox1.Text;
+            studen.ID = maskedTextBox1.Text;
+            studen.Pass = maskedTextBox2.Text;
+            studen.Number = Int32.Parse(maskedTextBox3.Text);
+            studen.Birth = dateTimePicker1.Value;
+            studen.Faculty = (Faculty)comboBox1.SelectedItem;
+            studen.Group = (Group)comboBox2.SelectedItem;
+            studen.FormOfStudy = comboBox3.SelectedItem.ToString();
+            StaticData.students.Add(studen);
+        }
     }
 }
