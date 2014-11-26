@@ -53,6 +53,7 @@ namespace lmvz3
         {
             PrepareBoforeStart();
             notebook = notebook.OrderBy(s => s.FIO).ToList();
+            StaticData.students = notebook;
             using (FileStream f = new FileStream(@"..\..\database.dat", FileMode.Create))
             {
                 BinaryFormatter b = new BinaryFormatter();
