@@ -230,6 +230,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Все формы";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -240,6 +241,7 @@
             this.radioButton2.TabIndex = 1;
             this.radioButton2.Text = "Контракт";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton3
             // 
@@ -250,6 +252,7 @@
             this.radioButton3.TabIndex = 2;
             this.radioButton3.Text = "Бюджет";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // dateTimePicker1
             // 
