@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace lmvz3
 {
+    [Serializable]
     public class Student
     {
         string fio; //ФИО

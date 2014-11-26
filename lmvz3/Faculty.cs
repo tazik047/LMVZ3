@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace lmvz3
 {
+    [Serializable]
 	public class Faculty
 	{
         public String Title { get; set; }

@@ -18,7 +18,7 @@ namespace lmvz3
         {
             InitializeComponent();
             //faculties = IOClass.LoadFaculty();
-            create();
+            StaticData.faculties = IOClass.LoadFac();
             CreateNodes();
             treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(filter);
         }
@@ -53,18 +53,6 @@ namespace lmvz3
 
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            /*if (e.Button == MouseButtons.Left)
-            {
-                var n = e.Node;
-                if (n.Parent == null)
-                {
-                    MessageBox.Show(String.Format("Вы выбрали факультет - {0}", n.Text), "Click");
-                }
-                else
-                {
-                    MessageBox.Show(String.Format("Вы выбрали группу - {0}", n.Text), "Click");
-                }
-            }*/
             if(e.Button == MouseButtons.Right)
             {
                 selectedNode = e.Node;
@@ -101,6 +89,7 @@ namespace lmvz3
                     treeView1.Nodes.Add(n);
                     treeView1.Sort();
                 }
+                IOClass.Save(StaticData.faculties);
             }
         }
 
@@ -130,6 +119,7 @@ namespace lmvz3
                     StaticData.faculties.Where(f => f.Title.Equals(title)).First().Groups.Add(g);
                     treeView1.Sort();
                 }
+                IOClass.Save(StaticData.faculties);
             }
         }
 
@@ -153,6 +143,7 @@ namespace lmvz3
                         break;
                     }
                 selectedNode.Remove();
+                IOClass.Save(StaticData.faculties);
             }
         }
 
@@ -169,6 +160,7 @@ namespace lmvz3
                         break;
                     }
                 treeView1.Nodes.Remove(selectedNode);
+                IOClass.Save(StaticData.faculties);
             }
         }
     }
