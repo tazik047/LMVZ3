@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace lmvz3
 {
     public partial class Edit : Form
@@ -29,9 +30,8 @@ namespace lmvz3
                 controls.Enabled = false;
             textBox1.BringToFront();
         }
-          
-
-        private void trackBar1_Scroll(object sender, EventArgs e)
+         
+        private void colorSlider1_Scroll(object sender, ScrollEventArgs e)
         {
             if (trackBar1.Value == 0)
             {

@@ -45,8 +45,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.trackBar1 = new MB.Controls.ColorSlider();
             this.SuspendLayout();
             // 
             // fio
@@ -191,19 +190,22 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.BackColor = System.Drawing.SystemColors.Control;
-            this.trackBar1.LargeChange = 2;
-            this.trackBar1.Location = new System.Drawing.Point(242, 9);
+            this.trackBar1.BackColor = System.Drawing.Color.Transparent;
+            this.trackBar1.BarInnerColor = System.Drawing.Color.DeepSkyBlue;
+            this.trackBar1.BorderRoundRectSize = new System.Drawing.Size(20, 40);
+            this.trackBar1.ElapsedInnerColor = System.Drawing.Color.Transparent;
+            this.trackBar1.ElapsedOuterColor = System.Drawing.Color.Transparent;
+            this.trackBar1.LargeChange = ((uint)(1u));
+            this.trackBar1.Location = new System.Drawing.Point(253, 9);
             this.trackBar1.Maximum = 1;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.trackBar1.RightToLeftLayout = true;
-            this.trackBar1.Size = new System.Drawing.Size(63, 45);
-            this.trackBar1.SmallChange = 2;
+            this.trackBar1.Size = new System.Drawing.Size(43, 30);
+            this.trackBar1.SmallChange = ((uint)(1u));
             this.trackBar1.TabIndex = 18;
-            this.trackBar1.TickFrequency = 2;
-            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            this.trackBar1.ThumbRoundRectSize = new System.Drawing.Size(8, 20);
+            this.trackBar1.ThumbSize = 20;
+            this.trackBar1.Value = 1;
+            this.trackBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.colorSlider1_Scroll);
             // 
             // Edit
             // 
@@ -231,7 +233,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Edit";
             this.Text = "Edit";
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,7 +257,7 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private MB.Controls.ColorSlider trackBar1;
 
     }
 }

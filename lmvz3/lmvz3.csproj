@@ -120,6 +120,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="F:\Users\koste_000\Desktop\ColorSlider\ColorSlider\ColorSlider.csproj">
+      <Project>{16E224DC-7FF0-4908-8318-D6A3AC2E797A}</Project>
+      <Name>ColorSlider</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

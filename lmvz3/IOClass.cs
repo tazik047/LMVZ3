@@ -95,5 +95,20 @@ namespace lmvz3
             }
             return rStud;
         }
+        public static List<Student> findByFaculty(List<Student> stud, List<Faculty> faculties)
+        {
+            List<Student> rStud = new List<Student>();
+            foreach (Student student in stud)
+            {
+                foreach (Faculty faculty in faculties)
+                {
+                    if (student.Faculty == faculty)
+                    {
+                        rStud.Add(student);
+                    }
+                }
+            }
+            return rStud;
+        }
     }
 }
