@@ -46,7 +46,7 @@ namespace lmvz3
             {
                 Student studen = new Student();
                 studen.FIO = textBox1.Text;
-                studen.ID = maskedTextBox1.Text;
+                studen.ID = Guid.NewGuid().ToString();
                 studen.Pass = maskedTextBox2.Text;
                 studen.Number = maskedTextBox3.Text;
                 studen.Birth = dateTimePicker1.Value;
