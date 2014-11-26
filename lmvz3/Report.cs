@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System.IO;
 
 namespace lmvz3
 {
@@ -104,6 +107,50 @@ namespace lmvz3
                 studentBindingSource.DataSource = students.Where(s => s.FormOfStudy.ToLower() == "бюджет");
             else
                 studentBindingSource.DataSource = students.Where(s => s.FormOfStudy.ToLower() == "контракт");
+            dataGridView1.AutoResizeColumns();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Creating iTextSharp Table from the DataTable data
+            PdfPTable pdfTable = new PdfPTable(dataGridView1.ColumnCount);
+            pdfTable.DefaultCell.Padding = 3;
+            pdfTable.WidthPercentage = 30;
+            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+            pdfTable.DefaultCell.BorderWidth = 1;
+
+            //Adding Header row
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                cell.Width = column.Width;
+                cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                pdfTable.AddCell(cell);
+            }
+
+            //Adding DataRow
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    pdfTable.AddCell(cell.Value.ToString());
+                }
+            }
+
+            //Exporting to PDF
+            using (FileStream stream = new FileStream("DataGridViewExport.pdf", FileMode.Create))
+            {
+                Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
+                PdfWriter.GetInstance(pdfDoc, stream);
+                pdfDoc.Open();
+                pdfDoc.Add(pdfTable);
+                pdfDoc.Close();
+            }
+        }
+
+        private void Report_Load(object sender, EventArgs e)
+        {
+            dataGridView1.AutoResizeColumns();
         }
     }
 }
