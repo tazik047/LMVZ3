@@ -57,7 +57,12 @@ namespace lmvz3
                     MessageBox.Show(String.Format("Вы выбрали факультет - {0}", n.Text), "Click");
                 }
             }*/
-            if (e.Node.Parent == null)
+            if (e.Node.Parent == null && e.Node.Text == "Все факультеты")
+            {
+                studentBindingSource.DataSource = StaticData.students;
+                label1.Text = "Все студенты";
+            }
+            else if (e.Node.Parent == null)
             {
                 label1.Text = string.Format("Студенты из факультета {0}", e.Node.Text);
                 studentBindingSource.DataSource = IOClass.findByFaculty(StaticData.students,
