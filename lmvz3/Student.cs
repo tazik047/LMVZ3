@@ -27,7 +27,7 @@ namespace lmvz3
         }
         public string ID //Код
         {
-            get { return id.Substring(0, 8); }
+            get { return id; }
             set { id = value; }
         }
         public string Pass //Номер пасспорта
