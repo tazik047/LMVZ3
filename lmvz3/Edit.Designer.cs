@@ -62,8 +62,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.trackBar1 = new MB.Controls.ColorSlider();
             this.delete = new System.Windows.Forms.Button();
+            this.trackBar1 = new MB.Controls.ColorSlider();
             this.SuspendLayout();
             // 
             // fio
@@ -381,6 +381,16 @@
             this.label15.Text = "Выберите студента для просмотра или редактирования";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // delete
+            // 
+            this.delete.Location = new System.Drawing.Point(223, 606);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(75, 23);
+            this.delete.TabIndex = 39;
+            this.delete.Text = "Удалить";
+            this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
+            // 
             // trackBar1
             // 
             this.trackBar1.BackColor = System.Drawing.Color.Transparent;
@@ -399,16 +409,6 @@
             this.trackBar1.ThumbSize = 20;
             this.trackBar1.Value = 0;
             this.trackBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.colorSlider1_Scroll);
-            // 
-            // delete
-            // 
-            this.delete.Location = new System.Drawing.Point(223, 606);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(75, 23);
-            this.delete.TabIndex = 39;
-            this.delete.Text = "Удалить";
-            this.delete.UseVisualStyleBackColor = true;
-            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // Edit
             // 
@@ -453,7 +453,7 @@
             this.Controls.Add(this.fio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Edit";
-            this.Text = "Edit";
+            this.Text = "Редактирование";
             this.ResumeLayout(false);
             this.PerformLayout();
 

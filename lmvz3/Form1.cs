@@ -15,12 +15,12 @@ namespace lmvz3
         GroupTree groups;
         Main mainTable;
         Edit edit;
+        
+
         public Form1()
         {
             InitializeComponent();
-            
-            
-        }
+         }
 
         private void Form1_Resize(object sender, EventArgs e)
         {
@@ -86,5 +86,21 @@ namespace lmvz3
         {
             Close();
         }
+
+        
+        public void ShowHelp()
+        {
+
+            Help.ShowHelp(ActiveMdiChild, IOClass.PathHelp, new HelpNavigator(), ActiveMdiChild.Text);
+          
+        }
+
+       
+
+        private void содержаниеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowHelp();
+        }
+
     }
 }

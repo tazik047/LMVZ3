@@ -208,6 +208,7 @@ namespace lmvz3
             foreach (Control control in this.constrols)
                 control.Hide();
             label15.Show();
+            delete.Hide();
         }
         public void Show2()
         {
