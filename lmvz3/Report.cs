@@ -125,6 +125,10 @@ namespace lmvz3
             iTextSharp.text.Font fgFont = new iTextSharp.text.Font(font, 14, iTextSharp.text.Font.NORMAL,
                 iTextSharp.text.Color.BLACK);
             //Adding Header row
+            /*PdfPCell cell1 = new PdfPCell(new Phrase("№", fgFont));
+            cell1.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+            pdfTable.AddCell(cell1);*/
+
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
                 PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, fgFont));
@@ -132,15 +136,26 @@ namespace lmvz3
                 pdfTable.AddCell(cell);
             }
 
-            
+            int ind = 1;
 
             //Adding DataRow
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
+                /*pdfTable.AddCell(new Phrase(ind.ToString(), fgFont));
+                ind++;*/
                 foreach (DataGridViewCell cell in row.Cells)
                 {
+                    if (cell.ValueType.Name == dateTimePicker1.Value.GetType().Name )
+                        pdfTable.AddCell(new Phrase(((DateTime)cell.Value).ToShortDateString(), fgFont));
+                    else
                     pdfTable.AddCell(new Phrase(cell.Value.ToString(), fgFont));
                 }
+            }
+
+            if(pdfTable.Rows.Count==2)
+            {
+                for (int i = 0; i < dataGridView1.ColumnCount; i++)
+                    pdfTable.AddCell("");
             }
 
             //Exporting to PDF
@@ -155,7 +170,7 @@ namespace lmvz3
                 foreach (var i in students.Select(s => s.Group.Title).Distinct())
                     res += i+", ";
                 res = res.Substring(0, res.Length - 2) + ".\n";
-                res += "Форма обчения: " + (radioButton1.Checked ? "любая.\n" : (radioButton2.Checked ? "контрактная.\n" : "бюджетная.\n"));
+                res += "Форма обучения: " + (radioButton1.Checked ? "любая.\n" : (radioButton2.Checked ? "контрактная.\n" : "бюджетная.\n"));
                 res += "Студенты старше: " + dateTimePicker1.Value.ToShortDateString() + "\n \n ";
                 
                 Paragraph p = new Paragraph(res, fgFont);
