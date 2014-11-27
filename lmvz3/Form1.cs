@@ -90,8 +90,8 @@ namespace lmvz3
         
         public void ShowHelp()
         {
-
-            Help.ShowHelp(ActiveMdiChild, IOClass.PathHelp, new HelpNavigator(), ActiveMdiChild.Text);
+            HelpNavigator navigator = HelpNavigator.AssociateIndex;
+            Help.ShowHelp(this, IOClass.PathHelp, navigator, ActiveMdiChild.Text);
           
         }
 
