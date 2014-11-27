@@ -128,7 +128,9 @@ namespace lmvz3
 
         internal void RefreshAfterDel(object sender, EventArgs e)
         {
-            studentBindingSource.ResetBindings(true);
+            studentBindingSource.DataSource = ((List<Student>)studentBindingSource.DataSource).Where(s => StaticData.students.Contains(s)).ToList();
+            //studentBindingSource.ResetBindings(true);
+            currentStud = ((List<Student>)studentBindingSource.DataSource);
         }
     }
 }
