@@ -46,6 +46,7 @@
             // 
             // treeView1
             // 
+            this.treeView1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.treeView1.ContextMenuStrip = this.contextMenuStripMain;
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
@@ -97,7 +98,7 @@
             this.удалитьФакультетToolStripMenuItem,
             this.добавитьГруппуToolStripMenuItem});
             this.contextMenuStripFac.Name = "contextMenuStripFac";
-            this.contextMenuStripFac.Size = new System.Drawing.Size(186, 92);
+            this.contextMenuStripFac.Size = new System.Drawing.Size(186, 70);
             // 
             // добавитьФакультетToolStripMenuItem1
             // 

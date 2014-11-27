@@ -50,15 +50,19 @@ namespace lmvz3
 
         private void cancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Вы уверены, что желаете выйти?", "Выход", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void Save_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Вы уверены?", "Сохранение клиента", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                if (Check())
-                {
+             if (Check())
+             {
+                 if (MessageBox.Show("Вы уверены?", "Сохранение клиента", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                 {
+               
                     Student studen = new Student();
                     studen.FIO = textBox1.Text;
                     studen.ID = maskedTextBox1.Text;
@@ -149,8 +153,23 @@ namespace lmvz3
             if (e.Control && e.KeyCode == Keys.F1)
             {
                 HelpNavigator navigator = HelpNavigator.AssociateIndex;
-                Help.ShowHelp(this, IOClass.PathHelp, navigator, "new");
+                Help.ShowHelp(this, IOClass.PathHelp, navigator, "Добавление");
             }
         }
+
+        private void newStud_Load(object sender, EventArgs e)
+        {
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.SetToolTip(this.label12, "Введите ФИО\nНапример: Потёмкин Константин Юрьевич");
+            toolTip1.SetToolTip(this.label14, "Введите адрес\nНапример: 61254, г.Харьков,\nул. Иванова, 23, кв.231");
+            toolTip1.SetToolTip(this.label2, "Введите идентификационный номер\nНапример: 1234567890");
+            toolTip1.SetToolTip(this.label3, "Введите номер пасспорта\nНапример: АВ123456");
+            toolTip1.SetToolTip(this.label4, "Выберите дату рождения");
+            toolTip1.SetToolTip(this.label5, "Выберите факультет");
+            toolTip1.SetToolTip(this.label6, "Выберите группу");
+            toolTip1.SetToolTip(this.label7, "Выберите форму обучения");
+            toolTip1.SetToolTip(this.label8, "Введите номер телефона\nНапример: +38(066)123 4567");
+        }
+
     }
 }

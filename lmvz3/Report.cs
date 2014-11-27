@@ -179,8 +179,11 @@ namespace lmvz3
                 pdfDoc.Add(pdfTable);
                 pdfDoc.Close();
             }
-            try { Process.Start("DataGridViewExport.pdf"); }
-            catch { }
+            if (MessageBox.Show("Желаете открыть сформированный отчет?", "Открыть", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try { Process.Start("DataGridViewExport.pdf"); }
+                catch { }
+            }
         }
 
         private void Report_Load(object sender, EventArgs e)
