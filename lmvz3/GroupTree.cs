@@ -25,6 +25,7 @@ namespace lmvz3
             StaticData.faculties = IOClass.LoadFac();
             CreateNodes();
             treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(filter);
+            Text = "treeGroup";
         }
 
         private void CreateNodes()

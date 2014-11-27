@@ -92,6 +92,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(830, 418);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Report_KeyDown);
             // 
             // checkedListBox1
             // 
@@ -102,6 +103,7 @@
             this.checkedListBox1.Size = new System.Drawing.Size(177, 109);
             this.checkedListBox1.TabIndex = 2;
             this.checkedListBox1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_ItemCheck);
+            this.checkedListBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Report_KeyDown);
             // 
             // label1
             // 
@@ -140,6 +142,7 @@
             this.checkedListBox2.Size = new System.Drawing.Size(177, 109);
             this.checkedListBox2.TabIndex = 5;
             this.checkedListBox2.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox2_ItemCheck);
+            this.checkedListBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Report_KeyDown);
             // 
             // label4
             // 
@@ -230,6 +233,7 @@
             this.radioButton3.Text = "Бюджет";
             this.radioButton3.UseVisualStyleBackColor = true;
             this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButton3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Report_KeyDown);
             // 
             // radioButton2
             // 
@@ -241,6 +245,7 @@
             this.radioButton2.Text = "Контракт";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButton2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Report_KeyDown);
             // 
             // radioButton1
             // 
@@ -254,6 +259,7 @@
             this.radioButton1.Text = "Все формы";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButton1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Report_KeyDown);
             // 
             // dateTimePicker1
             // 
@@ -262,6 +268,7 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 15;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateTimePicker1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Report_KeyDown);
             // 
             // label10
             // 
@@ -303,6 +310,7 @@
             this.button1.Text = "Сформировать";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Report_KeyDown);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -387,6 +395,7 @@
             this.Name = "Report";
             this.Text = "Отчет";
             this.Load += new System.EventHandler(this.Report_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Report_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

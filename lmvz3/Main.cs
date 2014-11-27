@@ -26,6 +26,7 @@ namespace lmvz3
             studentBindingSource.DataSource = StaticData.students;
             currentStud = StaticData.students;
             dataGridView1.SelectionChanged += new System.EventHandler(select);
+            Text = "main";
         }
 
         private void create()

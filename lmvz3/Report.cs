@@ -197,5 +197,14 @@ namespace lmvz3
         {
             otherCriter();
         }
+
+        private void Report_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Control && e.KeyCode==Keys.F1)
+            {
+                HelpNavigator navigator = HelpNavigator.AssociateIndex;
+                Help.ShowHelp(this, IOClass.PathHelp, navigator, "report");
+            }
+        }
     }
 }

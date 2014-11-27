@@ -56,6 +56,7 @@ namespace lmvz3
         public Edit()
         {
             InitializeComponent();
+            Text = "edit";
             Basic();
             Add3();
             Hide2();

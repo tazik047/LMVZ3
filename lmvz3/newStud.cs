@@ -143,5 +143,14 @@ namespace lmvz3
             }
             return check;
         }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.F1)
+            {
+                HelpNavigator navigator = HelpNavigator.AssociateIndex;
+                Help.ShowHelp(this, IOClass.PathHelp, navigator, "new");
+            }
+        }
     }
 }
