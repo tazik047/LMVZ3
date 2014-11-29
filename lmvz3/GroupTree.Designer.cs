@@ -52,9 +52,10 @@
             this.treeView1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView1.ContextMenuStrip = this.contextMenuStripMain;
-            this.treeView1.Location = new System.Drawing.Point(10, 16);
+            this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.treeView1.Location = new System.Drawing.Point(12, 21);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(122, 455);
+            this.treeView1.Size = new System.Drawing.Size(120, 450);
             this.treeView1.TabIndex = 1;
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
             // 

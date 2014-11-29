@@ -55,6 +55,7 @@ namespace lmvz3
             groups.UpdateFaculties += edit.faculties;
             groups.RefreshData += mainTable.RefreshData;
             mainTable.dataGridView1.ClearSelection();
+            groups.Width = edit.Width - 35;
             edit.Hide2();
             Form1_Resize(this, EventArgs.Empty);
         }

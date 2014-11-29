@@ -59,6 +59,8 @@ namespace lmvz3
                 studentBindingSource.DataSource = IOClass.findByGroup(StaticData.students,
                     new List<Group>() {new Group() { Title = e.Node.Text }});
             }
+            dataGridView1.Location = new Point(dataGridView1.Location.X, label1.Location.Y + label1.Height + 4);
+            dataGridView1.Height = textBox1.Location.Y - dataGridView1.Location.Y - 10;
             currentStud = (List<Student>)studentBindingSource.DataSource;
             //studentBindingSource.DataSource = students.Where(s => s.ID  == 0).ToList();
         }
@@ -107,6 +109,7 @@ namespace lmvz3
         {
             studentBindingSource.DataSource = ((List<Student>)studentBindingSource.DataSource).Where(s => StaticData.students.Contains(s)).ToList();
             currentStud = ((List<Student>)studentBindingSource.DataSource);
+            dataGridView1.ClearSelection();
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
