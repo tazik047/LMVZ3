@@ -58,5 +58,10 @@ namespace lmvz3
             }
             
         }
+
+        private void CreateForm_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
     }
 }
