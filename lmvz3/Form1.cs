@@ -29,9 +29,9 @@ namespace lmvz3
                 groups.ClientSize = new Size(groups.ClientSize.Width, this.ClientSize.Height - 28);
                 edit.ClientSize = new Size(edit.ClientSize.Width, this.ClientSize.Height - 28);
                 edit.Location = new Point(this.ClientSize.Width - edit.Width - 4, 0);
-                mainTable.Location = new Point(groups.Width + 1, 0);
-                mainTable.ClientSize = new Size(edit.Location.X - mainTable.Location.X - 1, this.ClientSize.Height - 28);
-                mainTable.Location = new Point(groups.Width + 1, 0);
+                mainTable.Location = new Point(groups.Width , 0);
+                mainTable.ClientSize = new Size(edit.Location.X - mainTable.Location.X , this.ClientSize.Height - 28);
+                mainTable.Location = new Point(groups.Width, 0);
             }
         }
 
@@ -54,6 +54,8 @@ namespace lmvz3
             edit.DelStud += mainTable.RefreshAfterDel;
             groups.UpdateFaculties += edit.faculties;
             groups.RefreshData += mainTable.RefreshData;
+            mainTable.dataGridView1.ClearSelection();
+            edit.Hide2();
             Form1_Resize(this, EventArgs.Empty);
         }
 

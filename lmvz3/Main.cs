@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,6 @@ namespace lmvz3
             currentStud = StaticData.students;
             dataGridView1.SelectionChanged += new System.EventHandler(select);
             Text = "main";
-            
         }
 
 
@@ -65,7 +65,8 @@ namespace lmvz3
 
         private void Main_Resize(object sender, EventArgs e)
         {
-            dataGridView1.Columns[1].Width = this.ClientSize.Width - dataGridView1.Columns[0].Width -2;
+            dataGridView1.Columns[1].Width = this.ClientSize.Width - dataGridView1.Columns[0].Width -60;
+            dataGridView1.Width = ClientSize.Width - 50;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -125,6 +126,25 @@ namespace lmvz3
                 textBox1.Text = "Поиск...";
                 studentBindingSource.DataSource = currentStud;
             }
+        }
+
+        private void Main_Paint(object sender, PaintEventArgs e)
+        {
+            DrawRadiusBorder();
+        }
+
+        private void DrawRadiusBorder()
+        {
+            var g = this.CreateGraphics();
+            Pen pen = new Pen(Brushes.LightBlue, 2);
+            pen.LineJoin = LineJoin.Round;//задаем скошенные углы
+            pen.MiterLimit = 5;//задаем ограничение толщины скошенных углов
+            g.DrawImage(lmvz3.Properties.Resources.border, textBox1.Location.X - 9, textBox1.Location.Y - 10, textBox1.Width + 20, textBox1.Height + 18);
+        }
+
+        private void textBox1_MouseEnter(object sender, EventArgs e)
+        {
+            DrawRadiusBorder();
         }
     }
 }

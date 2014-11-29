@@ -149,7 +149,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(52, 10);
+            this.label1.Location = new System.Drawing.Point(35, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 23);
             this.label1.TabIndex = 8;
@@ -315,7 +315,7 @@
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(17, 501);
+            this.Save.Location = new System.Drawing.Point(17, 497);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(75, 23);
             this.Save.TabIndex = 33;
@@ -325,7 +325,7 @@
             // 
             // cancel
             // 
-            this.cancel.Location = new System.Drawing.Point(111, 501);
+            this.cancel.Location = new System.Drawing.Point(111, 497);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(75, 23);
             this.cancel.TabIndex = 34;
@@ -373,7 +373,7 @@
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(208, 501);
+            this.delete.Location = new System.Drawing.Point(208, 497);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(75, 23);
             this.delete.TabIndex = 39;
@@ -384,22 +384,17 @@
             // trackBar1
             // 
             this.trackBar1.BackColor = System.Drawing.Color.White;
-            this.trackBar1.BarInnerColor = System.Drawing.Color.White;
-            this.trackBar1.BarOuterColor = System.Drawing.Color.White;
-            this.trackBar1.BarPenColor = System.Drawing.Color.White;
             this.trackBar1.BorderRoundRectSize = new System.Drawing.Size(20, 40);
-            this.trackBar1.ElapsedInnerColor = System.Drawing.Color.Transparent;
-            this.trackBar1.ElapsedOuterColor = System.Drawing.Color.Transparent;
+            this.trackBar1.ElapsedInnerColor = System.Drawing.Color.DarkSlateBlue;
+            this.trackBar1.ElapsedOuterColor = System.Drawing.Color.SkyBlue;
             this.trackBar1.LargeChange = ((uint)(1u));
-            this.trackBar1.Location = new System.Drawing.Point(242, 29);
+            this.trackBar1.Location = new System.Drawing.Point(240, 35);
             this.trackBar1.Maximum = 1;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(41, 30);
             this.trackBar1.SmallChange = ((uint)(1u));
             this.trackBar1.TabIndex = 18;
-            this.trackBar1.ThumbInnerColor = System.Drawing.SystemColors.MenuHighlight;
-            this.trackBar1.ThumbOuterColor = System.Drawing.SystemColors.MenuHighlight;
-            this.trackBar1.ThumbPenColor = System.Drawing.SystemColors.MenuHighlight;
+            this.trackBar1.ThumbInnerColor = System.Drawing.Color.CornflowerBlue;
             this.trackBar1.ThumbRoundRectSize = new System.Drawing.Size(1, 1);
             this.trackBar1.ThumbSize = 20;
             this.trackBar1.Value = 0;
@@ -409,7 +404,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackgroundImage = global::lmvz3.Properties.Resources.Безымянный;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(300, 535);
             this.Controls.Add(this.delete);
             this.Controls.Add(this.label14);
