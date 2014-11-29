@@ -57,7 +57,7 @@ namespace lmvz3
             Form1_Resize(this, EventArgs.Empty);
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        public void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             var d = sender as DataGridView;
             var source = d.DataSource as BindingSource;
@@ -100,6 +100,16 @@ namespace lmvz3
         private void содержаниеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowHelp();
+        }
+
+        private void отменадействияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            edit.cancel_Click(sender, e);
+        }
+
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            edit.delete_Click(sender, e);
         }
 
     }
