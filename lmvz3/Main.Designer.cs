@@ -79,7 +79,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(53, 13);
+            this.label1.Location = new System.Drawing.Point(23, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(168, 29);
             this.label1.TabIndex = 4;
@@ -92,10 +92,10 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.textBox1.Location = new System.Drawing.Point(28, 390);
+            this.textBox1.Location = new System.Drawing.Point(28, 384);
             this.textBox1.MinimumSize = new System.Drawing.Size(0, 23);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(460, 19);
+            this.textBox1.Size = new System.Drawing.Size(460, 23);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "Поиск...";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
