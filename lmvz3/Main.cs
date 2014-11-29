@@ -20,37 +20,13 @@ namespace lmvz3
         public Main(Action<object,EventArgs> select)
         {
             InitializeComponent();
-            //create();
             StaticData.students = IOClass.LoadStudent();
             studentBindingSource.Sort = "FIO";
             studentBindingSource.DataSource = StaticData.students;
             currentStud = StaticData.students;
-            dataGridView1.ClearSelection();
             dataGridView1.SelectionChanged += new System.EventHandler(select);
             Text = "main";
-            dataGridView1.ClearSelection();
-          //  dataGridView1.Select(null) ;
-          //  Appearance.SelectedRow = null;
-        }
-
-        private void create()
-        {
-            StaticData.students = new List<Student>();
-            for(int i=0; i<10; i++)
-            {
-                var s = new Student();
-                s.Birth = DateTime.Now;
-                s.Faculty = new Faculty(1,"sdfsdf", new List<Group>());
-                s.FIO = "ghklfh flghjf lfjhlkf";
-                s.FormOfStudy = i % 2 == 0 ? "Бюджет" : "Контракт";
-                s.Home = "sfgkljdflgk";
-                s.ID = Guid.NewGuid().ToString();
-                s.Number = "0953123838";
-                s.Pass = "AX000000";
-                s.Group = new Group("fsdf", 1);
-                StaticData.students.Add(s);
-
-            }
+            
         }
 
 
@@ -92,17 +68,8 @@ namespace lmvz3
             dataGridView1.Columns[1].Width = this.ClientSize.Width - dataGridView1.Columns[0].Width -2;
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            textBox1.ForeColor = Color.Black;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            if (textBox1.Text == "Поиск..")
-                textBox1.Text = "";
             studentBindingSource.DataSource = currentStud.Where(s => s.FIO.ToLower()
                     .Contains(textBox1.Text.ToLower())).ToList();
         }
@@ -138,20 +105,26 @@ namespace lmvz3
         internal void RefreshAfterDel(object sender, EventArgs e)
         {
             studentBindingSource.DataSource = ((List<Student>)studentBindingSource.DataSource).Where(s => StaticData.students.Contains(s)).ToList();
-            //studentBindingSource.ResetBindings(true);
             currentStud = ((List<Student>)studentBindingSource.DataSource);
         }
 
-        private void dataGridView1_SelectionChanged_1(object sender, EventArgs e)
+        private void textBox1_Enter(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
-            form.dataGridView1_SelectionChanged(sender, e);
+            textBox1.ForeColor = Color.Black;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            if (textBox1.Text == "Поиск...")
+                textBox1.Text = "";
         }
 
-        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void textBox1_Leave(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
-            form.dataGridView1_SelectionChanged(sender, e);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "Поиск...";
+                studentBindingSource.DataSource = currentStud;
+            }
         }
     }
 }
