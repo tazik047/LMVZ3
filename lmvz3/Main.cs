@@ -157,5 +157,11 @@ namespace lmvz3
             Help.ShowHelp(this, IOClass.PathHelp, navigator1, "Поиск");
             Help.ShowHelp(this, IOClass.PathHelp, navigator, "Search.html");
         }
+
+        private void Main_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            HelpNavigator navigator = HelpNavigator.Topic;
+            Help.ShowHelp(this, IOClass.PathHelp, navigator, "Search.html");
+        }
     }
 }

@@ -145,6 +145,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GroupTree";
             this.Text = "GroupTree";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.GroupTree_HelpRequested);
             this.contextMenuStripMain.ResumeLayout(false);
             this.contextMenuStripGroup.ResumeLayout(false);
             this.contextMenuStripFac.ResumeLayout(false);

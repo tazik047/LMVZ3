@@ -141,6 +141,7 @@
             this.Text = "Поиск";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Main_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Main_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Main_HelpRequested);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Main_Paint);
             this.Resize += new System.EventHandler(this.Main_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

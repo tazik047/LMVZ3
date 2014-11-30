@@ -132,5 +132,17 @@ namespace lmvz3
             Help.ShowHelp(this, IOClass.PathHelp, navigator,"");
         }
 
+        private void содержаниеToolStripMenuItem_Click_2(object sender, EventArgs e)
+        {
+            HelpNavigator navigator = HelpNavigator.Topic;
+            Help.ShowHelp(this, IOClass.PathHelp, navigator, "index.html");
+        }
+
+        private void Form1_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            HelpNavigator navigator = HelpNavigator.Topic;
+            Help.ShowHelp(this, IOClass.PathHelp, navigator, "main.html");
+        }
+
     }
 }

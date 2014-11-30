@@ -53,7 +53,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.delete = new System.Windows.Forms.Button();
-            this.trackBar1 = new MB.Controls.ColorSlider();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -65,6 +64,7 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.trackBar1 = new MB.Controls.ColorSlider();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -294,31 +294,6 @@
             this.delete.UseVisualStyleBackColor = true;
             this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
-            // trackBar1
-            // 
-            this.trackBar1.BackColor = System.Drawing.Color.Black;
-            this.trackBar1.BackgroundImage = global::lmvz3.Properties.Resources.fon_slider;
-            this.trackBar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.trackBar1.BarInnerColor = System.Drawing.Color.Gainsboro;
-            this.trackBar1.BarOuterColor = System.Drawing.Color.Gainsboro;
-            this.trackBar1.BorderRoundRectSize = new System.Drawing.Size(1, 1);
-            this.trackBar1.ElapsedInnerColor = System.Drawing.Color.Gainsboro;
-            this.trackBar1.ElapsedOuterColor = System.Drawing.Color.Gainsboro;
-            this.trackBar1.LargeChange = ((uint)(1u));
-            this.trackBar1.Location = new System.Drawing.Point(235, 40);
-            this.trackBar1.Maximum = 1;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(41, 30);
-            this.trackBar1.SmallChange = ((uint)(1u));
-            this.trackBar1.TabIndex = 18;
-            this.trackBar1.ThumbInnerColor = System.Drawing.Color.LightSkyBlue;
-            this.trackBar1.ThumbOuterColor = System.Drawing.Color.LightSkyBlue;
-            this.trackBar1.ThumbPenColor = System.Drawing.Color.LightSkyBlue;
-            this.trackBar1.ThumbRoundRectSize = new System.Drawing.Size(1, 1);
-            this.trackBar1.ThumbSize = 20;
-            this.trackBar1.Value = 0;
-            this.trackBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.colorSlider1_Scroll);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -409,6 +384,31 @@
             this.pictureBox10.TabIndex = 41;
             this.pictureBox10.TabStop = false;
             // 
+            // trackBar1
+            // 
+            this.trackBar1.BackColor = System.Drawing.Color.Black;
+            this.trackBar1.BackgroundImage = global::lmvz3.Properties.Resources.fon_slider;
+            this.trackBar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.trackBar1.BarInnerColor = System.Drawing.Color.Gainsboro;
+            this.trackBar1.BarOuterColor = System.Drawing.Color.Gainsboro;
+            this.trackBar1.BorderRoundRectSize = new System.Drawing.Size(1, 1);
+            this.trackBar1.ElapsedInnerColor = System.Drawing.Color.Gainsboro;
+            this.trackBar1.ElapsedOuterColor = System.Drawing.Color.Gainsboro;
+            this.trackBar1.LargeChange = ((uint)(1u));
+            this.trackBar1.Location = new System.Drawing.Point(235, 40);
+            this.trackBar1.Maximum = 1;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(41, 30);
+            this.trackBar1.SmallChange = ((uint)(1u));
+            this.trackBar1.TabIndex = 18;
+            this.trackBar1.ThumbInnerColor = System.Drawing.Color.LightSkyBlue;
+            this.trackBar1.ThumbOuterColor = System.Drawing.Color.LightSkyBlue;
+            this.trackBar1.ThumbPenColor = System.Drawing.Color.LightSkyBlue;
+            this.trackBar1.ThumbRoundRectSize = new System.Drawing.Size(1, 1);
+            this.trackBar1.ThumbSize = 20;
+            this.trackBar1.Value = 0;
+            this.trackBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.colorSlider1_Scroll);
+            // 
             // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,8 +454,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Edit";
             this.Text = "Редактирование";
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Edit_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Edit_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Edit_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

@@ -320,9 +320,12 @@ namespace lmvz3
 
         private void Edit_HelpButtonClicked(object sender, CancelEventArgs e)
         {
+           
+        }
+
+        private void Edit_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
             HelpNavigator navigator = HelpNavigator.Topic;
-            HelpNavigator navigator1 = HelpNavigator.Index;
-            Help.ShowHelp(this, IOClass.PathHelp, navigator1, "Редактирование");
             Help.ShowHelp(this, IOClass.PathHelp, navigator, "edit.html");
         }
   }

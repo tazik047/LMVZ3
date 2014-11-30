@@ -213,8 +213,14 @@ namespace lmvz3
         private void Report_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             HelpNavigator navigator = HelpNavigator.Topic;
+            Help.ShowHelp(this, IOClass.PathHelp, navigator, "report.html");
+        }
+
+        private void Report_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            HelpNavigator navigator = HelpNavigator.Topic;
             HelpNavigator navigator1 = HelpNavigator.Index;
-            Help.ShowHelp(this, IOClass.PathHelp, navigator1, "Отчет");
+            
             Help.ShowHelp(this, IOClass.PathHelp, navigator, "report.html");
         }
     }

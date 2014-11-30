@@ -413,6 +413,7 @@
             this.Text = "Отчет";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Report_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Report_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Report_HelpRequested);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Report_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();

@@ -190,5 +190,11 @@ namespace lmvz3
                     RefreshData(null, EventArgs.Empty);
             }
         }
+
+        private void GroupTree_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            HelpNavigator navigator = HelpNavigator.Topic;
+            Help.ShowHelp(this, IOClass.PathHelp, navigator, "fac.html");
+        }
     }
 }

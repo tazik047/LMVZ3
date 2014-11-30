@@ -202,8 +202,14 @@ namespace lmvz3
         private void newStud_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             HelpNavigator navigator = HelpNavigator.Topic;
+            Help.ShowHelp(this, IOClass.PathHelp, navigator, "add.html");
+        }
+
+        private void newStud_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            HelpNavigator navigator = HelpNavigator.Topic;
             HelpNavigator navigator1 = HelpNavigator.Index;
-            Help.ShowHelp(this, IOClass.PathHelp, navigator1, "Добавление");
+            Help.ShowHelp(this, IOClass.PathHelp, navigator1, "Добавить");
             Help.ShowHelp(this, IOClass.PathHelp, navigator, "add.html");
         }
 
