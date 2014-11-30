@@ -411,6 +411,7 @@
             this.Name = "Report";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Отчет";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Report_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Report_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Report_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

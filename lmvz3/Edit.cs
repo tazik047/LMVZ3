@@ -317,5 +317,13 @@ namespace lmvz3
             toolTip1.SetToolTip(this.pictureBox9, "Введите номер телефона\nНапример: +38(066)123 4567");
         
         }
+
+        private void Edit_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpNavigator navigator = HelpNavigator.Topic;
+            HelpNavigator navigator1 = HelpNavigator.Index;
+            Help.ShowHelp(this, IOClass.PathHelp, navigator1, "Редактирование");
+            Help.ShowHelp(this, IOClass.PathHelp, navigator, "edit.html");
+        }
   }
 }

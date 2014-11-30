@@ -429,6 +429,7 @@
             this.Name = "newStud";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление нового студента";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.newStud_HelpButtonClicked);
             this.Load += new System.EventHandler(this.newStud_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();

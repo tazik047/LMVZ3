@@ -115,5 +115,22 @@ namespace lmvz3
             edit.delete_Click(sender, e);
         }
 
+        private void содержаниеToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, IOClass.PathHelp);
+        }
+
+        private void индексToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HelpNavigator navigator1 = HelpNavigator.Index;
+            Help.ShowHelp(this, IOClass.PathHelp, navigator1);
+        }
+
+        private void поискToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HelpNavigator navigator = HelpNavigator.Find;
+            Help.ShowHelp(this, IOClass.PathHelp, navigator,"");
+        }
+
     }
 }

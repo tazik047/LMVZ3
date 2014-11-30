@@ -149,5 +149,13 @@ namespace lmvz3
         {
             DrawRadiusBorder();
         }
+
+        private void Main_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpNavigator navigator = HelpNavigator.Topic;
+            HelpNavigator navigator1 = HelpNavigator.Index;
+            Help.ShowHelp(this, IOClass.PathHelp, navigator1, "Поиск");
+            Help.ShowHelp(this, IOClass.PathHelp, navigator, "Search.html");
+        }
     }
 }
