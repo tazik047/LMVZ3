@@ -87,6 +87,7 @@ namespace lmvz3
             if(e.Button== MouseButtons.Left)
             {
                 CreateForm c = new CreateForm("Введите название нового факультета:", checkFac, "Такой факультет уже присутствует");
+                c.Text = "Добавление факультета";
                 c.ShowDialog();
                 if (c.WrittenName != "")
                 {
@@ -108,6 +109,7 @@ namespace lmvz3
             if (e.Button == MouseButtons.Left)
             {
                 CreateForm c = new CreateForm("Введите название новой группы:", checkGroup, "Такая группа уже присутствует");
+                c.Text = "Добавление группы";
                 c.ShowDialog();
                 if (c.WrittenName != "")
                 {

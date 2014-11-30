@@ -176,19 +176,12 @@ namespace lmvz3
             return check;
         }
 
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Control && e.KeyCode == Keys.F1)
-            {
-                HelpNavigator navigator = HelpNavigator.AssociateIndex;
-                Help.ShowHelp(this, IOClass.PathHelp, navigator, "Добавление");
-            }
-        }
+
 
         private void newStud_Load(object sender, EventArgs e)
         {
             ToolTip toolTip1 = new ToolTip();
-            toolTip1.SetToolTip(this.pictureBox1, "Введите ФИО\nНапример: Потёмкин Константин Юрьевич");
+            toolTip1.SetToolTip(this.pictureBox1, "Введите ФИО\nНапример: Иванов Иван Иванович");
             toolTip1.SetToolTip(this.pictureBox2, "Введите адрес\nНапример: 61254, г.Харьков,\nул. Иванова, 23, кв.231");
             toolTip1.SetToolTip(this.pictureBox3, "Введите идентификационный номер\nНапример: 1234567890");
             toolTip1.SetToolTip(this.pictureBox4, "Введите номер пасспорта\nНапример: АВ123456");
@@ -199,17 +192,9 @@ namespace lmvz3
             toolTip1.SetToolTip(this.pictureBox9, "Введите номер телефона\nНапример: +38(066)123 4567");
         }
 
-        private void newStud_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            HelpNavigator navigator = HelpNavigator.Topic;
-            Help.ShowHelp(this, IOClass.PathHelp, navigator, "add.html");
-        }
-
         private void newStud_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             HelpNavigator navigator = HelpNavigator.Topic;
-            HelpNavigator navigator1 = HelpNavigator.Index;
-            Help.ShowHelp(this, IOClass.PathHelp, navigator1, "Добавить");
             Help.ShowHelp(this, IOClass.PathHelp, navigator, "add.html");
         }
 

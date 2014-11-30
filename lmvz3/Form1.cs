@@ -97,14 +97,7 @@ namespace lmvz3
             Help.ShowHelp(this, IOClass.PathHelp, navigator, ActiveMdiChild.Text);
           
         }
-
-       
-
-        private void содержаниеToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ShowHelp();
-        }
-
+    
         private void отменадействияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             edit.cancel_Click(sender, e);
@@ -113,11 +106,6 @@ namespace lmvz3
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             edit.delete_Click(sender, e);
-        }
-
-        private void содержаниеToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            Help.ShowHelp(this, IOClass.PathHelp);
         }
 
         private void индексToolStripMenuItem_Click(object sender, EventArgs e)

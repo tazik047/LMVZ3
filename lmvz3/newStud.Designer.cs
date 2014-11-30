@@ -74,29 +74,35 @@
             // 
             // cancel
             // 
+            this.cancel.BackColor = System.Drawing.Color.White;
+            this.cancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.cancel.FlatAppearance.BorderSize = 3;
+            this.cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancel.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cancel.Location = new System.Drawing.Point(224, 598);
             this.cancel.Margin = new System.Windows.Forms.Padding(4);
             this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(100, 28);
+            this.cancel.Size = new System.Drawing.Size(100, 38);
             this.cancel.TabIndex = 63;
             this.cancel.Text = "Отменить";
-            this.cancel.UseVisualStyleBackColor = true;
+            this.cancel.UseVisualStyleBackColor = false;
             this.cancel.Click += new System.EventHandler(this.cancel_Click);
-            this.cancel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // Save
             // 
+            this.Save.BackColor = System.Drawing.Color.White;
+            this.Save.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Save.FlatAppearance.BorderSize = 3;
+            this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Save.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Save.Location = new System.Drawing.Point(58, 598);
             this.Save.Margin = new System.Windows.Forms.Padding(4);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(100, 28);
+            this.Save.Size = new System.Drawing.Size(100, 38);
             this.Save.TabIndex = 62;
             this.Save.Text = "Сохранить";
-            this.Save.UseVisualStyleBackColor = true;
+            this.Save.UseVisualStyleBackColor = false;
             this.Save.Click += new System.EventHandler(this.Save_Click);
-            this.Save.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // label1
             // 
@@ -429,7 +435,6 @@
             this.Name = "newStud";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление нового студента";
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.newStud_HelpButtonClicked);
             this.Load += new System.EventHandler(this.newStud_Load);
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.newStud_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();

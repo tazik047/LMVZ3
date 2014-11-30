@@ -306,7 +306,7 @@ namespace lmvz3
         private void Edit_Load(object sender, EventArgs e)
         {
             ToolTip toolTip1 = new ToolTip();
-            toolTip1.SetToolTip(this.pictureBox1, "Введите ФИО\nНапример: Потёмкин Константин Юрьевич");
+            toolTip1.SetToolTip(this.pictureBox1, "Введите ФИО\nНапример: Иванов Иван Иванович");
             toolTip1.SetToolTip(this.pictureBox2, "Введите адрес\nНапример: 61254, г.Харьков,\nул. Иванова, 23, кв.231");
             toolTip1.SetToolTip(this.pictureBox3, "Введите идентификационный номер\nНапример: 1234567890");
             toolTip1.SetToolTip(this.pictureBox4, "Введите номер пасспорта\nНапример: АВ123456");
@@ -316,11 +316,6 @@ namespace lmvz3
             toolTip1.SetToolTip(this.pictureBox8, "Выберите форму обучения");
             toolTip1.SetToolTip(this.pictureBox9, "Введите номер телефона\nНапример: +38(066)123 4567");
         
-        }
-
-        private void Edit_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-           
         }
 
         private void Edit_HelpRequested(object sender, HelpEventArgs hlpevent)
