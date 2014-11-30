@@ -309,7 +309,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(272, 76);
+            this.pictureBox1.Location = new System.Drawing.Point(288, 76);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(19, 15);
             this.pictureBox1.TabIndex = 40;
@@ -318,7 +318,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(272, 121);
+            this.pictureBox2.Location = new System.Drawing.Point(288, 121);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(19, 15);
             this.pictureBox2.TabIndex = 40;
