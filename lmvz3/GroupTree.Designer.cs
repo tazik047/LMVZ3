@@ -52,7 +52,7 @@
             this.treeView1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView1.ContextMenuStrip = this.contextMenuStripMain;
-            this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.treeView1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.treeView1.Location = new System.Drawing.Point(12, 21);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(120, 450);
@@ -61,67 +61,76 @@
             // 
             // contextMenuStripMain
             // 
+            this.contextMenuStripMain.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.contextMenuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавитьФакультетToolStripMenuItem});
             this.contextMenuStripMain.Name = "contextMenuStripMain";
-            this.contextMenuStripMain.Size = new System.Drawing.Size(186, 26);
+            this.contextMenuStripMain.Size = new System.Drawing.Size(218, 26);
             // 
             // добавитьФакультетToolStripMenuItem
             // 
+            this.добавитьФакультетToolStripMenuItem.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.добавитьФакультетToolStripMenuItem.Name = "добавитьФакультетToolStripMenuItem";
-            this.добавитьФакультетToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.добавитьФакультетToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.добавитьФакультетToolStripMenuItem.Text = "Добавить факультет";
             this.добавитьФакультетToolStripMenuItem.MouseUp += new System.Windows.Forms.MouseEventHandler(this.добавитьФакультетToolStripMenuItem1_MouseUp);
             // 
             // contextMenuStripGroup
             // 
+            this.contextMenuStripGroup.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.contextMenuStripGroup.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавитьГруппуToolStripMenuItem1,
             this.удалитьГруппуToolStripMenuItem});
             this.contextMenuStripGroup.Name = "contextMenuStripGroup";
-            this.contextMenuStripGroup.Size = new System.Drawing.Size(168, 48);
+            this.contextMenuStripGroup.Size = new System.Drawing.Size(192, 48);
             // 
             // добавитьГруппуToolStripMenuItem1
             // 
+            this.добавитьГруппуToolStripMenuItem1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.добавитьГруппуToolStripMenuItem1.Name = "добавитьГруппуToolStripMenuItem1";
-            this.добавитьГруппуToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
+            this.добавитьГруппуToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
             this.добавитьГруппуToolStripMenuItem1.Text = "Добавить группу";
             this.добавитьГруппуToolStripMenuItem1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.добавитьГруппуToolStripMenuItem_MouseUp);
             // 
             // удалитьГруппуToolStripMenuItem
             // 
+            this.удалитьГруппуToolStripMenuItem.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.удалитьГруппуToolStripMenuItem.Name = "удалитьГруппуToolStripMenuItem";
-            this.удалитьГруппуToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.удалитьГруппуToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.удалитьГруппуToolStripMenuItem.Text = "Удалить группу";
             this.удалитьГруппуToolStripMenuItem.MouseUp += new System.Windows.Forms.MouseEventHandler(this.удалитьГруппуToolStripMenuItem_MouseUp);
             // 
             // contextMenuStripFac
             // 
+            this.contextMenuStripFac.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.contextMenuStripFac.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавитьФакультетToolStripMenuItem1,
             this.удалитьФакультетToolStripMenuItem,
             this.добавитьГруппуToolStripMenuItem});
             this.contextMenuStripFac.Name = "contextMenuStripFac";
-            this.contextMenuStripFac.Size = new System.Drawing.Size(186, 70);
+            this.contextMenuStripFac.Size = new System.Drawing.Size(218, 70);
             // 
             // добавитьФакультетToolStripMenuItem1
             // 
+            this.добавитьФакультетToolStripMenuItem1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.добавитьФакультетToolStripMenuItem1.Name = "добавитьФакультетToolStripMenuItem1";
-            this.добавитьФакультетToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
+            this.добавитьФакультетToolStripMenuItem1.Size = new System.Drawing.Size(217, 22);
             this.добавитьФакультетToolStripMenuItem1.Text = "Добавить факультет";
             this.добавитьФакультетToolStripMenuItem1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.добавитьФакультетToolStripMenuItem1_MouseUp);
             // 
             // удалитьФакультетToolStripMenuItem
             // 
+            this.удалитьФакультетToolStripMenuItem.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.удалитьФакультетToolStripMenuItem.Name = "удалитьФакультетToolStripMenuItem";
-            this.удалитьФакультетToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.удалитьФакультетToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.удалитьФакультетToolStripMenuItem.Text = "Удалить факультет";
             this.удалитьФакультетToolStripMenuItem.MouseUp += new System.Windows.Forms.MouseEventHandler(this.удалитьФакультетToolStripMenuItem_MouseUp);
             // 
             // добавитьГруппуToolStripMenuItem
             // 
+            this.добавитьГруппуToolStripMenuItem.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.добавитьГруппуToolStripMenuItem.Name = "добавитьГруппуToolStripMenuItem";
-            this.добавитьГруппуToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.добавитьГруппуToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.добавитьГруппуToolStripMenuItem.Text = "Добавить группу";
             this.добавитьГруппуToolStripMenuItem.MouseUp += new System.Windows.Forms.MouseEventHandler(this.добавитьГруппуToolStripMenuItem_MouseUp);
             // 

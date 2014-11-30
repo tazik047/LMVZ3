@@ -79,8 +79,8 @@
             this.label1.AutoEllipsis = true;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(23, 13);
+            this.label1.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(43, 13);
             this.label1.MaximumSize = new System.Drawing.Size(265, 0);
             this.label1.MinimumSize = new System.Drawing.Size(265, 0);
             this.label1.Name = "label1";
@@ -154,9 +154,9 @@
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource studentBindingSource;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fIODataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox textBox1;
 
     }
 }

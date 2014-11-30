@@ -14,6 +14,7 @@ namespace lmvz3
     {
         public event EventHandler RefreshData;
         List<Control> textboxes = new List<Control>();
+        
         public newStud()
         {
             InitializeComponent();
@@ -29,7 +30,6 @@ namespace lmvz3
             textboxes.Add(comboBox2);
             textboxes.Add(comboBox3);
             textboxes.Add(textBox2);
-
         }
         public void groups(object sender, EventArgs e)
         {
@@ -110,40 +110,68 @@ namespace lmvz3
             if (textBox1.Text == null || textBox1.Text == "")
             {
                 textBox1.BackColor = Color.Red;
+                pictureBox1.Image = ((System.Drawing.Image)(Properties.Resources.warn));
                 check = false;
             }
-            else textBox1.BackColor = Color.White;
+            else
+            {
+                textBox1.BackColor = Color.White;
+                pictureBox1.Image = ((System.Drawing.Image)(Properties.Resources.help));
+            }
             if (textBox2.Text == null || textBox2.Text == "")
             {
                 textBox2.BackColor = Color.Red;
+                pictureBox2.Image = ((System.Drawing.Image)(Properties.Resources.warn));
                 check = false;
             }
-            else textBox2.BackColor = Color.White;
+            else
+            {
+                textBox2.BackColor = Color.White;
+                pictureBox2.Image = ((System.Drawing.Image)(Properties.Resources.help));
+            }
             List<MaskedTextBox> masked = new List<MaskedTextBox>();
+            List<PictureBox> mashints = new List<PictureBox>();
             masked.Add(maskedTextBox1);
             masked.Add(maskedTextBox2);
             masked.Add(maskedTextBox3);
-            foreach (MaskedTextBox maske in masked)
+            mashints.Add(pictureBox3);
+            mashints.Add(pictureBox4);
+            mashints.Add(pictureBox9);
+            for (int i = 0; i < masked.Count; i++ )
             {
-                if (maske.MaskFull == false)
+                if (masked[i].MaskFull == false)
                 {
-                    maske.BackColor = Color.Red;
+                    masked[i].BackColor = Color.Red;
+                    mashints[i].Image = ((System.Drawing.Image)(Properties.Resources.warn));
                     check = false;
                 }
-                else maske.BackColor = Color.White;
+                else
+                {
+                    masked[i].BackColor = Color.White;
+                    mashints[i].Image = ((System.Drawing.Image)(Properties.Resources.help));
+                }
             }
             List<ComboBox> combos = new List<ComboBox>();
+            List<PictureBox> combhints = new List<PictureBox>();
             combos.Add(comboBox1);
             combos.Add(comboBox2);
             combos.Add(comboBox3);
-            foreach (ComboBox maske in combos)  
+            combhints.Add(pictureBox6);
+            combhints.Add(pictureBox7);
+            combhints.Add(pictureBox8);
+            for (int i = 0; i < combos.Count; i++)  
             {
-                if (maske.SelectedItem == null && maske.Text == "")
+                if (combos[i].SelectedItem == null && combos[i].Text == "")
                 {
-                    maske.BackColor = Color.Red;
+                    combos[i].BackColor = Color.Red;
+                    combhints[i].Image = ((System.Drawing.Image)(Properties.Resources.warn));
                     check = false;
                 }
-                else maske.BackColor = Color.White;
+                else
+                {
+                    combos[i].BackColor = Color.White;
+                    combhints[i].Image = ((System.Drawing.Image)(Properties.Resources.help));
+                }
             }
             return check;
         }
@@ -160,15 +188,15 @@ namespace lmvz3
         private void newStud_Load(object sender, EventArgs e)
         {
             ToolTip toolTip1 = new ToolTip();
-            toolTip1.SetToolTip(this.label12, "Введите ФИО\nНапример: Потёмкин Константин Юрьевич");
-            toolTip1.SetToolTip(this.label14, "Введите адрес\nНапример: 61254, г.Харьков,\nул. Иванова, 23, кв.231");
-            toolTip1.SetToolTip(this.label2, "Введите идентификационный номер\nНапример: 1234567890");
-            toolTip1.SetToolTip(this.label3, "Введите номер пасспорта\nНапример: АВ123456");
-            toolTip1.SetToolTip(this.label4, "Выберите дату рождения");
-            toolTip1.SetToolTip(this.label5, "Выберите факультет");
-            toolTip1.SetToolTip(this.label6, "Выберите группу");
-            toolTip1.SetToolTip(this.label7, "Выберите форму обучения");
-            toolTip1.SetToolTip(this.label8, "Введите номер телефона\nНапример: +38(066)123 4567");
+            toolTip1.SetToolTip(this.pictureBox1, "Введите ФИО\nНапример: Потёмкин Константин Юрьевич");
+            toolTip1.SetToolTip(this.pictureBox2, "Введите адрес\nНапример: 61254, г.Харьков,\nул. Иванова, 23, кв.231");
+            toolTip1.SetToolTip(this.pictureBox3, "Введите идентификационный номер\nНапример: 1234567890");
+            toolTip1.SetToolTip(this.pictureBox4, "Введите номер пасспорта\nНапример: АВ123456");
+            toolTip1.SetToolTip(this.pictureBox5, "Выберите дату рождения");
+            toolTip1.SetToolTip(this.pictureBox6, "Выберите факультет");
+            toolTip1.SetToolTip(this.pictureBox7, "Выберите группу");
+            toolTip1.SetToolTip(this.pictureBox8, "Выберите форму обучения");
+            toolTip1.SetToolTip(this.pictureBox9, "Введите номер телефона\nНапример: +38(066)123 4567");
         }
 
     }

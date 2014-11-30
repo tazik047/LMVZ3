@@ -17,8 +17,8 @@ namespace lmvz3
         public event EventHandler DelStud;
 
         List<Control> textboxes = new List<Control>();
-        List<Control> constrols = new List<Control>();
-        List<Control> hints = new List<Control>();
+        List<Control> controls = new List<Control>();
+        List<PictureBox> hints = new List<PictureBox>();
         public Student studen = new Student();
         public void Basic()
         {
@@ -66,9 +66,11 @@ namespace lmvz3
          
         private void colorSlider1_Scroll(object sender, ScrollEventArgs e)
         {
+            
             if (trackBar1.Value == 0)
             {
                 label1.Text = "Режим просмотра";
+                pictureBox10.Image = ((System.Drawing.Image)(Properties.Resources.report));
                 foreach (Control controls in textboxes)
                     controls.Enabled = false;
                 HideHint();
@@ -76,6 +78,7 @@ namespace lmvz3
             else
             {
                 label1.Text = "Режим редактирования";
+                pictureBox10.Image = ((System.Drawing.Image)(Properties.Resources.edit));
                 foreach (Control controls in textboxes)
                     controls.Enabled = true;
                 ShowHint();
@@ -115,6 +118,7 @@ namespace lmvz3
                     IOClass.Save(StaticData.students);
                     if (RefreshData != null)
                         RefreshData(this.studen, EventArgs.Empty);
+
                 }
             }
         }
@@ -129,112 +133,141 @@ namespace lmvz3
         public bool Check()
         {
             bool check = true;
-            
-
-               
-                if (textBox1.Text == null || textBox1.Text == "")
+            if (textBox1.Text == null || textBox1.Text == "")
+            {
+                textBox1.BackColor = Color.Red;
+                pictureBox1.Image = ((System.Drawing.Image)(Properties.Resources.warn));
+                check = false;
+            }
+            else 
+            { 
+                textBox1.BackColor = Color.White;
+                pictureBox1.Image = ((System.Drawing.Image)(Properties.Resources.help));
+            }
+            if (textBox2.Text == null || textBox2.Text == "")
+            {
+                textBox2.BackColor = Color.Red;
+                pictureBox2.Image = ((System.Drawing.Image)(Properties.Resources.warn));
+                check = false;
+            }
+            else 
+            {
+                textBox2.BackColor = Color.White;
+                pictureBox2.Image = ((System.Drawing.Image)(Properties.Resources.help));
+            }
+            List<MaskedTextBox> masked = new List<MaskedTextBox>();
+            List<PictureBox> mashints = new List<PictureBox>();
+            masked.Add(maskedTextBox1);
+            masked.Add(maskedTextBox2);
+            masked.Add(maskedTextBox3);
+            mashints.Add(pictureBox3);
+            mashints.Add(pictureBox4);
+            mashints.Add(pictureBox9);
+            for (int i = 0; i < masked.Count; i++ )
+            {
+                if (masked[i].MaskFull == false)
                 {
-                    textBox1.BackColor = Color.Red;
+                    masked[i].BackColor = Color.Red;
+                    mashints[i].Image = ((System.Drawing.Image)(Properties.Resources.warn));
                     check = false;
                 }
-                else textBox1.BackColor = Color.White;
-                if (textBox2.Text == null || textBox2.Text == "")
+                else
                 {
-                    textBox2.BackColor = Color.Red;
+                    masked[i].BackColor = Color.White;
+                    mashints[i].Image = ((System.Drawing.Image)(Properties.Resources.help));
+                }
+            }
+            List<ComboBox> combos = new List<ComboBox>();
+            List<PictureBox> combhints = new List<PictureBox>();
+            combos.Add(comboBox1);
+            combos.Add(comboBox2);
+            combos.Add(comboBox3);
+            combhints.Add(pictureBox6);
+            combhints.Add(pictureBox7);
+            combhints.Add(pictureBox8);
+            for (int i = 0; i < combos.Count; i++)  
+            {
+                if (combos[i].SelectedItem == null && combos[i].Text == "")
+                {
+                    combos[i].BackColor = Color.Red;
+                    combhints[i].Image = ((System.Drawing.Image)(Properties.Resources.warn));
                     check = false;
                 }
-                else textBox2.BackColor = Color.White;
-                List<MaskedTextBox> masked = new List<MaskedTextBox>();
-                masked.Add(maskedTextBox1);
-                masked.Add(maskedTextBox2);
-                masked.Add(maskedTextBox3);
-                foreach (MaskedTextBox maske in masked)
+                else
                 {
-                    if (maske.MaskFull == false)
-                    {
-                        maske.BackColor = Color.Red;
-                        check = false;
-                    }
-                    else maske.BackColor = Color.White;
+                    combos[i].BackColor = Color.White;
+                    combhints[i].Image = ((System.Drawing.Image)(Properties.Resources.help));
                 }
-                List<ComboBox> combos = new List<ComboBox>();
-                combos.Add(comboBox1);
-                combos.Add(comboBox2);
-                combos.Add(comboBox3);
-                foreach (ComboBox maske in combos)
-                {
-                    if (maske.SelectedItem == null && maske.Text == "")
-                    {
-                        maske.BackColor = Color.Red;
-                        check = false;
-                    }
-                    else maske.BackColor = Color.White;
-                }
-            
+            }
             return check;
         }
         public void Add3() 
         {
            
-            this.constrols.Add(this.label14);
-            this.constrols.Add(this.textBox2);
-            this.constrols.Add(this.label13);
-            this.constrols.Add(this.cancel);
-            this.constrols.Add(this.Save);
-            this.constrols.Add(this.delete);
-            this.constrols.Add(this.label12);
+            this.controls.Add(this.pictureBox1);
+            this.controls.Add(this.pictureBox2);
+            this.controls.Add(this.pictureBox3);
+            this.controls.Add(this.pictureBox4);
+            this.controls.Add(this.pictureBox5);
+            this.controls.Add(this.pictureBox6);
+            this.controls.Add(this.pictureBox7);
+            this.controls.Add(this.pictureBox8);
+            this.controls.Add(this.pictureBox9);
+            this.controls.Add(this.pictureBox10);
 
-            this.constrols.Add(this.label8);
-            this.constrols.Add(this.label7);
-            this.constrols.Add(this.label6);
-            this.constrols.Add(this.label5);
-            this.constrols.Add(this.label4);
-            this.constrols.Add(this.label3);
-            this.constrols.Add(this.maskedTextBox3);
-            this.constrols.Add(this.label2);
-            this.constrols.Add(this.maskedTextBox2);
-            this.constrols.Add(this.maskedTextBox1);
-            this.constrols.Add(this.trackBar1);
-            this.constrols.Add(this.comboBox3);
-            this.constrols.Add(this.comboBox2);
-            this.constrols.Add(this.comboBox1);
-            this.constrols.Add(this.dateTimePicker1);
-            this.constrols.Add(this.textBox1);
-            this.constrols.Add(this.label1);
-            this.constrols.Add(this.number);
-            this.constrols.Add(this.formStudy);
-            this.constrols.Add(this.group);
-            this.constrols.Add(this.faculty);
-            this.constrols.Add(this.birth);
-            this.constrols.Add(this.pass);
-            this.constrols.Add(this.id);
-            this.constrols.Add(this.fio);
+            this.controls.Add(this.textBox2);
+            this.controls.Add(this.label13);
+            this.controls.Add(this.cancel);
+            this.controls.Add(this.Save);
+            this.controls.Add(this.delete);
+            this.controls.Add(this.maskedTextBox3);
+            this.controls.Add(this.maskedTextBox2);
+            this.controls.Add(this.maskedTextBox1);
+            this.controls.Add(this.trackBar1);
+            this.controls.Add(this.comboBox3);
+            this.controls.Add(this.comboBox2);
+            this.controls.Add(this.comboBox1);
+            this.controls.Add(this.dateTimePicker1);
+            this.controls.Add(this.textBox1);
+            this.controls.Add(this.label1);
+            this.controls.Add(this.number);
+            this.controls.Add(this.formStudy);
+            this.controls.Add(this.group);
+            this.controls.Add(this.faculty);
+            this.controls.Add(this.birth);
+            this.controls.Add(this.pass);
+            this.controls.Add(this.id);
+            this.controls.Add(this.fio);
 
-            this.hints.Add(this.label8);
-            this.hints.Add(this.label7);
-            this.hints.Add(this.label6);
-            this.hints.Add(this.label5);
-            this.hints.Add(this.label4);
-            this.hints.Add(this.label3);
-            this.hints.Add(this.label2);
-            this.hints.Add(this.label14);
-            this.hints.Add(this.label12);
+            this.hints.Add(this.pictureBox1);
+            this.hints.Add(this.pictureBox2);
+            this.hints.Add(this.pictureBox3);
+            this.hints.Add(this.pictureBox4);
+            this.hints.Add(this.pictureBox5);
+            this.hints.Add(this.pictureBox6);
+            this.hints.Add(this.pictureBox7);
+            this.hints.Add(this.pictureBox8);
+            this.hints.Add(this.pictureBox9);
 
         }
         public void Hide2()
         {
-            foreach (Control control in this.constrols)
+            foreach (Control control in this.controls)
                 control.Hide();
             label15.Show();
         }
         public void HideHint()
         {
-            foreach (Control control in this.hints)
+            foreach (PictureBox control in this.hints)
+            {
                 control.Hide();
-                Save.Hide();
-                cancel.Hide();
-                delete.Hide();
-            
+                control.Image = ((System.Drawing.Image)(Properties.Resources.help));
+            }
+            Save.Hide();
+            cancel.Hide();
+            delete.Hide();
+            for (int i = 9; i < controls.Count; i++)
+                controls[i].BackColor = Color.White;
         }
         public void ShowHint()
         {
@@ -247,7 +280,7 @@ namespace lmvz3
         }
         public void Show2()
         {
-            foreach (Control control in this.constrols)
+            foreach (Control control in this.controls)
                 control.Show();
             label15.Hide();
             if (trackBar1.Value == 0)
@@ -273,15 +306,16 @@ namespace lmvz3
         private void Edit_Load(object sender, EventArgs e)
         {
             ToolTip toolTip1 = new ToolTip();
-            toolTip1.SetToolTip(this.label12, "Введите ФИО\nНапример: Потёмкин Константин Юрьевич");
-            toolTip1.SetToolTip(this.label14, "Введите адрес\nНапример: 61254, г.Харьков,\nул. Иванова, 23, кв.231");
-            toolTip1.SetToolTip(this.label2, "Введите идентификационный номер\nНапример: 1234567890");
-            toolTip1.SetToolTip(this.label3, "Введите номер пасспорта\nНапример: АВ123456");
-            toolTip1.SetToolTip(this.label4, "Выберите дату рождения");
-            toolTip1.SetToolTip(this.label5, "Выберите факультет");
-            toolTip1.SetToolTip(this.label6, "Выберите группу");
-            toolTip1.SetToolTip(this.label7, "Выберите форму обучения");
-            toolTip1.SetToolTip(this.label8, "Введите номер телефона\nНапример: +38(066)123 4567");
+            toolTip1.SetToolTip(this.pictureBox1, "Введите ФИО\nНапример: Потёмкин Константин Юрьевич");
+            toolTip1.SetToolTip(this.pictureBox2, "Введите адрес\nНапример: 61254, г.Харьков,\nул. Иванова, 23, кв.231");
+            toolTip1.SetToolTip(this.pictureBox3, "Введите идентификационный номер\nНапример: 1234567890");
+            toolTip1.SetToolTip(this.pictureBox4, "Введите номер пасспорта\nНапример: АВ123456");
+            toolTip1.SetToolTip(this.pictureBox5, "Выберите дату рождения");
+            toolTip1.SetToolTip(this.pictureBox6, "Выберите факультет");
+            toolTip1.SetToolTip(this.pictureBox7, "Выберите группу");
+            toolTip1.SetToolTip(this.pictureBox8, "Выберите форму обучения");
+            toolTip1.SetToolTip(this.pictureBox9, "Введите номер телефона\nНапример: +38(066)123 4567");
+        
         }
   }
 }
