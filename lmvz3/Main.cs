@@ -18,30 +18,26 @@ namespace lmvz3
 
         private TreeNode currentNode;
 
+        private Action<object, EventArgs> selectRow;
+
+
         public Main(Action<object,EventArgs> select)
         {
             InitializeComponent();
+            selectRow = select;
             StaticData.students = IOClass.LoadStudent();
             studentBindingSource.Sort = "FIO";
             studentBindingSource.DataSource = StaticData.students;
             currentStud = StaticData.students;
-            dataGridView1.SelectionChanged += new System.EventHandler(select);
+            
             Text = "main";
         }
 
 
         public void filter(object sender, TreeNodeMouseClickEventArgs e)
         {
-            /*
-            if (e.Button == MouseButtons.Left)
-            {
-                var n = e.Node;
-                if (n.Parent == null)
-                {
-                    MessageBox.Show(String.Format("Вы выбрали факультет - {0}", n.Text), "Click");
-                }
-            }*/
             currentNode = e.Node;
+            textBox1.Text = "Поиск...";
             if (e.Node.Parent == null && e.Node.Text == "Все факультеты")
             {
                 studentBindingSource.DataSource = StaticData.students;
@@ -62,12 +58,14 @@ namespace lmvz3
             dataGridView1.Location = new Point(dataGridView1.Location.X, label1.Location.Y + label1.Height + 4);
             dataGridView1.Height = textBox1.Location.Y - dataGridView1.Location.Y - 10;
             currentStud = (List<Student>)studentBindingSource.DataSource;
+            if(selectRow!=null)
+            selectRow(null, EventArgs.Empty);
             //studentBindingSource.DataSource = students.Where(s => s.ID  == 0).ToList();
         }
 
         private void Main_Resize(object sender, EventArgs e)
         {
-            dataGridView1.Columns[1].Width = this.ClientSize.Width - dataGridView1.Columns[0].Width -60;
+            dataGridView1.Columns[1].Width = ClientSize.Width - dataGridView1.Columns[0].Width -60;
             dataGridView1.Width = ClientSize.Width - 50;
         }
 
@@ -84,7 +82,6 @@ namespace lmvz3
 
         public void RefreshData(object sender, EventArgs e)
         {
-
             if(sender==null)
             {
                 studentBindingSource.DataSource = StaticData.students;
@@ -115,7 +112,7 @@ namespace lmvz3
         private void textBox1_Enter(object sender, EventArgs e)
         {
             textBox1.ForeColor = Color.Black;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             if (textBox1.Text == "Поиск...")
                 textBox1.Text = "";
         }
@@ -124,11 +121,9 @@ namespace lmvz3
         {
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            if (textBox1.Text == "")
-            {
-                textBox1.Text = "Поиск...";
-                studentBindingSource.DataSource = currentStud;
-            }
+            if (textBox1.Text != "") return;
+            textBox1.Text = "Поиск...";
+            studentBindingSource.DataSource = currentStud;
         }
 
         private void Main_Paint(object sender, PaintEventArgs e)
@@ -154,6 +149,13 @@ namespace lmvz3
         {
             HelpNavigator navigator = HelpNavigator.Topic;
             Help.ShowHelp(this, IOClass.PathHelp, navigator, "Search.html");
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && selectRow != null)
+                selectRow(dataGridView1, e);
+
         }
     }
 }

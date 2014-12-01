@@ -14,7 +14,9 @@ namespace lmvz3
     {
         GroupTree groups;
         Main mainTable;
-        Edit edit;
+        private Edit edit;
+
+        private Form main;
         
 
         public Form1()
@@ -24,13 +26,11 @@ namespace lmvz3
 
         private void Form1_Resize(object sender, EventArgs e)
         {
-            if (groups == null || edit == null || mainTable == null) return;
+            if (groups == null || main == null || edit == null) return;
             groups.ClientSize = new Size(groups.ClientSize.Width, this.ClientSize.Height - 28);
-            edit.ClientSize = new Size(edit.ClientSize.Width, this.ClientSize.Height - 28);
-            edit.Location = new Point(this.ClientSize.Width - edit.Width - 4, 0);
-            mainTable.Location = new Point(groups.Width , 0);
-            mainTable.ClientSize = new Size(edit.Location.X - mainTable.Location.X , this.ClientSize.Height - 28);
-            mainTable.Location = new Point(groups.Width, 0);
+            main.Location = new Point(groups.Width , 0);
+            main.ClientSize = new Size(edit.ClientSize.Width, this.ClientSize.Height - 28);
+            main.Location = new Point(groups.Width, 0);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -39,32 +39,51 @@ namespace lmvz3
 
             groups = new GroupTree(mainTable.filter) {MdiParent = this};
             groups.Show();
-
             mainTable.MdiParent = this;
             mainTable.Show();
-
+            
             edit = new Edit {MdiParent = this};
-            edit.Show();
+            //edit.Show();
 
             edit.RefreshData += mainTable.RefreshData;
             edit.DelStud += mainTable.RefreshAfterDel;
             groups.UpdateFaculties += edit.faculties;
             groups.RefreshData += mainTable.RefreshData;
-            mainTable.dataGridView1.ClearSelection();
+            
             groups.Width = edit.Width - 35;
-            edit.Hide2();
+            
+            mainTable.dataGridView1.ClearSelection();
+            //edit.Hide2();
             edit.studen = null;
+            main = mainTable;
             Form1_Resize(this, EventArgs.Empty);
+            
         }
 
         public void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            var d = sender as DataGridView;
-            var source = d.DataSource as BindingSource;
-            var s = source.Current as Student;
-            if (edit == null || s == null) return;
-            edit.EditStud(s);
-            edit.Show2();
+            
+            if (sender != null)
+            {
+                
+                var d = sender as DataGridView;
+                var source = d.DataSource as BindingSource;
+                var s = source.Current as Student;
+                if (edit == null || s == null) return;
+                edit.EditStud(s);
+                edit.Show2();
+                main = edit;
+            }
+            else
+            {
+                mainTable.dataGridView1.ClearSelection();
+                if (main.Text == "main")
+                    return;
+                main.Hide();
+                main = mainTable;
+            }
+            main.Show();
+            Form1_Resize(sender, e);
         }
 
         private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
