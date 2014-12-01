@@ -57,8 +57,7 @@ namespace lmvz3
 
         private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            var groups = StaticData.faculties.Where(f => f.Title.Equals(checkedListBox1.Items[e.Index].ToString()))
-                    .First().Groups.ToArray();
+            var groups = StaticData.faculties.First(f => f.Title.Equals(checkedListBox1.Items[e.Index].ToString())).Groups.ToArray();
             if (e.NewValue == CheckState.Checked)
             {
                 checkedListBox2.Items.AddRange(groups);
@@ -74,12 +73,10 @@ namespace lmvz3
             {
                 for(int i = 0; i<checkedListBox2.Items.Count; i++)
                 {
-                    if(groups.Count(g => g.Title.Equals(checkedListBox2.Items[i].ToString())) != 0)
-                    {
-                        checkedListBox2.SetItemChecked(i, false);
-                        checkedListBox2.Items.RemoveAt(i);
-                        i--;
-                    }
+                    if (groups.Count(g => g.Title.Equals(checkedListBox2.Items[i].ToString())) == 0) continue;
+                    checkedListBox2.SetItemChecked(i, false);
+                    checkedListBox2.Items.RemoveAt(i);
+                    i--;
                 }
             }
         }
@@ -145,10 +142,9 @@ namespace lmvz3
                 ind++;*/
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    if (cell.ValueType.Name == dateTimePicker1.Value.GetType().Name )
-                        pdfTable.AddCell(new Phrase(((DateTime)cell.Value).ToShortDateString(), fgFont));
-                    else
-                    pdfTable.AddCell(new Phrase(cell.Value.ToString(), fgFont));
+                    pdfTable.AddCell(cell.ValueType.Name == dateTimePicker1.Value.GetType().Name
+                        ? new Phrase(((DateTime) cell.Value).ToShortDateString(), fgFont)
+                        : new Phrase(cell.Value.ToString(), fgFont));
                 }
             }
 
@@ -166,9 +162,7 @@ namespace lmvz3
                 PdfWriter.GetInstance(pdfDoc, stream);
                 pdfDoc.Open();
                 //da
-                string res = "Список студентов из групп: ";
-                foreach (var i in students.Select(s => s.Group.Title).Distinct())
-                    res += i+", ";
+                string res = students.Select(s => s.Group.Title).Distinct().Aggregate("Список студентов из групп: ", (current, i) => current + (i + ", "));
                 res = res.Substring(0, res.Length - 2) + ".\n";
                 res += "Форма обучения: " + (radioButton1.Checked ? "любая.\n" : (radioButton2.Checked ? "контрактная.\n" : "бюджетная.\n"));
                 res += "Студенты старше: " + dateTimePicker1.Value.ToShortDateString() + "\n \n ";

@@ -33,29 +33,17 @@ namespace lmvz3
             var t = new TreeNode("Все факультеты");
             t.ContextMenu = null;
             treeView1.Nodes.Add(t);
-            for (int i = 0; i < StaticData.faculties.Count; i++)
+            foreach (Faculty t1 in StaticData.faculties)
             {
-                var ns = new TreeNode[StaticData.faculties[i].Groups.Count];
-                for (int j = 0; j < StaticData.faculties[i].Groups.Count; j++)
+                var ns = new TreeNode[t1.Groups.Count];
+                for (int j = 0; j < t1.Groups.Count; j++)
                 {
-                    ns[j] = new TreeNode(StaticData.faculties[i].Groups[j].Title);
+                    ns[j] = new TreeNode(t1.Groups[j].Title);
                     ns[j].ContextMenuStrip = contextMenuStripGroup;
                 }
-                var n = new TreeNode(StaticData.faculties[i].Title, ns);
+                var n = new TreeNode(t1.Title, ns);
                 n.ContextMenuStrip = contextMenuStripFac;
                 treeView1.Nodes.Add(n);
-            }
-        }
-
-        private void create()
-        {
-            StaticData.faculties = new List<Faculty>();
-            for (int i = 0; i < 10; i++)
-            {
-                var gs = new List<Group>();
-                for (int j = 0; j < 10; j++)
-                    gs.Add(new Group(String.Format("Fac{0}-Group{1}", i, j), i));
-                StaticData.faculties.Add(new Faculty(i, String.Format("Fac{0}", i), gs));
             }
         }
 
@@ -74,12 +62,7 @@ namespace lmvz3
 
         private bool checkGroup(string title)
         {
-            for (int i = 0; i < StaticData.faculties.Count; i++)
-            {
-                if (StaticData.faculties[i].Groups.Count(g => g.Title.Equals(title)) != 0)
-                    return false;
-            }
-            return true;
+            return StaticData.faculties.All(t => t.Groups.Count(g => g.Title.Equals(title)) == 0);
         }
 
         private void добавитьФакультетToolStripMenuItem1_MouseUp(object sender, MouseEventArgs e)
@@ -128,7 +111,7 @@ namespace lmvz3
                         selectedNode.Parent.Nodes.Add(n);
                         title = selectedNode.Parent.Text;
                     }
-                    StaticData.faculties.Where(f => f.Title.Equals(title)).First().Groups.Add(g);
+                    StaticData.faculties.First(f => f.Title.Equals(title)).Groups.Add(g);
                     treeView1.Sort();
                 }
                 IOClass.Save(StaticData.faculties);
@@ -143,14 +126,14 @@ namespace lmvz3
                 + " нельзя будет отменить. \nБудут утеряны все данный связанные с этой группой.", selectedNode.Text),
                 "Вы уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                for (int i = 0; i < StaticData.faculties.Count; i++)
-                    if (StaticData.faculties[i].Title.Equals(selectedNode.Parent.Text))
+                foreach (Faculty t in StaticData.faculties)
+                    if (t.Title.Equals(selectedNode.Parent.Text))
                     {
-                        for (int j = 0; j < StaticData.faculties[i].Groups.Count; j++)
+                        for (int j = 0; j < t.Groups.Count; j++)
                         {
-                            if (StaticData.faculties[i].Groups[j].Title.Equals(selectedNode.Text))
+                            if (t.Groups[j].Title.Equals(selectedNode.Text))
                             {
-                                StaticData.faculties[i].Groups.RemoveAt(j);
+                                t.Groups.RemoveAt(j);
                                 break;
                             }
                         }

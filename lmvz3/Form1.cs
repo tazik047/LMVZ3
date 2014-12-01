@@ -24,30 +24,26 @@ namespace lmvz3
 
         private void Form1_Resize(object sender, EventArgs e)
         {
-            if (groups != null && edit != null && mainTable != null)
-            {
-                groups.ClientSize = new Size(groups.ClientSize.Width, this.ClientSize.Height - 28);
-                edit.ClientSize = new Size(edit.ClientSize.Width, this.ClientSize.Height - 28);
-                edit.Location = new Point(this.ClientSize.Width - edit.Width - 4, 0);
-                mainTable.Location = new Point(groups.Width , 0);
-                mainTable.ClientSize = new Size(edit.Location.X - mainTable.Location.X , this.ClientSize.Height - 28);
-                mainTable.Location = new Point(groups.Width, 0);
-            }
+            if (groups == null || edit == null || mainTable == null) return;
+            groups.ClientSize = new Size(groups.ClientSize.Width, this.ClientSize.Height - 28);
+            edit.ClientSize = new Size(edit.ClientSize.Width, this.ClientSize.Height - 28);
+            edit.Location = new Point(this.ClientSize.Width - edit.Width - 4, 0);
+            mainTable.Location = new Point(groups.Width , 0);
+            mainTable.ClientSize = new Size(edit.Location.X - mainTable.Location.X , this.ClientSize.Height - 28);
+            mainTable.Location = new Point(groups.Width, 0);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             mainTable = new Main(dataGridView1_SelectionChanged);
 
-            groups = new GroupTree(mainTable.filter);
-            groups.MdiParent = this;
+            groups = new GroupTree(mainTable.filter) {MdiParent = this};
             groups.Show();
 
             mainTable.MdiParent = this;
             mainTable.Show();
 
-            edit = new Edit();
-            edit.MdiParent = this;
+            edit = new Edit {MdiParent = this};
             edit.Show();
 
             edit.RefreshData += mainTable.RefreshData;

@@ -122,34 +122,14 @@ namespace lmvz3
             }
         }
 
-        public static List<Student> findByGroup(List<Student> stud, List<Group> groups){
-            List<Student> rStud = new List<Student>();
-            foreach (Student student in stud)
-            {
-                foreach (Group group in groups)
-                {
-                    if (student.Group.Title.Equals(group.Title))
-                    {
-                        rStud.Add(student);
-                    }
-                }
-            }
-            return rStud;
-        }
-        public static List<Student> findByFaculty(List<Student> stud, List<Faculty> faculties)
+        public static List<Student> findByGroup(IEnumerable<Student> stud, List<Group> groups)
         {
-            List<Student> rStud = new List<Student>();
-            foreach (Student student in stud)
-            {
-                foreach (Faculty faculty in faculties)
-                {
-                    if (student.Faculty.Title.Equals(faculty.Title))
-                    {
-                        rStud.Add(student);
-                    }
-                }
-            }
-            return rStud;
+            return (from student in stud from @group in groups where student.Group.Title.Equals(@group.Title) select student).ToList();
+        }
+
+        public static List<Student> findByFaculty(IEnumerable<Student> stud, List<Faculty> faculties)
+        {
+            return (from student in stud from faculty in faculties where student.Faculty.Title.Equals(faculty.Title) select student).ToList();
         }
     }
 }

@@ -44,7 +44,7 @@ namespace lmvz3
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
-            if (!(comboBox1.SelectedItem == null))
+            if (comboBox1.SelectedItem != null)
                 groups(sender, e);
         }
 
@@ -63,17 +63,19 @@ namespace lmvz3
                  if (MessageBox.Show("Вы уверены?", "Сохранение клиента", MessageBoxButtons.YesNo) == DialogResult.Yes)
                  {
                
-                    Student studen = new Student();
-                    studen.FIO = textBox1.Text;
-                    studen.ID = maskedTextBox1.Text;
-                    studen.Pass = maskedTextBox2.Text;
-                    studen.Number = maskedTextBox3.Text;
-                    studen.Birth = dateTimePicker1.Value;
-                    studen.Faculty = (Faculty)comboBox1.SelectedItem;
-                    studen.Group = (Group)comboBox2.SelectedItem;
-                    studen.FormOfStudy = comboBox3.SelectedItem.ToString();
-                    studen.Home = textBox2.Text;
-                    StaticData.students.Add(studen);
+                    Student studen = new Student
+                    {
+                        FIO = textBox1.Text,
+                        ID = maskedTextBox1.Text,
+                        Pass = maskedTextBox2.Text,
+                        Number = maskedTextBox3.Text,
+                        Birth = dateTimePicker1.Value,
+                        Faculty = (Faculty) comboBox1.SelectedItem,
+                        Group = (Group) comboBox2.SelectedItem,
+                        FormOfStudy = comboBox3.SelectedItem.ToString(),
+                        Home = textBox2.Text
+                    };
+                     StaticData.students.Add(studen);
                     IOClass.Save(StaticData.students);
                     if (RefreshData != null)
                         RefreshData(studen, EventArgs.Empty);
@@ -104,10 +106,11 @@ namespace lmvz3
 
             
         }
-        public bool Check()
+
+        private bool Check()
         {
             bool check = true;
-            if (textBox1.Text == null || textBox1.Text == "")
+            if (string.IsNullOrEmpty(textBox1.Text))
             {
                 textBox1.BackColor = Color.Red;
                 pictureBox1.Image = ((System.Drawing.Image)(Properties.Resources.warn));
@@ -118,7 +121,7 @@ namespace lmvz3
                 textBox1.BackColor = Color.White;
                 pictureBox1.Image = ((System.Drawing.Image)(Properties.Resources.help));
             }
-            if (textBox2.Text == null || textBox2.Text == "")
+            if (string.IsNullOrEmpty(textBox2.Text))
             {
                 textBox2.BackColor = Color.Red;
                 pictureBox2.Image = ((System.Drawing.Image)(Properties.Resources.warn));
