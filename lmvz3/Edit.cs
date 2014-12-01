@@ -58,13 +58,11 @@ namespace lmvz3
             Text = "edit";
             Basic();
             Add3();
-            Hide2();
         }
         
          
         private void colorSlider1_Scroll(object sender, ScrollEventArgs e)
         {
-            
             if (trackBar1.Value == 0)
             {
                 label1.Text = "Режим просмотра";
@@ -246,12 +244,6 @@ namespace lmvz3
             this.hints.Add(this.pictureBox9);
 
         }
-        public void Hide2()
-        {
-            foreach (Control control in this.controls)
-                control.Hide();
-            label15.Show();
-        }
         public void HideHint()
         {
             foreach (PictureBox control in this.hints)
@@ -278,7 +270,6 @@ namespace lmvz3
         {
             foreach (Control control in this.controls)
                 control.Show();
-            label15.Hide();
             if (trackBar1.Value == 0)
                 HideHint();
         }
@@ -304,7 +295,7 @@ namespace lmvz3
 
         private void Edit_Load(object sender, EventArgs e)
         {
-            ToolTip toolTip1 = new ToolTip();
+            //ToolTip toolTip1 = new ToolTip();
             toolTip1.SetToolTip(this.pictureBox1, "Введите ФИО\nНапример: Потёмкин Константин Юрьевич");
             toolTip1.SetToolTip(this.pictureBox2, "Введите адрес\nНапример: 61254, г.Харьков,\nул. Иванова, 23, кв.231");
             toolTip1.SetToolTip(this.pictureBox3, "Введите идентификационный номер\nНапример: 1234567890");
@@ -326,6 +317,12 @@ namespace lmvz3
         {
             HelpNavigator navigator = HelpNavigator.Topic;
             Help.ShowHelp(this, IOClass.PathHelp, navigator, "edit.html");
+        }
+
+        public void ScrollToDefault()
+        {
+            trackBar1.Value = 0;
+            colorSlider1_Scroll(null, new ScrollEventArgs(ScrollEventType.First, 0));
         }
   }
 }

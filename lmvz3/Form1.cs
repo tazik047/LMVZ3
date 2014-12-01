@@ -28,9 +28,9 @@ namespace lmvz3
         {
             if (groups == null || main == null || edit == null) return;
             groups.ClientSize = new Size(groups.ClientSize.Width, this.ClientSize.Height - 28);
-            main.Location = new Point(groups.Width , 0);
+            mainTable.Location = new Point(groups.Width , 0);
             main.ClientSize = new Size(edit.ClientSize.Width, this.ClientSize.Height - 28);
-            main.Location = new Point(groups.Width, 0);
+            edit.Location = new Point(groups.Width, 0);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -43,6 +43,9 @@ namespace lmvz3
             mainTable.Show();
             
             edit = new Edit {MdiParent = this};
+            edit.Show();
+            edit.SendToBack();
+            //edit.Visible = false;
             //edit.Show();
 
             edit.RefreshData += mainTable.RefreshData;
@@ -65,13 +68,14 @@ namespace lmvz3
             
             if (sender != null)
             {
-                
+                //main.SendToBack();
                 var d = sender as DataGridView;
                 var source = d.DataSource as BindingSource;
                 var s = source.Current as Student;
                 if (edit == null || s == null) return;
                 edit.EditStud(s);
                 edit.Show2();
+                edit.ScrollToDefault();
                 main = edit;
             }
             else
@@ -79,16 +83,16 @@ namespace lmvz3
                 mainTable.dataGridView1.ClearSelection();
                 if (main.Text == "main")
                     return;
-                main.Hide();
+                //main.SendToBack();
                 main = mainTable;
             }
-            main.Show();
-            Form1_Resize(sender, e);
+            main.BringToFront();
+            
         }
 
         private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            newStud create = new newStud();
+            var create = new newStud();
             create.RefreshData += mainTable.RefreshData;
             create.ShowDialog();
         }
@@ -129,26 +133,22 @@ namespace lmvz3
 
         private void индексToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HelpNavigator navigator1 = HelpNavigator.Index;
-            Help.ShowHelp(this, IOClass.PathHelp, navigator1);
+            Help.ShowHelp(this, IOClass.PathHelp, HelpNavigator.Index);
         }
 
         private void поискToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HelpNavigator navigator = HelpNavigator.Find;
-            Help.ShowHelp(this, IOClass.PathHelp, navigator,"");
+            Help.ShowHelp(this, IOClass.PathHelp, HelpNavigator.Find,"");
         }
 
         private void содержаниеToolStripMenuItem_Click_2(object sender, EventArgs e)
         {
-            HelpNavigator navigator = HelpNavigator.Topic;
-            Help.ShowHelp(this, IOClass.PathHelp, navigator, "index.html");
+            Help.ShowHelp(this, IOClass.PathHelp, HelpNavigator.Topic, "index.html");
         }
 
         private void Form1_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            HelpNavigator navigator = HelpNavigator.Topic;
-            Help.ShowHelp(this, IOClass.PathHelp, navigator, "main.html");
+            Help.ShowHelp(this, IOClass.PathHelp, HelpNavigator.Topic, "main.html");
         }
 
     }

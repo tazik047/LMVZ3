@@ -51,7 +51,6 @@
             this.cancel = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.delete = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -281,17 +280,6 @@
             this.textBox2.Size = new System.Drawing.Size(244, 20);
             this.textBox2.TabIndex = 36;
             // 
-            // label15
-            // 
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label15.Location = new System.Drawing.Point(79, 184);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(203, 140);
-            this.label15.TabIndex = 38;
-            this.label15.Text = "Выберите студента для просмотра или редактирования";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // delete
             // 
             this.delete.BackColor = System.Drawing.Color.CadetBlue;
@@ -462,7 +450,6 @@
             this.Controls.Add(this.pass);
             this.Controls.Add(this.id);
             this.Controls.Add(this.fio);
-            this.Controls.Add(this.label15);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Edit";
             this.Text = "Редактирование";
@@ -507,7 +494,6 @@
         private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.PictureBox pictureBox1;
