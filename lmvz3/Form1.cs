@@ -53,6 +53,7 @@ namespace lmvz3
             mainTable.dataGridView1.ClearSelection();
             groups.Width = edit.Width - 35;
             edit.Hide2();
+            edit.studen = null;
             Form1_Resize(this, EventArgs.Empty);
         }
 
@@ -61,11 +62,9 @@ namespace lmvz3
             var d = sender as DataGridView;
             var source = d.DataSource as BindingSource;
             var s = source.Current as Student;
-            if (edit != null && s != null)
-            {
-                edit.EditStud(s);
-                edit.Show2();
-            }
+            if (edit == null || s == null) return;
+            edit.EditStud(s);
+            edit.Show2();
         }
 
         private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -93,11 +92,16 @@ namespace lmvz3
             Help.ShowHelp(this, IOClass.PathHelp, navigator, ActiveMdiChild.Text);
           
         }
-    
+
         private void отменадействияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            edit.cancel_Click(sender, e);
+            if (edit.studen != null)
+                edit.cancel_Click(sender, e);
+            else
+                MessageBox.Show("Нет выбранных студентов для редактировани", "Ошибка", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
         }
+
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {

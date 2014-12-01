@@ -19,7 +19,7 @@ namespace lmvz3
         List<Control> textboxes = new List<Control>();
         List<Control> controls = new List<Control>();
         List<PictureBox> hints = new List<PictureBox>();
-        public Student studen = new Student();
+        public Student studen = null;
         public void Basic()
         {
             textboxes.Add(textBox1);
@@ -35,9 +35,7 @@ namespace lmvz3
             foreach (Control controls in textboxes)
                 controls.Enabled = false;
             textBox1.BringToFront();
-            object sender = new object();
-            EventArgs e = new EventArgs();
-            faculties(sender, e);
+            faculties(new object(), EventArgs.Empty);
             
         }
 
@@ -102,24 +100,22 @@ namespace lmvz3
 
         private void Save_Click(object sender, EventArgs e)
         {
-            if (Check())
+            if (!Check()) return;
+            if (MessageBox.Show("Вы уверены?", "Сохранение клиента", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (MessageBox.Show("Вы уверены?", "Сохранение клиента", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    this.studen.FIO = textBox1.Text;
-                    this.studen.ID = maskedTextBox1.Text;
-                    this.studen.Pass = maskedTextBox2.Text;
-                    this.studen.Number = maskedTextBox3.Text;
-                    this.studen.Birth = dateTimePicker1.Value;
-                    this.studen.Faculty = (Faculty)comboBox1.SelectedItem;
-                    this.studen.Group = (Group)comboBox2.SelectedItem;
-                    this.studen.FormOfStudy = comboBox3.SelectedItem.ToString();
-                    this.studen.Home = textBox2.Text;
-                    IOClass.Save(StaticData.students);
-                    if (RefreshData != null)
-                        RefreshData(this.studen, EventArgs.Empty);
+                this.studen.FIO = textBox1.Text;
+                this.studen.ID = maskedTextBox1.Text;
+                this.studen.Pass = maskedTextBox2.Text;
+                this.studen.Number = maskedTextBox3.Text;
+                this.studen.Birth = dateTimePicker1.Value;
+                this.studen.Faculty = (Faculty)comboBox1.SelectedItem;
+                this.studen.Group = (Group)comboBox2.SelectedItem;
+                this.studen.FormOfStudy = comboBox3.SelectedItem.ToString();
+                this.studen.Home = textBox2.Text;
+                IOClass.Save(StaticData.students);
+                if (RefreshData != null)
+                    RefreshData(this.studen, EventArgs.Empty);
 
-                }
             }
         }
 
@@ -290,10 +286,13 @@ namespace lmvz3
         public void delete_Click(object sender, EventArgs e)
         {
             if (this.studen == null)
-                MessageBox.Show("Нет студентов для редактировани");
+                MessageBox.Show("Нет выбранных студентов для редактировани", "Ошибка", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             else
             {
-                if (MessageBox.Show("Вы уверены, что хотите удалить студента?", "Удаление студента", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (
+                    MessageBox.Show("Вы уверены, что хотите удалить студента?", "Удаление студента",
+                        MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     StaticData.students.Remove(this.studen);
                     IOClass.Save(StaticData.students);
