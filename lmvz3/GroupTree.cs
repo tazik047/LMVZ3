@@ -18,6 +18,8 @@ namespace lmvz3
 
         public event EventHandler UpdateFaculties;
 
+        private Action<Object, TreeNodeMouseClickEventArgs> selectItem;
+
         public GroupTree(Action<Object, TreeNodeMouseClickEventArgs> filter)
         {
             InitializeComponent();
@@ -25,6 +27,7 @@ namespace lmvz3
             StaticData.faculties = IOClass.LoadFac();
             CreateNodes();
             treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(filter);
+            selectItem = filter;
             Text = "treeGroup";
         }
 
@@ -180,6 +183,12 @@ namespace lmvz3
         {
             HelpNavigator navigator = HelpNavigator.Topic;
             Help.ShowHelp(this, IOClass.PathHelp, navigator, "fac.html");
+        }
+
+        internal void SelectItem(object sender, TreeNode e)
+        {
+            if (selectItem != null)
+                selectItem(sender, new TreeNodeMouseClickEventArgs(e, MouseButtons.Left, 1, 0, 0));
         }
     }
 }

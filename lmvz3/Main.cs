@@ -16,7 +16,7 @@ namespace lmvz3
 
         private List<Student> currentStud;
 
-        private TreeNode currentNode;
+        public TreeNode currentNode;
 
         private Action<object, EventArgs> selectRow;
 

@@ -45,8 +45,6 @@ namespace lmvz3
             edit = new Edit {MdiParent = this};
             edit.Show();
             edit.SendToBack();
-            //edit.Visible = false;
-            //edit.Show();
 
             edit.RefreshData += mainTable.RefreshData;
             edit.DelStud += mainTable.RefreshAfterDel;
@@ -56,6 +54,8 @@ namespace lmvz3
             groups.Width = edit.Width - 35;
             
             mainTable.dataGridView1.ClearSelection();
+            edit.SelectGroup += groups.SelectItem;
+            edit.WantClose += (o, args) => dataGridView1_SelectionChanged(null, e);
             //edit.Hide2();
             edit.studen = null;
             main = mainTable;
@@ -73,7 +73,7 @@ namespace lmvz3
                 var source = d.DataSource as BindingSource;
                 var s = source.Current as Student;
                 if (edit == null || s == null) return;
-                edit.EditStud(s);
+                edit.EditStud(s, mainTable.currentNode);
                 edit.Show2();
                 edit.ScrollToDefault();
                 main = edit;
@@ -81,6 +81,7 @@ namespace lmvz3
             else
             {
                 mainTable.dataGridView1.ClearSelection();
+                edit.studen = null;
                 if (main.Text == "main")
                     return;
                 //main.SendToBack();

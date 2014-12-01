@@ -16,10 +16,15 @@ namespace lmvz3
         public event EventHandler RefreshData;
         public event EventHandler DelStud;
 
+        public event EventHandler<TreeNode> SelectGroup;
+        public event EventHandler WantClose;
+
         List<Control> textboxes = new List<Control>();
         List<Control> controls = new List<Control>();
         List<PictureBox> hints = new List<PictureBox>();
         public Student studen = null;
+
+        private TreeNode currentTreeNode;
         public void Basic()
         {
             textboxes.Add(textBox1);
@@ -39,7 +44,7 @@ namespace lmvz3
             
         }
 
-        public void EditStud(Student stud) 
+        public void EditStud(Student stud, TreeNode cur) 
         {
             this.studen = stud;
             textBox1.Text = stud.FIO;
@@ -51,6 +56,22 @@ namespace lmvz3
             comboBox2.SelectedItem = stud.Group;
             comboBox3.SelectedItem = stud.FormOfStudy;
             textBox2.Text = stud.Home;
+            currentTreeNode = cur ?? (new TreeNode("Все факультеты"));
+            if (currentTreeNode.Parent == null)
+            {
+                label2.Text = currentTreeNode.Text;
+                label3.Visible = false;
+                label4.Visible = false;
+            }
+            else
+            {
+                label2.Text = currentTreeNode.Parent.Text;
+                label3.Location = new Point(label2.Location.X + label2.Size.Width, label3.Location.Y);
+                label4.Location = new Point(label3.Location.X + label3.Size.Width, label4.Location.Y);
+                label4.Text = currentTreeNode.Text;
+                label3.Visible = true;
+                label4.Visible = true;
+            }
         }
         public Edit()
         {
@@ -121,7 +142,7 @@ namespace lmvz3
         {
             if (MessageBox.Show("Вы уверены, что желаете отменить внесенные изменения?", "Отмена", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                EditStud(this.studen);
+                EditStud(this.studen, currentTreeNode);
             }
         }
         public bool Check()
@@ -323,6 +344,22 @@ namespace lmvz3
         {
             trackBar1.Value = 0;
             colorSlider1_Scroll(null, new ScrollEventArgs(ScrollEventType.First, 0));
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            if (SelectGroup != null)
+            {
+                var l = sender as Label;
+                var c = label2.Equals(l)? (currentTreeNode.Parent ?? currentTreeNode): currentTreeNode;
+                SelectGroup(this, c);
+            }
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            if (WantClose != null)
+                WantClose(sender, e);
         }
   }
 }
