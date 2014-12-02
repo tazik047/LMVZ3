@@ -427,6 +427,7 @@
             // 
             // label2
             // 
+            this.label2.AutoEllipsis = true;
             this.label2.AutoSize = true;
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Location = new System.Drawing.Point(49, 21);
@@ -448,6 +449,7 @@
             // 
             // label4
             // 
+            this.label4.AutoEllipsis = true;
             this.label4.AutoSize = true;
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Location = new System.Drawing.Point(110, 21);

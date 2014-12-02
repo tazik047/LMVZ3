@@ -60,6 +60,7 @@ namespace lmvz3
             if (currentTreeNode.Parent == null)
             {
                 label2.Text = currentTreeNode.Text;
+                toolTip1.SetToolTip(label2, label2.Text);
                 label3.Visible = false;
                 label4.Visible = false;
             }
@@ -71,6 +72,8 @@ namespace lmvz3
                 label4.Text = currentTreeNode.Text;
                 label3.Visible = true;
                 label4.Visible = true;
+                toolTip1.SetToolTip(label2, label2.Text);
+                toolTip1.SetToolTip(label4, label4.Text);
             }
         }
         public Edit()
@@ -79,6 +82,7 @@ namespace lmvz3
             Text = "edit";
             Basic();
             Add3();
+            toolTip1.SetToolTip(pictureBox11,"Вернуться назад");
         }
         
          
@@ -348,12 +352,10 @@ namespace lmvz3
 
         private void label2_Click(object sender, EventArgs e)
         {
-            if (SelectGroup != null)
-            {
-                var l = sender as Label;
-                var c = label2.Equals(l)? (currentTreeNode.Parent ?? currentTreeNode): currentTreeNode;
-                SelectGroup(this, c);
-            }
+            if (SelectGroup == null) return;
+            var l = sender as Label;
+            var c = label2.Equals(l)? (currentTreeNode.Parent ?? currentTreeNode): currentTreeNode;
+            SelectGroup(this, c);
         }
 
         private void pictureBox11_Click(object sender, EventArgs e)
