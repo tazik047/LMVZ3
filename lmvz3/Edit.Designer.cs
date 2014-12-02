@@ -68,6 +68,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -79,6 +84,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.SuspendLayout();
             // 
             // fio
@@ -95,7 +103,7 @@
             // 
             this.id.AutoSize = true;
             this.id.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.id.Location = new System.Drawing.Point(31, 181);
+            this.id.Location = new System.Drawing.Point(17, 22);
             this.id.Name = "id";
             this.id.Size = new System.Drawing.Size(195, 16);
             this.id.TabIndex = 1;
@@ -105,7 +113,7 @@
             // 
             this.pass.AutoSize = true;
             this.pass.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pass.Location = new System.Drawing.Point(31, 230);
+            this.pass.Location = new System.Drawing.Point(17, 71);
             this.pass.Name = "pass";
             this.pass.Size = new System.Drawing.Size(118, 16);
             this.pass.TabIndex = 2;
@@ -115,7 +123,7 @@
             // 
             this.birth.AutoSize = true;
             this.birth.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.birth.Location = new System.Drawing.Point(31, 278);
+            this.birth.Location = new System.Drawing.Point(22, 118);
             this.birth.Name = "birth";
             this.birth.Size = new System.Drawing.Size(113, 16);
             this.birth.TabIndex = 3;
@@ -125,7 +133,7 @@
             // 
             this.faculty.AutoSize = true;
             this.faculty.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.faculty.Location = new System.Drawing.Point(31, 329);
+            this.faculty.Location = new System.Drawing.Point(16, 21);
             this.faculty.Name = "faculty";
             this.faculty.Size = new System.Drawing.Size(80, 16);
             this.faculty.TabIndex = 4;
@@ -135,7 +143,7 @@
             // 
             this.group.AutoSize = true;
             this.group.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.group.Location = new System.Drawing.Point(31, 377);
+            this.group.Location = new System.Drawing.Point(16, 71);
             this.group.Name = "group";
             this.group.Size = new System.Drawing.Size(55, 16);
             this.group.TabIndex = 5;
@@ -145,7 +153,7 @@
             // 
             this.formStudy.AutoSize = true;
             this.formStudy.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.formStudy.Location = new System.Drawing.Point(31, 425);
+            this.formStudy.Location = new System.Drawing.Point(16, 118);
             this.formStudy.Name = "formStudy";
             this.formStudy.Size = new System.Drawing.Size(121, 16);
             this.formStudy.TabIndex = 6;
@@ -155,7 +163,7 @@
             // 
             this.number.AutoSize = true;
             this.number.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.number.Location = new System.Drawing.Point(31, 473);
+            this.number.Location = new System.Drawing.Point(17, 174);
             this.number.Name = "number";
             this.number.Size = new System.Drawing.Size(121, 16);
             this.number.TabIndex = 7;
@@ -165,7 +173,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(48, 49);
+            this.label1.Location = new System.Drawing.Point(61, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 23);
             this.label1.TabIndex = 8;
@@ -175,12 +183,12 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(34, 112);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(247, 20);
+            this.textBox1.Size = new System.Drawing.Size(472, 20);
             this.textBox1.TabIndex = 9;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(34, 298);
+            this.dateTimePicker1.Location = new System.Drawing.Point(20, 139);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(144, 20);
             this.dateTimePicker1.TabIndex = 13;
@@ -189,7 +197,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(34, 349);
+            this.comboBox1.Location = new System.Drawing.Point(19, 41);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(141, 21);
             this.comboBox1.TabIndex = 14;
@@ -199,7 +207,7 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(34, 397);
+            this.comboBox2.Location = new System.Drawing.Point(19, 91);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(141, 21);
             this.comboBox2.TabIndex = 15;
@@ -211,14 +219,14 @@
             this.comboBox3.Items.AddRange(new object[] {
             "Бюджет",
             "Контракт"});
-            this.comboBox3.Location = new System.Drawing.Point(34, 445);
+            this.comboBox3.Location = new System.Drawing.Point(19, 138);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(141, 21);
             this.comboBox3.TabIndex = 16;
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(34, 201);
+            this.maskedTextBox1.Location = new System.Drawing.Point(20, 42);
             this.maskedTextBox1.Mask = "#########";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(144, 20);
@@ -226,7 +234,7 @@
             // 
             // maskedTextBox2
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(34, 250);
+            this.maskedTextBox2.Location = new System.Drawing.Point(20, 91);
             this.maskedTextBox2.Mask = "LL######";
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(144, 20);
@@ -234,7 +242,7 @@
             // 
             // maskedTextBox3
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(34, 495);
+            this.maskedTextBox3.Location = new System.Drawing.Point(20, 196);
             this.maskedTextBox3.Mask = "+38 (###) ### ####";
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.Size = new System.Drawing.Size(141, 20);
@@ -246,7 +254,7 @@
             this.Save.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
             this.Save.FlatAppearance.BorderSize = 0;
             this.Save.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Save.Location = new System.Drawing.Point(14, 525);
+            this.Save.Location = new System.Drawing.Point(34, 525);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(88, 31);
             this.Save.TabIndex = 33;
@@ -260,7 +268,7 @@
             this.cancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
             this.cancel.FlatAppearance.BorderSize = 0;
             this.cancel.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cancel.Location = new System.Drawing.Point(115, 525);
+            this.cancel.Location = new System.Drawing.Point(235, 525);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(91, 31);
             this.cancel.TabIndex = 34;
@@ -282,7 +290,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(37, 157);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(244, 20);
+            this.textBox2.Size = new System.Drawing.Size(469, 20);
             this.textBox2.TabIndex = 36;
             // 
             // delete
@@ -291,7 +299,7 @@
             this.delete.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
             this.delete.FlatAppearance.BorderSize = 0;
             this.delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.delete.Location = new System.Drawing.Point(220, 525);
+            this.delete.Location = new System.Drawing.Point(426, 525);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(80, 31);
             this.delete.TabIndex = 39;
@@ -302,16 +310,16 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(287, 112);
+            this.pictureBox1.Location = new System.Drawing.Point(485, 114);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(19, 15);
+            this.pictureBox1.Size = new System.Drawing.Size(19, 16);
             this.pictureBox1.TabIndex = 40;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(287, 157);
+            this.pictureBox2.Location = new System.Drawing.Point(485, 159);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(19, 15);
             this.pictureBox2.TabIndex = 40;
@@ -320,7 +328,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(184, 201);
+            this.pictureBox3.Location = new System.Drawing.Point(170, 42);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(19, 15);
             this.pictureBox3.TabIndex = 40;
@@ -329,7 +337,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(184, 250);
+            this.pictureBox4.Location = new System.Drawing.Point(170, 91);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(19, 15);
             this.pictureBox4.TabIndex = 40;
@@ -338,7 +346,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(184, 298);
+            this.pictureBox5.Location = new System.Drawing.Point(170, 139);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(19, 15);
             this.pictureBox5.TabIndex = 40;
@@ -347,7 +355,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(184, 349);
+            this.pictureBox6.Location = new System.Drawing.Point(169, 41);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(19, 15);
             this.pictureBox6.TabIndex = 40;
@@ -356,7 +364,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(184, 397);
+            this.pictureBox7.Location = new System.Drawing.Point(169, 91);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(19, 15);
             this.pictureBox7.TabIndex = 40;
@@ -365,7 +373,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(184, 445);
+            this.pictureBox8.Location = new System.Drawing.Point(169, 138);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(19, 15);
             this.pictureBox8.TabIndex = 40;
@@ -374,7 +382,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(184, 495);
+            this.pictureBox9.Location = new System.Drawing.Point(170, 196);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(19, 15);
             this.pictureBox9.TabIndex = 40;
@@ -383,7 +391,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = global::lmvz3.Properties.Resources.report;
-            this.pictureBox10.Location = new System.Drawing.Point(21, 51);
+            this.pictureBox10.Location = new System.Drawing.Point(34, 60);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(29, 31);
             this.pictureBox10.TabIndex = 41;
@@ -400,7 +408,7 @@
             this.trackBar1.ElapsedInnerColor = System.Drawing.Color.Gainsboro;
             this.trackBar1.ElapsedOuterColor = System.Drawing.Color.Gainsboro;
             this.trackBar1.LargeChange = ((uint)(1u));
-            this.trackBar1.Location = new System.Drawing.Point(257, 76);
+            this.trackBar1.Location = new System.Drawing.Point(473, 61);
             this.trackBar1.Maximum = 1;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(33, 30);
@@ -418,7 +426,7 @@
             // 
             this.pictureBox11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox11.Image = global::lmvz3.Properties.Resources.exit;
-            this.pictureBox11.Location = new System.Drawing.Point(17, 14);
+            this.pictureBox11.Location = new System.Drawing.Point(480, 21);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(26, 27);
             this.pictureBox11.TabIndex = 42;
@@ -430,8 +438,8 @@
             this.label2.AutoEllipsis = true;
             this.label2.AutoSize = true;
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Location = new System.Drawing.Point(49, 21);
-            this.label2.MaximumSize = new System.Drawing.Size(65, 13);
+            this.label2.Location = new System.Drawing.Point(31, 21);
+            this.label2.MaximumSize = new System.Drawing.Size(205, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 43;
@@ -441,7 +449,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(90, 21);
+            this.label3.Location = new System.Drawing.Point(72, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(13, 13);
             this.label3.TabIndex = 44;
@@ -452,13 +460,81 @@
             this.label4.AutoEllipsis = true;
             this.label4.AutoSize = true;
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.Location = new System.Drawing.Point(110, 21);
-            this.label4.MaximumSize = new System.Drawing.Size(65, 13);
+            this.label4.Location = new System.Drawing.Point(92, 21);
+            this.label4.MaximumSize = new System.Drawing.Size(205, 13);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 45;
             this.label4.Text = "label4";
             this.label4.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.pictureBox12);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.faculty);
+            this.groupBox1.Controls.Add(this.group);
+            this.groupBox1.Controls.Add(this.formStudy);
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.pictureBox6);
+            this.groupBox1.Controls.Add(this.pictureBox7);
+            this.groupBox1.Controls.Add(this.pictureBox8);
+            this.groupBox1.Location = new System.Drawing.Point(287, 207);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(219, 235);
+            this.groupBox1.TabIndex = 46;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Университетские данные";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.id);
+            this.groupBox2.Controls.Add(this.pass);
+            this.groupBox2.Controls.Add(this.birth);
+            this.groupBox2.Controls.Add(this.number);
+            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.maskedTextBox1);
+            this.groupBox2.Controls.Add(this.maskedTextBox2);
+            this.groupBox2.Controls.Add(this.maskedTextBox3);
+            this.groupBox2.Controls.Add(this.pictureBox9);
+            this.groupBox2.Controls.Add(this.pictureBox3);
+            this.groupBox2.Controls.Add(this.pictureBox5);
+            this.groupBox2.Controls.Add(this.pictureBox4);
+            this.groupBox2.Location = new System.Drawing.Point(37, 207);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(229, 235);
+            this.groupBox2.TabIndex = 47;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Личные данные";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(16, 174);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(121, 16);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "Номер телефона";
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
+            this.pictureBox12.Location = new System.Drawing.Point(169, 196);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(19, 15);
+            this.pictureBox12.TabIndex = 43;
+            this.pictureBox12.TabStop = false;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(16, 196);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(144, 20);
+            this.dateTimePicker2.TabIndex = 44;
             // 
             // Edit
             // 
@@ -467,44 +543,25 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImage = global::lmvz3.Properties.Resources.Безымянный;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(319, 578);
+            this.ClientSize = new System.Drawing.Size(543, 578);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.trackBar1);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.delete);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.Save);
-            this.Controls.Add(this.maskedTextBox3);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.number);
-            this.Controls.Add(this.formStudy);
-            this.Controls.Add(this.group);
-            this.Controls.Add(this.faculty);
-            this.Controls.Add(this.birth);
-            this.Controls.Add(this.pass);
-            this.Controls.Add(this.id);
             this.Controls.Add(this.fio);
+            this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Edit";
             this.Text = "Редактирование";
@@ -521,6 +578,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -566,6 +628,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.GroupBox groupBox2;
 
     }
 }

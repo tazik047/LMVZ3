@@ -285,8 +285,11 @@ namespace lmvz3
         public void ShowHint()
         {
             foreach (Control control in this.hints)
+            {
                 control.Show();
-                            Save.Show();
+                control.BringToFront();
+            }
+            Save.Show();
                 cancel.Show();
                 delete.Show();
             
