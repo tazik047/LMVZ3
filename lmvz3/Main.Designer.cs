@@ -33,10 +33,12 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,13 +101,25 @@
             this.textBox1.Location = new System.Drawing.Point(33, 384);
             this.textBox1.MinimumSize = new System.Drawing.Size(0, 23);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(457, 23);
+            this.textBox1.Size = new System.Drawing.Size(457, 19);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "Поиск...";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             this.textBox1.MouseEnter += new System.EventHandler(this.textBox1_MouseEnter);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox1.BackgroundImage = global::lmvz3.Properties.Resources.search;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(461, 384);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -134,6 +148,7 @@
             this.BackgroundImage = global::lmvz3.Properties.Resources.Безымянный;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(525, 437);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
@@ -145,6 +160,7 @@
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Main_Paint);
             this.Resize += new System.EventHandler(this.Main_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -159,6 +175,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fIODataGridViewTextBoxColumn;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
     }
 }
