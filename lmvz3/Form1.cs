@@ -55,7 +55,6 @@ namespace lmvz3
             groups.UpdateFaculties += edit.faculties;
             groups.RefreshData += mainTable.RefreshData;
             
-            groups.Width = 250;
             
             mainTable.dataGridView1.ClearSelection();
             edit.SelectGroup += groups.SelectItem;
@@ -69,7 +68,10 @@ namespace lmvz3
             edit.studen = null;
             main = mainTable;
             Form1_Resize(this, EventArgs.Empty);
-            
+            groups.Width = 335;
+            edit.Width = 543;
+            mainTable.Width = edit.Width;
+            Width = groups.Width + edit.Width;Form1_Resize(this, EventArgs.Empty);
         }
 
         public void dataGridView1_SelectionChanged(object sender, EventArgs e)

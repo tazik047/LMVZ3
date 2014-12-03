@@ -228,6 +228,7 @@ namespace lmvz3
             IOClass.Save(StaticData.faculties);
             if (UpdateFaculties != null)
                 UpdateFaculties(this, EventArgs.Empty);
+
         }
     }
 }
