@@ -42,6 +42,7 @@
             this.редактироватьФакультетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьФакультетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьГруппуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.contextMenuStripMain.SuspendLayout();
             this.contextMenuStripGroup.SuspendLayout();
             this.contextMenuStripFac.SuspendLayout();
@@ -126,9 +127,10 @@
             this.добавитьФакультетToolStripMenuItem1,
             this.редактироватьФакультетToolStripMenuItem,
             this.удалитьФакультетToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.добавитьГруппуToolStripMenuItem});
             this.contextMenuStripFac.Name = "contextMenuStripFac";
-            this.contextMenuStripFac.Size = new System.Drawing.Size(274, 194);
+            this.contextMenuStripFac.Size = new System.Drawing.Size(274, 200);
             // 
             // добавитьФакультетToolStripMenuItem1
             // 
@@ -170,6 +172,11 @@
             this.добавитьГруппуToolStripMenuItem.Text = "Добавить группу";
             this.добавитьГруппуToolStripMenuItem.MouseUp += new System.Windows.Forms.MouseEventHandler(this.добавитьГруппуToolStripMenuItem_MouseUp);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(270, 6);
+            // 
             // GroupTree
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,6 +210,7 @@
         private System.Windows.Forms.ToolStripMenuItem добавитьГруппуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактироватьГруппуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактироватьФакультетToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
 
     }
 }

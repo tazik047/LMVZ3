@@ -167,5 +167,10 @@ namespace lmvz3
                 dataGridView1_SelectionChanged(null, e);
         }
 
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Все данные успешно сохранены", "Сохранение", MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
+
     }
 }
