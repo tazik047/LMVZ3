@@ -79,7 +79,7 @@
             // 
             // создатьToolStripMenuItem
             // 
-            this.создатьToolStripMenuItem.Image = global::lmvz3.Properties.Resources.info;
+            this.создатьToolStripMenuItem.Image = global::lmvz3.Properties.Resources.add;
             this.создатьToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
             this.создатьToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
@@ -143,7 +143,7 @@
             // 
             // удалитьToolStripMenuItem
             // 
-            this.удалитьToolStripMenuItem.Image = global::lmvz3.Properties.Resources.info;
+            this.удалитьToolStripMenuItem.Image = global::lmvz3.Properties.Resources.remove;
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
             this.удалитьToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
             this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
