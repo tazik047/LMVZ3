@@ -79,7 +79,7 @@
             // 
             // создатьToolStripMenuItem
             // 
-            this.создатьToolStripMenuItem.Image = global::lmvz3.Properties.Resources.add;
+            this.создатьToolStripMenuItem.Image = global::lmvz3.Properties.Resources.info;
             this.создатьToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
             this.создатьToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
@@ -89,7 +89,7 @@
             // 
             // сохранитьToolStripMenuItem
             // 
-            this.сохранитьToolStripMenuItem.Image = global::lmvz3.Properties.Resources.save;
+            this.сохранитьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("сохранитьToolStripMenuItem.Image")));
             this.сохранитьToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
             this.сохранитьToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
@@ -103,7 +103,7 @@
             // 
             // печатьToolStripMenuItem
             // 
-            this.печатьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("печатьToolStripMenuItem.Image")));
+            this.печатьToolStripMenuItem.Image = global::lmvz3.Properties.Resources.print;
             this.печатьToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.печатьToolStripMenuItem.Name = "печатьToolStripMenuItem";
             this.печатьToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
@@ -143,7 +143,7 @@
             // 
             // удалитьToolStripMenuItem
             // 
-            this.удалитьToolStripMenuItem.Image = global::lmvz3.Properties.Resources.del;
+            this.удалитьToolStripMenuItem.Image = global::lmvz3.Properties.Resources.info;
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
             this.удалитьToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
             this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
