@@ -614,6 +614,7 @@
             this.Controls.Add(this.fio);
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(543, 578);
             this.Name = "Edit";
             this.Text = "Редактирование";
             this.Load += new System.EventHandler(this.Edit_Load);

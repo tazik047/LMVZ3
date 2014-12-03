@@ -46,7 +46,8 @@ namespace lmvz3
             mainTable.MdiParent = this;
             mainTable.Show();
             
-            edit = new Edit {MdiParent = this};
+            edit = new Edit();
+            edit.MdiParent = this;
             edit.Show();
             edit.SendToBack();
 
@@ -68,15 +69,19 @@ namespace lmvz3
             edit.studen = null;
             main = mainTable;
             Form1_Resize(this, EventArgs.Empty);
-            groups.Width = 335;
-            edit.Width = 543;
-            mainTable.Width = edit.Width;
-            Width = groups.Width + edit.Width;Form1_Resize(this, EventArgs.Empty);
+            //groups.Width = 335;
+            /*edit.Width = 543;*/
+            var s = new Size(Convert.ToInt32(633*0.618), 0);
+            groups.MaximumSize = s;
+            groups.Width = s.Width;
+            mainTable.Width = 633;
+            Width = groups.Width + 653;
+            
+            Form1_Resize(this, EventArgs.Empty);
         }
 
         public void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            
             if (sender != null)
             {
                 //main.SendToBack();

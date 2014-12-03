@@ -382,5 +382,10 @@ namespace lmvz3
             if (WantClose != null)
                 WantClose(sender, e);
         }
+
+        private void Edit_Resize(object sender, EventArgs e)
+        {
+            ClientSize = new Size() { Width = 543, Height = 578 };
+        }
   }
 }
