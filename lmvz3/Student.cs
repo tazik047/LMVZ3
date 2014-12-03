@@ -18,7 +18,7 @@ namespace lmvz3
         Group group; //Группа
         string formOfStudy;//форма обучения
         string number;//номер телефона
-        DateTime Start { get; set; } //дата поступления
+        public DateTime Start { get; set; } //дата поступления
         
         public string FIO //ФИО
         {

@@ -75,7 +75,8 @@ namespace lmvz3
                         Faculty = (Faculty) comboBox1.SelectedItem,
                         Group = (Group) comboBox2.SelectedItem,
                         FormOfStudy = comboBox3.SelectedItem.ToString(),
-                        Home = textBox2.Text
+                        Home = textBox2.Text,
+                        Start = dateTimePicker2.Value
                     };
                      StaticData.students.Add(studen);
                     IOClass.Save(StaticData.students);

@@ -36,6 +36,7 @@ namespace lmvz3
             textboxes.Add(comboBox2);
             textboxes.Add(comboBox3);
             textboxes.Add(textBox2);
+            textboxes.Add(dateTimePicker2);
 
             foreach (Control controls in textboxes)
                 controls.Enabled = false;
@@ -50,8 +51,9 @@ namespace lmvz3
             textBox1.Text = stud.FIO;
             maskedTextBox1.Text = stud.ID;
             maskedTextBox2.Text = stud.Pass;
-            maskedTextBox3.Text = stud.Number.ToString();
+            maskedTextBox3.Text = stud.Number;
             dateTimePicker1.Value = stud.Birth;
+            //dateTimePicker2.Value = stud.Start;
             comboBox1.SelectedItem = stud.Faculty;
             comboBox2.SelectedItem = stud.Group;
             comboBox3.SelectedItem = stud.FormOfStudy;
@@ -135,6 +137,7 @@ namespace lmvz3
                 this.studen.Group = (Group)comboBox2.SelectedItem;
                 this.studen.FormOfStudy = comboBox3.SelectedItem.ToString();
                 this.studen.Home = textBox2.Text;
+                this.studen.Start = dateTimePicker2.Value;
                 IOClass.Save(StaticData.students);
                 if (RefreshData != null)
                     RefreshData(this.studen, EventArgs.Empty);
@@ -267,6 +270,7 @@ namespace lmvz3
             this.hints.Add(this.pictureBox7);
             this.hints.Add(this.pictureBox8);
             this.hints.Add(this.pictureBox9);
+            this.hints.Add(this.pictureBox12);
 
         }
         public void HideHint()

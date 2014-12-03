@@ -514,6 +514,7 @@
             this.pictureBox12.Size = new System.Drawing.Size(10, 10);
             this.pictureBox12.TabIndex = 43;
             this.pictureBox12.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox12, "Выберите дату поступления");
             // 
             // groupBox2
             // 

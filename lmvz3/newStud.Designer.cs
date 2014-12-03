@@ -434,6 +434,7 @@
             this.pictureBox10.Size = new System.Drawing.Size(16, 19);
             this.pictureBox10.TabIndex = 91;
             this.pictureBox10.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox10, "Выберите дату поступления");
             // 
             // label2
             // 
@@ -532,11 +533,8 @@
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Controls.Add(this.faculty);
             this.panel3.Controls.Add(this.dateTimePicker2);
-            this.panel3.Controls.Add(this.textBox5);
             this.panel3.Controls.Add(this.group);
-            this.panel3.Controls.Add(this.textBox4);
             this.panel3.Controls.Add(this.formStudy);
-            this.panel3.Controls.Add(this.textBox3);
             this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.pictureBox6);
             this.panel3.Controls.Add(this.pictureBox8);
@@ -545,6 +543,9 @@
             this.panel3.Controls.Add(this.pictureBox7);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.comboBox2);
+            this.panel3.Controls.Add(this.textBox4);
+            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.textBox5);
             this.panel3.Location = new System.Drawing.Point(289, 224);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(250, 280);
