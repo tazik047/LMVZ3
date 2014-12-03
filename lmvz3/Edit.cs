@@ -53,7 +53,7 @@ namespace lmvz3
             maskedTextBox2.Text = stud.Pass;
             maskedTextBox3.Text = stud.Number;
             dateTimePicker1.Value = stud.Birth;
-            //dateTimePicker2.Value = stud.Start;
+            dateTimePicker2.Value = stud.Start;
             comboBox1.SelectedItem = stud.Faculty;
             comboBox2.SelectedItem = stud.Group;
             comboBox3.SelectedItem = stud.FormOfStudy;
@@ -105,6 +105,7 @@ namespace lmvz3
                 foreach (Control controls in textboxes)
                     controls.Enabled = true;
                 ShowHint();
+                textBox1.Select();
             }
         }
 

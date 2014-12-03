@@ -102,11 +102,20 @@ namespace lmvz3
         private void otherCriter()
         {
             if (radioButton1.Checked)
-                studentBindingSource.DataSource = students.Where(s => s.Birth < dateTimePicker1.Value).ToList();
+                studentBindingSource.DataSource =
+                    students.Where(s => s.Birth < dateTimePicker1.Value && s.Start < dateTimePicker2.Value).ToList();
             else if (radioButton3.Checked)
-                studentBindingSource.DataSource = students.Where(s => s.FormOfStudy.ToLower() == "бюджет" && s.Birth < dateTimePicker1.Value).ToList();
+                studentBindingSource.DataSource =
+                    students.Where(
+                        s =>
+                            s.FormOfStudy.ToLower() == "бюджет" && s.Birth < dateTimePicker1.Value &&
+                            s.Start < dateTimePicker2.Value).ToList();
             else
-                studentBindingSource.DataSource = students.Where(s => s.FormOfStudy.ToLower() == "контракт" && s.Birth < dateTimePicker1.Value).ToList();
+                studentBindingSource.DataSource =
+                    students.Where(
+                        s =>
+                            s.FormOfStudy.ToLower() == "контракт" && s.Birth < dateTimePicker1.Value &&
+                            s.Start < dateTimePicker2.Value).ToList();
             dataGridView1.AutoResizeColumns();
         }
 
@@ -187,11 +196,6 @@ namespace lmvz3
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            otherCriter();
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             otherCriter();
         }

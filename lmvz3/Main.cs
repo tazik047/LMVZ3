@@ -21,6 +21,12 @@ namespace lmvz3
         private Action<object, EventArgs> selectRow;
 
 
+        public int SelectItem
+        {
+            get { return studentBindingSource.Position; }
+            set { dataGridView1.Rows[value].Selected = true; }
+        }
+
         public Main(Action<object,EventArgs> select)
         {
             InitializeComponent();
@@ -152,7 +158,7 @@ namespace lmvz3
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left && selectRow != null)
+            if (e.Button == MouseButtons.Left && selectRow != null && e.RowIndex!=-1)
                 selectRow(dataGridView1, e);
 
         }

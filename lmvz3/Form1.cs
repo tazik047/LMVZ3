@@ -59,7 +59,12 @@ namespace lmvz3
             
             mainTable.dataGridView1.ClearSelection();
             edit.SelectGroup += groups.SelectItem;
-            edit.WantClose += (o, args) => dataGridView1_SelectionChanged(null, e);
+            edit.WantClose += (o, args) =>
+            {
+                var ind = mainTable.SelectItem;
+                dataGridView1_SelectionChanged(null, e);
+                mainTable.SelectItem = ind;
+            };
             //edit.Hide2();
             edit.studen = null;
             main = mainTable;
@@ -154,6 +159,12 @@ namespace lmvz3
         private void Form1_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             Help.ShowHelp(this, IOClass.PathHelp, HelpNavigator.Topic, "main.html");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (main.Text == edit.Text)
+                dataGridView1_SelectionChanged(null, e);
         }
 
     }

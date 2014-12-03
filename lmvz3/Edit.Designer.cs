@@ -53,6 +53,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.delete = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -71,8 +72,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -85,7 +86,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -184,14 +184,14 @@
             this.textBox1.Location = new System.Drawing.Point(34, 112);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(472, 20);
-            this.textBox1.TabIndex = 9;
+            this.textBox1.TabIndex = 1;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(20, 139);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(144, 20);
-            this.dateTimePicker1.TabIndex = 13;
+            this.dateTimePicker1.TabIndex = 5;
             // 
             // comboBox1
             // 
@@ -200,7 +200,7 @@
             this.comboBox1.Location = new System.Drawing.Point(19, 41);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(141, 21);
-            this.comboBox1.TabIndex = 14;
+            this.comboBox1.TabIndex = 7;
             this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
             // 
             // comboBox2
@@ -210,7 +210,7 @@
             this.comboBox2.Location = new System.Drawing.Point(19, 91);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(141, 21);
-            this.comboBox2.TabIndex = 15;
+            this.comboBox2.TabIndex = 8;
             // 
             // comboBox3
             // 
@@ -222,7 +222,7 @@
             this.comboBox3.Location = new System.Drawing.Point(19, 138);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(141, 21);
-            this.comboBox3.TabIndex = 16;
+            this.comboBox3.TabIndex = 9;
             // 
             // maskedTextBox1
             // 
@@ -230,7 +230,7 @@
             this.maskedTextBox1.Mask = "#########";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(144, 20);
-            this.maskedTextBox1.TabIndex = 19;
+            this.maskedTextBox1.TabIndex = 3;
             // 
             // maskedTextBox2
             // 
@@ -238,7 +238,7 @@
             this.maskedTextBox2.Mask = "LL######";
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(144, 20);
-            this.maskedTextBox2.TabIndex = 20;
+            this.maskedTextBox2.TabIndex = 4;
             // 
             // maskedTextBox3
             // 
@@ -246,7 +246,7 @@
             this.maskedTextBox3.Mask = "+38 (###) ### ####";
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.Size = new System.Drawing.Size(141, 20);
-            this.maskedTextBox3.TabIndex = 22;
+            this.maskedTextBox3.TabIndex = 6;
             // 
             // Save
             // 
@@ -257,7 +257,7 @@
             this.Save.Location = new System.Drawing.Point(34, 525);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(88, 31);
-            this.Save.TabIndex = 33;
+            this.Save.TabIndex = 11;
             this.Save.Text = "Сохранить";
             this.Save.UseVisualStyleBackColor = false;
             this.Save.Click += new System.EventHandler(this.Save_Click);
@@ -271,7 +271,7 @@
             this.cancel.Location = new System.Drawing.Point(235, 525);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(91, 31);
-            this.cancel.TabIndex = 34;
+            this.cancel.TabIndex = 12;
             this.cancel.Text = "Отменить";
             this.cancel.UseVisualStyleBackColor = false;
             this.cancel.Click += new System.EventHandler(this.cancel_Click);
@@ -291,7 +291,7 @@
             this.textBox2.Location = new System.Drawing.Point(37, 157);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(469, 20);
-            this.textBox2.TabIndex = 36;
+            this.textBox2.TabIndex = 2;
             // 
             // delete
             // 
@@ -302,10 +302,20 @@
             this.delete.Location = new System.Drawing.Point(426, 525);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(80, 31);
-            this.delete.TabIndex = 39;
+            this.delete.TabIndex = 13;
             this.delete.Text = "Удалить";
             this.delete.UseVisualStyleBackColor = false;
             this.delete.Click += new System.EventHandler(this.delete_Click);
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
+            this.pictureBox12.Location = new System.Drawing.Point(167, 201);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(10, 10);
+            this.pictureBox12.TabIndex = 43;
+            this.pictureBox12.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox12, "Выберите дату поступления");
             // 
             // pictureBox1
             // 
@@ -444,7 +454,7 @@
             this.label2.MaximumSize = new System.Drawing.Size(205, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
-            this.label2.TabIndex = 43;
+            this.label2.TabIndex = 15;
             this.label2.Text = "label2";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -470,7 +480,7 @@
             this.label4.MaximumSize = new System.Drawing.Size(205, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 20);
-            this.label4.TabIndex = 45;
+            this.label4.TabIndex = 14;
             this.label4.Text = "label4";
             this.label4.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -491,7 +501,7 @@
             this.groupBox1.Location = new System.Drawing.Point(287, 207);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(219, 235);
-            this.groupBox1.TabIndex = 46;
+            this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Университетские данные";
             // 
@@ -500,7 +510,7 @@
             this.dateTimePicker2.Location = new System.Drawing.Point(16, 196);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(144, 20);
-            this.dateTimePicker2.TabIndex = 44;
+            this.dateTimePicker2.TabIndex = 10;
             // 
             // label5
             // 
@@ -511,16 +521,6 @@
             this.label5.Size = new System.Drawing.Size(133, 16);
             this.label5.TabIndex = 41;
             this.label5.Text = "Дата поступления";
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(167, 201);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(10, 10);
-            this.pictureBox12.TabIndex = 43;
-            this.pictureBox12.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox12, "Выберите дату поступления");
             // 
             // groupBox2
             // 
@@ -539,7 +539,7 @@
             this.groupBox2.Location = new System.Drawing.Point(37, 207);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(229, 235);
-            this.groupBox2.TabIndex = 47;
+            this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Личные данные";
             // 
@@ -574,6 +574,7 @@
             this.Text = "Редактирование";
             this.Load += new System.EventHandler(this.Edit_Load);
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Edit_HelpRequested);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -587,7 +588,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);

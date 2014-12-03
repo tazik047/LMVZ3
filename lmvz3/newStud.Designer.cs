@@ -51,6 +51,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -61,7 +62,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.fio = new System.Windows.Forms.Label();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -70,6 +70,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -79,7 +80,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -92,7 +92,7 @@
             this.cancel.FlatAppearance.BorderSize = 3;
             this.cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancel.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cancel.Location = new System.Drawing.Point(451, 528);
+            this.cancel.Location = new System.Drawing.Point(451, 510);
             this.cancel.Margin = new System.Windows.Forms.Padding(4);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(100, 38);
@@ -108,7 +108,7 @@
             this.Save.FlatAppearance.BorderSize = 3;
             this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Save.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Save.Location = new System.Drawing.Point(12, 528);
+            this.Save.Location = new System.Drawing.Point(12, 510);
             this.Save.Margin = new System.Windows.Forms.Padding(4);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(100, 38);
@@ -131,7 +131,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(26, 31);
+            this.textBox1.Location = new System.Drawing.Point(26, 26);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(463, 31);
@@ -142,7 +142,7 @@
             this.id.AutoSize = true;
             this.id.BackColor = System.Drawing.Color.White;
             this.id.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.id.Location = new System.Drawing.Point(15, 14);
+            this.id.Location = new System.Drawing.Point(15, 21);
             this.id.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.id.Name = "id";
             this.id.Size = new System.Drawing.Size(195, 16);
@@ -154,7 +154,7 @@
             this.pass.AutoSize = true;
             this.pass.BackColor = System.Drawing.Color.White;
             this.pass.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pass.Location = new System.Drawing.Point(38, 69);
+            this.pass.Location = new System.Drawing.Point(15, 81);
             this.pass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.pass.Name = "pass";
             this.pass.Size = new System.Drawing.Size(118, 16);
@@ -166,7 +166,7 @@
             this.birth.AutoSize = true;
             this.birth.BackColor = System.Drawing.Color.White;
             this.birth.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.birth.Location = new System.Drawing.Point(38, 128);
+            this.birth.Location = new System.Drawing.Point(15, 147);
             this.birth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.birth.Name = "birth";
             this.birth.Size = new System.Drawing.Size(113, 16);
@@ -215,7 +215,7 @@
             this.number.AutoSize = true;
             this.number.BackColor = System.Drawing.Color.White;
             this.number.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.number.Location = new System.Drawing.Point(15, 185);
+            this.number.Location = new System.Drawing.Point(13, 203);
             this.number.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.number.Name = "number";
             this.number.Size = new System.Drawing.Size(121, 16);
@@ -225,7 +225,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(17, 154);
+            this.dateTimePicker1.Location = new System.Drawing.Point(17, 172);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(191, 23);
@@ -277,7 +277,7 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(17, 34);
+            this.maskedTextBox1.Location = new System.Drawing.Point(16, 48);
             this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBox1.Mask = "#########";
             this.maskedTextBox1.Name = "maskedTextBox1";
@@ -287,7 +287,7 @@
             // maskedTextBox2
             // 
             this.maskedTextBox2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.maskedTextBox2.Location = new System.Drawing.Point(17, 95);
+            this.maskedTextBox2.Location = new System.Drawing.Point(17, 106);
             this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBox2.Mask = "LL######";
             this.maskedTextBox2.Name = "maskedTextBox2";
@@ -297,7 +297,7 @@
             // maskedTextBox3
             // 
             this.maskedTextBox3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.maskedTextBox3.Location = new System.Drawing.Point(17, 212);
+            this.maskedTextBox3.Location = new System.Drawing.Point(16, 223);
             this.maskedTextBox3.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBox3.Mask = "+38 (###) ### ####";
             this.maskedTextBox3.Name = "maskedTextBox3";
@@ -308,7 +308,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(23, 85);
+            this.label13.Location = new System.Drawing.Point(23, 69);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(123, 16);
@@ -318,17 +318,28 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(26, 105);
+            this.textBox2.Location = new System.Drawing.Point(26, 89);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(463, 31);
             this.textBox2.TabIndex = 90;
             // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackColor = System.Drawing.Color.White;
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(217, 229);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(16, 19);
+            this.pictureBox10.TabIndex = 91;
+            this.pictureBox10.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox10, "Выберите дату поступления");
+            // 
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.White;
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(211, 216);
+            this.pictureBox9.Location = new System.Drawing.Point(211, 229);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(16, 19);
             this.pictureBox9.TabIndex = 91;
@@ -368,7 +379,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(211, 158);
+            this.pictureBox5.Location = new System.Drawing.Point(211, 176);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(16, 19);
             this.pictureBox5.TabIndex = 91;
@@ -378,7 +389,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(211, 99);
+            this.pictureBox4.Location = new System.Drawing.Point(211, 110);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(16, 19);
             this.pictureBox4.TabIndex = 91;
@@ -388,7 +399,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(211, 38);
+            this.pictureBox3.Location = new System.Drawing.Point(211, 50);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(16, 19);
             this.pictureBox3.TabIndex = 91;
@@ -397,7 +408,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(498, 115);
+            this.pictureBox2.Location = new System.Drawing.Point(498, 99);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(18, 19);
             this.pictureBox2.TabIndex = 91;
@@ -406,7 +417,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(500, 42);
+            this.pictureBox1.Location = new System.Drawing.Point(500, 37);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(16, 19);
             this.pictureBox1.TabIndex = 91;
@@ -416,7 +427,7 @@
             // 
             this.fio.AutoSize = true;
             this.fio.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.fio.Location = new System.Drawing.Point(23, 11);
+            this.fio.Location = new System.Drawing.Point(23, 6);
             this.fio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fio.Name = "fio";
             this.fio.Size = new System.Drawing.Size(38, 16);
@@ -424,17 +435,6 @@
             this.fio.Text = "ФИО";
             this.fio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.fio.Click += new System.EventHandler(this.fio_Click);
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.BackColor = System.Drawing.Color.White;
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(217, 229);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(16, 19);
-            this.pictureBox10.TabIndex = 91;
-            this.pictureBox10.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox10, "Выберите дату поступления");
             // 
             // label2
             // 
@@ -503,7 +503,7 @@
             this.panel1.Controls.Add(this.label13);
             this.panel1.Location = new System.Drawing.Point(12, 56);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(539, 162);
+            this.panel1.Size = new System.Drawing.Size(536, 140);
             this.panel1.TabIndex = 95;
             // 
             // panel2
@@ -522,9 +522,9 @@
             this.panel2.Controls.Add(this.maskedTextBox1);
             this.panel2.Controls.Add(this.maskedTextBox3);
             this.panel2.Controls.Add(this.maskedTextBox2);
-            this.panel2.Location = new System.Drawing.Point(22, 224);
+            this.panel2.Location = new System.Drawing.Point(23, 211);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(247, 280);
+            this.panel2.Size = new System.Drawing.Size(247, 268);
             this.panel2.TabIndex = 96;
             // 
             // panel3
@@ -546,9 +546,9 @@
             this.panel3.Controls.Add(this.textBox4);
             this.panel3.Controls.Add(this.textBox3);
             this.panel3.Controls.Add(this.textBox5);
-            this.panel3.Location = new System.Drawing.Point(289, 224);
+            this.panel3.Location = new System.Drawing.Point(290, 211);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(250, 280);
+            this.panel3.Size = new System.Drawing.Size(250, 268);
             this.panel3.TabIndex = 97;
             // 
             // newStud
@@ -556,7 +556,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            this.ClientSize = new System.Drawing.Size(560, 570);
+            this.ClientSize = new System.Drawing.Size(560, 552);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -572,6 +572,7 @@
             this.Text = "Добавление нового студента";
             this.Load += new System.EventHandler(this.newStud_Load);
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.newStud_HelpRequested);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -581,7 +582,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

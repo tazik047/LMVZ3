@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Report));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -53,15 +54,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.Start = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.homeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.facultyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.formOfStudyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.homeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -82,12 +84,13 @@
             this.iDDataGridViewTextBoxColumn,
             this.fIODataGridViewTextBoxColumn,
             this.birthDataGridViewTextBoxColumn,
+            this.homeDataGridViewTextBoxColumn,
+            this.numberDataGridViewTextBoxColumn,
+            this.passDataGridViewTextBoxColumn,
+            this.Start,
             this.facultyDataGridViewTextBoxColumn,
             this.groupDataGridViewTextBoxColumn,
-            this.formOfStudyDataGridViewTextBoxColumn,
-            this.passDataGridViewTextBoxColumn,
-            this.homeDataGridViewTextBoxColumn,
-            this.numberDataGridViewTextBoxColumn});
+            this.formOfStudyDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.studentBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(0, 365);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -227,7 +230,7 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox1.Size = new System.Drawing.Size(266, 99);
+            this.groupBox1.Size = new System.Drawing.Size(235, 99);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Форма обучения";
@@ -235,7 +238,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(8, 78);
+            this.radioButton3.Location = new System.Drawing.Point(8, 74);
             this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(79, 20);
@@ -248,7 +251,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(8, 49);
+            this.radioButton2.Location = new System.Drawing.Point(8, 48);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(88, 20);
@@ -280,7 +283,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(176, 23);
             this.dateTimePicker1.TabIndex = 15;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             this.dateTimePicker1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Report_KeyDown);
             // 
             // label10
@@ -337,9 +340,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(339, 231);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(133, 16);
+            this.label11.Size = new System.Drawing.Size(141, 16);
             this.label11.TabIndex = 18;
-            this.label11.Text = "Поступил раньше:";
+            this.label11.Text = "Поступили раньше:";
             // 
             // dateTimePicker2
             // 
@@ -348,6 +351,18 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(176, 23);
             this.dateTimePicker2.TabIndex = 17;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.dateTimePicker2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Report_KeyDown);
+            // 
+            // Start
+            // 
+            this.Start.DataPropertyName = "Start";
+            dataGridViewCellStyle2.Format = "D";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Start.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Start.HeaderText = "Дата поступления";
+            this.Start.Name = "Start";
+            this.Start.ReadOnly = true;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -374,6 +389,27 @@
             this.birthDataGridViewTextBoxColumn.Name = "birthDataGridViewTextBoxColumn";
             this.birthDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // homeDataGridViewTextBoxColumn
+            // 
+            this.homeDataGridViewTextBoxColumn.DataPropertyName = "Home";
+            this.homeDataGridViewTextBoxColumn.HeaderText = "Адрес";
+            this.homeDataGridViewTextBoxColumn.Name = "homeDataGridViewTextBoxColumn";
+            this.homeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numberDataGridViewTextBoxColumn
+            // 
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn.HeaderText = "Телефон";
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
+            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // passDataGridViewTextBoxColumn
+            // 
+            this.passDataGridViewTextBoxColumn.DataPropertyName = "Pass";
+            this.passDataGridViewTextBoxColumn.HeaderText = "Идент. код";
+            this.passDataGridViewTextBoxColumn.Name = "passDataGridViewTextBoxColumn";
+            this.passDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // facultyDataGridViewTextBoxColumn
             // 
             this.facultyDataGridViewTextBoxColumn.DataPropertyName = "Faculty";
@@ -395,27 +431,6 @@
             this.formOfStudyDataGridViewTextBoxColumn.Name = "formOfStudyDataGridViewTextBoxColumn";
             this.formOfStudyDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // passDataGridViewTextBoxColumn
-            // 
-            this.passDataGridViewTextBoxColumn.DataPropertyName = "Pass";
-            this.passDataGridViewTextBoxColumn.HeaderText = "Идент. код";
-            this.passDataGridViewTextBoxColumn.Name = "passDataGridViewTextBoxColumn";
-            this.passDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // homeDataGridViewTextBoxColumn
-            // 
-            this.homeDataGridViewTextBoxColumn.DataPropertyName = "Home";
-            this.homeDataGridViewTextBoxColumn.HeaderText = "Адрес";
-            this.homeDataGridViewTextBoxColumn.Name = "homeDataGridViewTextBoxColumn";
-            this.homeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numberDataGridViewTextBoxColumn
-            // 
-            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
-            this.numberDataGridViewTextBoxColumn.HeaderText = "Телефон";
-            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
-            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // studentBindingSource
             // 
             this.studentBindingSource.DataSource = typeof(lmvz3.Student);
@@ -424,7 +439,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
             this.ClientSize = new System.Drawing.Size(987, 583);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -475,17 +490,18 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fIODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn birthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn homeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Start;
         private System.Windows.Forms.DataGridViewTextBoxColumn facultyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn groupDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn formOfStudyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn homeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
 
     }
 }
