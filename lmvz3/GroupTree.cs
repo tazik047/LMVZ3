@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
 
 namespace lmvz3
 {
@@ -24,7 +25,7 @@ namespace lmvz3
         {
             InitializeComponent();
             //faculties = IOClass.LoadFaculty();
-            StaticData.faculties = IOClass.LoadFac();
+            //StaticData.faculties = IOClass.LoadFac();
             CreateNodes();
             treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(filter);
             selectItem = filter;
@@ -189,6 +190,44 @@ namespace lmvz3
         {
             if (selectItem != null)
                 selectItem(sender, new TreeNodeMouseClickEventArgs(e, MouseButtons.Left, 1, 0, 0));
+        }
+
+        private void редактироватьГруппуToolStripMenuItem_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            CreateForm c = new CreateForm("Введите новое название группы:", checkGroup, "Такая группа уже присутствует", selectedNode.Text)
+            {
+                Text = "Редактирование группы"
+            };
+            c.ShowDialog();
+            if (c.WrittenName != "")
+            {
+                StaticData.groups.First(g => g.Title.Equals(selectedNode.Text)).Title = c.WrittenName;
+                selectedNode.Text = c.WrittenName;
+                treeView1.Sort();
+            }
+            IOClass.Save(StaticData.faculties);
+            if (UpdateFaculties != null)
+                UpdateFaculties(this, EventArgs.Empty);
+        }
+
+        private void редактироватьФакультетToolStripMenuItem_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            var c = new CreateForm("Введите новое название факульета:", checkGroup, "Такой факультет уже присутствует", selectedNode.Text)
+            {
+                Text = "Редактирование факультета"
+            };
+            c.ShowDialog();
+            if (c.WrittenName != "")
+            {
+                StaticData.faculties.First(g => g.Title.Equals(selectedNode.Text)).Title = c.WrittenName;
+                selectedNode.Text = c.WrittenName;
+                treeView1.Sort();
+            }
+            IOClass.Save(StaticData.faculties);
+            if (UpdateFaculties != null)
+                UpdateFaculties(this, EventArgs.Empty);
         }
     }
 }

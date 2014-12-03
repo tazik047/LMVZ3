@@ -25,7 +25,6 @@ namespace lmvz3
         {
             InitializeComponent();
             selectRow = select;
-            StaticData.students = IOClass.LoadStudent();
             studentBindingSource.Sort = "FIO";
             studentBindingSource.DataSource = StaticData.students;
             currentStud = StaticData.students;

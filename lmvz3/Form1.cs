@@ -35,6 +35,10 @@ namespace lmvz3
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            StaticData.faculties = IOClass.LoadFac();
+            StaticData.students = IOClass.LoadStudent();
+
             mainTable = new Main(dataGridView1_SelectionChanged);
 
             groups = new GroupTree(mainTable.filter) {MdiParent = this};

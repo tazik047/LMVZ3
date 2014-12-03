@@ -16,13 +16,14 @@ namespace lmvz3
         private Func<string, bool> check;
         private string errorMes;
 
-        public CreateForm(String mess, Func<string,bool> check, string er)
+        public CreateForm(String mess, Func<string,bool> check, string er, string text = "")
         {
             InitializeComponent();
             label1.Text = mess;
             cancel = false;
             this.check = check;
             errorMes = er;
+            textBox1.Text = text;
         }
 
         public string WrittenName

@@ -72,7 +72,13 @@ namespace lmvz3
                 using (FileStream f = new FileStream(@"..\..\database.dat", FileMode.Open))
                 {
                     BinaryFormatter b = new BinaryFormatter();
-                    return b.Deserialize(f) as List<Student>;
+                    var res =  b.Deserialize(f) as List<Student>;
+                    foreach (var s in res)
+                    {
+                        s.Faculty = StaticData.faculties.Find(fac => fac.Title.Equals(s.Faculty.Title));
+                        s.Group = StaticData.groups.Find(gr => gr.Title.Equals(s.Group.Title));
+                    }
+                    return res;
                 }
             }
             catch
