@@ -137,7 +137,7 @@ namespace lmvz3
             Pen pen = new Pen(Brushes.LightBlue, 2);
             pen.LineJoin = LineJoin.Round;//задаем скошенные углы
             pen.MiterLimit = 5;//задаем ограничение толщины скошенных углов
-            g.DrawImage(lmvz3.Properties.Resources.border, textBox1.Location.X - 9, textBox1.Location.Y - 10, textBox1.Width + 20, textBox1.Height + 20);
+            g.DrawImage(lmvz3.Properties.Resources.border, textBox1.Location.X - 11, textBox1.Location.Y - 12, textBox1.Width + 25, textBox1.Height + 24);
         }
 
         private void textBox1_MouseEnter(object sender, EventArgs e)

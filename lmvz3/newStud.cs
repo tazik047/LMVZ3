@@ -30,6 +30,8 @@ namespace lmvz3
             textboxes.Add(comboBox2);
             textboxes.Add(comboBox3);
             textboxes.Add(textBox2);
+
+            BackColor = System.Drawing.Color.FromArgb(0xFF, 0x86, 0xB9, 0xF6);
         }
         public void groups(object sender, EventArgs e)
         {
@@ -199,6 +201,21 @@ namespace lmvz3
         {
             HelpNavigator navigator = HelpNavigator.Topic;
             Help.ShowHelp(this, IOClass.PathHelp, navigator, "add.html");
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void formStudy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fio_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

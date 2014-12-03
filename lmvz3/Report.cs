@@ -25,6 +25,7 @@ namespace lmvz3
             studentBindingSource.DataSource = StaticData.students;
             studentBindingSource.Sort = "FIO";
             label4_Click(this, EventArgs.Empty);
+            BackColor = System.Drawing.Color.FromArgb(0xFF, 0x86, 0xB9, 0xF6);
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -216,6 +217,11 @@ namespace lmvz3
             HelpNavigator navigator1 = HelpNavigator.Index;
             
             Help.ShowHelp(this, IOClass.PathHelp, navigator, "report.html");
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
