@@ -206,22 +206,34 @@
     <None Include="Resources\inform2.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\fon_slider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1417656524_gears_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\help.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\warn.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\help1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fon_slider.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\edit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\report.png" />
+    <None Include="Resources\back.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

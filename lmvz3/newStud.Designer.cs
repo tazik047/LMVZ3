@@ -553,9 +553,11 @@
             // 
             // newStud
             // 
+            this.AcceptButton = this.Save;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            this.CancelButton = this.cancel;
             this.ClientSize = new System.Drawing.Size(560, 552);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);

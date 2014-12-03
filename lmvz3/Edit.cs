@@ -93,7 +93,7 @@ namespace lmvz3
             if (trackBar1.Value == 0)
             {
                 label1.Text = "Режим просмотра";
-                pictureBox10.Image = ((System.Drawing.Image)(Properties.Resources.report));
+                pictureBox10.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.info));
                 foreach (Control controls in textboxes)
                     controls.Enabled = false;
                 HideHint();
@@ -101,7 +101,7 @@ namespace lmvz3
             else
             {
                 label1.Text = "Режим редактирования";
-                pictureBox10.Image = ((System.Drawing.Image)(Properties.Resources.edit));
+                pictureBox10.BackgroundImage = ((System.Drawing.Image)(Properties.Resources._1417656524_gears_blue));
                 foreach (Control controls in textboxes)
                     controls.Enabled = true;
                 ShowHint();
@@ -113,11 +113,13 @@ namespace lmvz3
         {
             groups(sender, e);
         }
+
         public void groups(object sender, EventArgs e)
         {
             comboBox2.Items.Clear();
-            comboBox2.Items.AddRange(((Faculty)comboBox1.SelectedItem).Groups.ToArray());
+            comboBox2.Items.AddRange(((Faculty) comboBox1.SelectedItem).Groups.ToArray());
         }
+
         public void faculties(object sender, EventArgs e)
         {
             comboBox1.Items.Clear();
@@ -151,6 +153,8 @@ namespace lmvz3
             if (MessageBox.Show("Вы уверены, что желаете отменить внесенные изменения?", "Отмена", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 EditStud(this.studen, currentTreeNode);
+                HideHint();
+                trackBar1.Value = 0;
             }
         }
         public bool Check()
@@ -159,24 +163,24 @@ namespace lmvz3
             if (string.IsNullOrEmpty(textBox1.Text))
             {
                 textBox1.BackColor = Color.Red;
-                pictureBox1.Image = ((System.Drawing.Image)(Properties.Resources.warn));
+                pictureBox1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.warn));
                 check = false;
             }
             else 
             { 
                 textBox1.BackColor = Color.White;
-                pictureBox1.Image = ((System.Drawing.Image)(Properties.Resources.help));
+                pictureBox1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.help));
             }
             if (string.IsNullOrEmpty(textBox2.Text))
             {
                 textBox2.BackColor = Color.Red;
-                pictureBox2.Image = ((System.Drawing.Image)(Properties.Resources.warn));
+                pictureBox2.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.warn));
                 check = false;
             }
             else 
             {
                 textBox2.BackColor = Color.White;
-                pictureBox2.Image = ((System.Drawing.Image)(Properties.Resources.help));
+                pictureBox2.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.help));
             }
             List<MaskedTextBox> masked = new List<MaskedTextBox>();
             List<PictureBox> mashints = new List<PictureBox>();
@@ -191,13 +195,13 @@ namespace lmvz3
                 if (masked[i].MaskFull == false)
                 {
                     masked[i].BackColor = Color.Red;
-                    mashints[i].Image = ((System.Drawing.Image)(Properties.Resources.warn));
+                    mashints[i].BackgroundImage = ((System.Drawing.Image)(Properties.Resources.warn));
                     check = false;
                 }
                 else
                 {
                     masked[i].BackColor = Color.White;
-                    mashints[i].Image = ((System.Drawing.Image)(Properties.Resources.help));
+                    mashints[i].BackgroundImage = ((System.Drawing.Image)(Properties.Resources.help));
                 }
             }
             List<ComboBox> combos = new List<ComboBox>();
@@ -213,13 +217,13 @@ namespace lmvz3
                 if (combos[i].SelectedItem == null && combos[i].Text == "")
                 {
                     combos[i].BackColor = Color.Red;
-                    combhints[i].Image = ((System.Drawing.Image)(Properties.Resources.warn));
+                    combhints[i].BackgroundImage = ((System.Drawing.Image)(Properties.Resources.warn));
                     check = false;
                 }
                 else
                 {
                     combos[i].BackColor = Color.White;
-                    combhints[i].Image = ((System.Drawing.Image)(Properties.Resources.help));
+                    combhints[i].BackgroundImage = ((System.Drawing.Image)(Properties.Resources.help));
                 }
             }
             return check;
@@ -279,26 +283,32 @@ namespace lmvz3
             foreach (PictureBox control in this.hints)
             {
                 control.Hide();
-                control.Image = ((System.Drawing.Image)(Properties.Resources.help));
+                control.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.help));
             }
+            pictureBox13.BackgroundImage = ((System.Drawing.Image)(Properties.Resources._lock));
             Save.Hide();
             cancel.Hide();
             delete.Hide();
             for (int i = 9; i < controls.Count; i++)
                 controls[i].BackColor = Color.White;
         }
+
         public void ShowHint()
         {
             foreach (Control control in this.hints)
             {
                 control.Show();
                 control.BringToFront();
+                
             }
+            panel1.BringToFront();
             Save.Show();
-                cancel.Show();
-                delete.Show();
-            
+            pictureBox13.BackgroundImage = ((System.Drawing.Image) (Properties.Resources.unlock));
+            cancel.Show();
+            delete.Show();
+
         }
+
         public void Show2()
         {
             foreach (Control control in this.controls)
