@@ -195,7 +195,7 @@ namespace lmvz3
         private void редактироватьГруппуToolStripMenuItem_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left) return;
-            CreateForm c = new CreateForm("Введите новое название группы:", checkGroup, "Такая группа уже присутствует", selectedNode.Text)
+            CreateForm c = new CreateForm("Введите новое название группы:", checkGroup, "Такая группа уже присутствует", selectedNode.Text, "Изменить")
             {
                 Text = "Редактирование группы"
             };
@@ -214,7 +214,7 @@ namespace lmvz3
         private void редактироватьФакультетToolStripMenuItem_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left) return;
-            var c = new CreateForm("Введите новое название факульета:", checkGroup, "Такой факультет уже присутствует", selectedNode.Text)
+            var c = new CreateForm("Введите новое название факульета:", checkGroup, "Такой факультет уже присутствует", selectedNode.Text, "Изменить")
             {
                 Text = "Редактирование факультета"
             };
