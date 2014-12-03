@@ -438,10 +438,12 @@
             this.label2.AutoEllipsis = true;
             this.label2.AutoSize = true;
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.Blue;
             this.label2.Location = new System.Drawing.Point(31, 21);
-            this.label2.MaximumSize = new System.Drawing.Size(205, 13);
+            this.label2.MaximumSize = new System.Drawing.Size(205, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 43;
             this.label2.Text = "label2";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -449,9 +451,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(72, 21);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(78, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(13, 13);
+            this.label3.Size = new System.Drawing.Size(18, 20);
             this.label3.TabIndex = 44;
             this.label3.Text = ">";
             // 
@@ -460,10 +464,12 @@
             this.label4.AutoEllipsis = true;
             this.label4.AutoSize = true;
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.Location = new System.Drawing.Point(92, 21);
-            this.label4.MaximumSize = new System.Drawing.Size(205, 13);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.Blue;
+            this.label4.Location = new System.Drawing.Point(98, 21);
+            this.label4.MaximumSize = new System.Drawing.Size(205, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 45;
             this.label4.Text = "label4";
             this.label4.Click += new System.EventHandler(this.label2_Click);

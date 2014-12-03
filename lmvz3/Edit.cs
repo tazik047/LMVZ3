@@ -141,7 +141,7 @@ namespace lmvz3
                 IOClass.Save(StaticData.students);
                 if (RefreshData != null)
                     RefreshData(this.studen, EventArgs.Empty);
-
+                WantClose(sender, e);
             }
         }
 
@@ -321,6 +321,7 @@ namespace lmvz3
                     IOClass.Save(StaticData.students);
                     this.DelStud(null, e);
                     this.studen = null;
+                    WantClose(sender, e);
                 }
             }
         }

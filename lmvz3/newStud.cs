@@ -62,7 +62,7 @@ namespace lmvz3
         {
              if (Check())
              {
-                 if (MessageBox.Show("Вы уверены?", "Сохранение клиента", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                 if (MessageBox.Show("Вы уверены?", "Сохранение студента", MessageBoxButtons.YesNo) == DialogResult.Yes)
                  {
                
                     Student studen = new Student
@@ -104,6 +104,10 @@ namespace lmvz3
                             comboBox3.SelectedItem = null;
                         }
                     }
+                }
+                else
+                {
+                    Close();
                 }
             }
 
