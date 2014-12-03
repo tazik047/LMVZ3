@@ -88,6 +88,7 @@
             // cancel
             // 
             this.cancel.BackColor = System.Drawing.Color.White;
+            this.cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
             this.cancel.FlatAppearance.BorderSize = 3;
             this.cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -327,10 +328,11 @@
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.White;
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(217, 229);
+            this.pictureBox10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.BackgroundImage")));
+            this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox10.Location = new System.Drawing.Point(217, 223);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(16, 19);
+            this.pictureBox10.Size = new System.Drawing.Size(25, 25);
             this.pictureBox10.TabIndex = 91;
             this.pictureBox10.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBox10, "Выберите дату поступления");
@@ -338,88 +340,97 @@
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.White;
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(211, 229);
+            this.pictureBox9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox9.BackgroundImage")));
+            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox9.Location = new System.Drawing.Point(211, 223);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(16, 19);
+            this.pictureBox9.Size = new System.Drawing.Size(25, 25);
             this.pictureBox9.TabIndex = 91;
             this.pictureBox9.TabStop = false;
             // 
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.White;
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(217, 176);
+            this.pictureBox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.BackgroundImage")));
+            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox8.Location = new System.Drawing.Point(217, 172);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(16, 19);
+            this.pictureBox8.Size = new System.Drawing.Size(25, 25);
             this.pictureBox8.TabIndex = 91;
             this.pictureBox8.TabStop = false;
             // 
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.White;
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(217, 110);
+            this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox7.Location = new System.Drawing.Point(217, 106);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(16, 19);
+            this.pictureBox7.Size = new System.Drawing.Size(25, 25);
             this.pictureBox7.TabIndex = 91;
             this.pictureBox7.TabStop = false;
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.White;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(217, 50);
+            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox6.Location = new System.Drawing.Point(217, 48);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(16, 19);
+            this.pictureBox6.Size = new System.Drawing.Size(25, 25);
             this.pictureBox6.TabIndex = 91;
             this.pictureBox6.TabStop = false;
             // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.White;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(211, 176);
+            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.Location = new System.Drawing.Point(211, 172);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(16, 19);
+            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
             this.pictureBox5.TabIndex = 91;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.White;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(211, 110);
+            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(211, 106);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(16, 19);
+            this.pictureBox4.Size = new System.Drawing.Size(25, 25);
             this.pictureBox4.TabIndex = 91;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(211, 50);
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(211, 48);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(16, 19);
+            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
             this.pictureBox3.TabIndex = 91;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(498, 99);
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(495, 89);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(18, 19);
+            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
             this.pictureBox2.TabIndex = 91;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(500, 37);
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(495, 26);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 19);
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
             this.pictureBox1.TabIndex = 91;
             this.pictureBox1.TabStop = false;
             // 

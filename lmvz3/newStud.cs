@@ -30,6 +30,9 @@ namespace lmvz3
             textboxes.Add(comboBox2);
             textboxes.Add(comboBox3);
             textboxes.Add(textBox2);
+            var now = DateTime.Now;
+
+            dateTimePicker1.Value = now.AddYears(-18);
 
             BackColor = System.Drawing.Color.FromArgb(0xFF, 0x86, 0xB9, 0xF6);
         }
@@ -120,24 +123,24 @@ namespace lmvz3
             if (string.IsNullOrEmpty(textBox1.Text))
             {
                 textBox1.BackColor = Color.Red;
-                pictureBox1.Image = ((System.Drawing.Image)(Properties.Resources.warn));
+                pictureBox1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.warn));
                 check = false;
             }
             else
             {
                 textBox1.BackColor = Color.White;
-                pictureBox1.Image = ((System.Drawing.Image)(Properties.Resources.help));
+                pictureBox1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.help));
             }
             if (string.IsNullOrEmpty(textBox2.Text))
             {
                 textBox2.BackColor = Color.Red;
-                pictureBox2.Image = ((System.Drawing.Image)(Properties.Resources.warn));
+                pictureBox2.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.warn));
                 check = false;
             }
             else
             {
                 textBox2.BackColor = Color.White;
-                pictureBox2.Image = ((System.Drawing.Image)(Properties.Resources.help));
+                pictureBox2.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.help));
             }
             List<MaskedTextBox> masked = new List<MaskedTextBox>();
             List<PictureBox> mashints = new List<PictureBox>();
@@ -152,13 +155,13 @@ namespace lmvz3
                 if (masked[i].MaskFull == false)
                 {
                     masked[i].BackColor = Color.Red;
-                    mashints[i].Image = ((System.Drawing.Image)(Properties.Resources.warn));
+                    mashints[i].BackgroundImage = ((System.Drawing.Image)(Properties.Resources.warn));
                     check = false;
                 }
                 else
                 {
                     masked[i].BackColor = Color.White;
-                    mashints[i].Image = ((System.Drawing.Image)(Properties.Resources.help));
+                    mashints[i].BackgroundImage = ((System.Drawing.Image)(Properties.Resources.help));
                 }
             }
             List<ComboBox> combos = new List<ComboBox>();
@@ -174,13 +177,13 @@ namespace lmvz3
                 if (combos[i].SelectedItem == null && combos[i].Text == "")
                 {
                     combos[i].BackColor = Color.Red;
-                    combhints[i].Image = ((System.Drawing.Image)(Properties.Resources.warn));
+                    combhints[i].BackgroundImage = ((System.Drawing.Image)(Properties.Resources.warn));
                     check = false;
                 }
                 else
                 {
                     combos[i].BackColor = Color.White;
-                    combhints[i].Image = ((System.Drawing.Image)(Properties.Resources.help));
+                    combhints[i].BackgroundImage = ((System.Drawing.Image)(Properties.Resources.help));
                 }
             }
             return check;
