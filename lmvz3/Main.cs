@@ -98,9 +98,9 @@ namespace lmvz3
             if (!studentBindingSource.DataSource.Equals(StaticData.students))
             {
                 var s = (Student)sender;
-                if (currentNode != null && currentNode.Parent == null && currentNode.Text == s.Faculty.Title)
+                if (currentNode != null && currentNode.Parent == null && currentNode.Text == s.Faculty.Title && !currentStud.Contains(s))
                     currentStud.Add(s);
-                else if (currentNode != null && currentNode.Parent != null && currentNode.Text == s.Group.Title)
+                else if (currentNode != null && currentNode.Parent != null && currentNode.Text == s.Group.Title && !currentStud.Contains(s))
                     currentStud.Add(s);
                 studentBindingSource.DataSource = currentStud.OrderBy(st => st.FIO).ToList();
             }
