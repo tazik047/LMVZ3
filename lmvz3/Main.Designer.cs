@@ -33,6 +33,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -80,13 +81,14 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(43, 13);
-            this.label1.MaximumSize = new System.Drawing.Size(265, 0);
-            this.label1.MinimumSize = new System.Drawing.Size(265, 0);
+            this.label1.Location = new System.Drawing.Point(19, 13);
+            this.label1.MaximumSize = new System.Drawing.Size(350, 0);
+            this.label1.MinimumSize = new System.Drawing.Size(350, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 29);
+            this.label1.Size = new System.Drawing.Size(350, 29);
             this.label1.TabIndex = 4;
             this.label1.Text = "Все студенты";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox1
             // 
@@ -104,7 +106,18 @@
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
-            this.textBox1.MouseEnter += new System.EventHandler(this.textBox1_MouseEnter);
+            // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label15.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label15.Location = new System.Drawing.Point(93, 173);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(203, 140);
+            this.label15.TabIndex = 39;
+            this.label15.Text = "Выберите факультет и группу для просмотра списка студентов";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -133,6 +146,7 @@
             this.BackgroundImage = global::lmvz3.Properties.Resources.Безымянный;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(525, 437);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
@@ -141,7 +155,6 @@
             this.Text = "Поиск";
             this.Load += new System.EventHandler(this.Main_Load);
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Main_HelpRequested);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Main_Paint);
             this.Resize += new System.EventHandler(this.Main_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
@@ -158,6 +171,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fIODataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label15;
 
     }
 }

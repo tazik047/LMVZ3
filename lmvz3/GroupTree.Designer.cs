@@ -144,6 +144,7 @@
             this.Controls.Add(this.treeView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GroupTree";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "GroupTree";
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.GroupTree_HelpRequested);
             this.contextMenuStripMain.ResumeLayout(false);

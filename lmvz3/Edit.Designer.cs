@@ -81,7 +81,7 @@
             // 
             this.fio.AutoSize = true;
             this.fio.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.fio.Location = new System.Drawing.Point(35, 58);
+            this.fio.Location = new System.Drawing.Point(50, 47);
             this.fio.Name = "fio";
             this.fio.Size = new System.Drawing.Size(38, 16);
             this.fio.TabIndex = 0;
@@ -91,7 +91,7 @@
             // 
             this.id.AutoSize = true;
             this.id.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.id.Location = new System.Drawing.Point(32, 145);
+            this.id.Location = new System.Drawing.Point(74, 135);
             this.id.Name = "id";
             this.id.Size = new System.Drawing.Size(195, 16);
             this.id.TabIndex = 1;
@@ -101,7 +101,7 @@
             // 
             this.pass.AutoSize = true;
             this.pass.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pass.Location = new System.Drawing.Point(32, 194);
+            this.pass.Location = new System.Drawing.Point(74, 184);
             this.pass.Name = "pass";
             this.pass.Size = new System.Drawing.Size(118, 16);
             this.pass.TabIndex = 2;
@@ -111,7 +111,7 @@
             // 
             this.birth.AutoSize = true;
             this.birth.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.birth.Location = new System.Drawing.Point(32, 242);
+            this.birth.Location = new System.Drawing.Point(74, 232);
             this.birth.Name = "birth";
             this.birth.Size = new System.Drawing.Size(113, 16);
             this.birth.TabIndex = 3;
@@ -121,7 +121,7 @@
             // 
             this.faculty.AutoSize = true;
             this.faculty.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.faculty.Location = new System.Drawing.Point(32, 293);
+            this.faculty.Location = new System.Drawing.Point(74, 283);
             this.faculty.Name = "faculty";
             this.faculty.Size = new System.Drawing.Size(80, 16);
             this.faculty.TabIndex = 4;
@@ -131,7 +131,7 @@
             // 
             this.group.AutoSize = true;
             this.group.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.group.Location = new System.Drawing.Point(32, 341);
+            this.group.Location = new System.Drawing.Point(74, 331);
             this.group.Name = "group";
             this.group.Size = new System.Drawing.Size(55, 16);
             this.group.TabIndex = 5;
@@ -141,7 +141,7 @@
             // 
             this.formStudy.AutoSize = true;
             this.formStudy.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.formStudy.Location = new System.Drawing.Point(32, 389);
+            this.formStudy.Location = new System.Drawing.Point(74, 379);
             this.formStudy.Name = "formStudy";
             this.formStudy.Size = new System.Drawing.Size(121, 16);
             this.formStudy.TabIndex = 6;
@@ -151,7 +151,7 @@
             // 
             this.number.AutoSize = true;
             this.number.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.number.Location = new System.Drawing.Point(32, 437);
+            this.number.Location = new System.Drawing.Point(77, 427);
             this.number.Name = "number";
             this.number.Size = new System.Drawing.Size(121, 16);
             this.number.TabIndex = 7;
@@ -169,25 +169,25 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(35, 76);
+            this.textBox1.Location = new System.Drawing.Point(53, 66);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(247, 20);
+            this.textBox1.Size = new System.Drawing.Size(251, 20);
             this.textBox1.TabIndex = 9;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(35, 262);
+            this.dateTimePicker1.Location = new System.Drawing.Point(77, 252);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(144, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(187, 20);
             this.dateTimePicker1.TabIndex = 13;
             // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(35, 313);
+            this.comboBox1.Location = new System.Drawing.Point(77, 303);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(141, 21);
+            this.comboBox1.Size = new System.Drawing.Size(184, 21);
             this.comboBox1.TabIndex = 14;
             this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
             // 
@@ -195,9 +195,9 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(35, 361);
+            this.comboBox2.Location = new System.Drawing.Point(77, 351);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(141, 21);
+            this.comboBox2.Size = new System.Drawing.Size(184, 21);
             this.comboBox2.TabIndex = 15;
             // 
             // comboBox3
@@ -207,42 +207,43 @@
             this.comboBox3.Items.AddRange(new object[] {
             "Бюджет",
             "Контракт"});
-            this.comboBox3.Location = new System.Drawing.Point(35, 409);
+            this.comboBox3.Location = new System.Drawing.Point(77, 399);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(141, 21);
+            this.comboBox3.Size = new System.Drawing.Size(184, 21);
             this.comboBox3.TabIndex = 16;
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(35, 165);
+            this.maskedTextBox1.Location = new System.Drawing.Point(77, 155);
             this.maskedTextBox1.Mask = "#########";
             this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(144, 20);
+            this.maskedTextBox1.Size = new System.Drawing.Size(187, 20);
             this.maskedTextBox1.TabIndex = 19;
             // 
             // maskedTextBox2
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(35, 214);
+            this.maskedTextBox2.Location = new System.Drawing.Point(77, 204);
             this.maskedTextBox2.Mask = "LL######";
             this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(144, 20);
+            this.maskedTextBox2.Size = new System.Drawing.Size(187, 20);
             this.maskedTextBox2.TabIndex = 20;
             // 
             // maskedTextBox3
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(35, 459);
+            this.maskedTextBox3.Location = new System.Drawing.Point(77, 449);
             this.maskedTextBox3.Mask = "+38 (###) ### ####";
             this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(141, 20);
+            this.maskedTextBox3.Size = new System.Drawing.Size(184, 20);
             this.maskedTextBox3.TabIndex = 22;
             // 
             // Save
             // 
-            this.Save.BackColor = System.Drawing.Color.CadetBlue;
-            this.Save.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Save.FlatAppearance.BorderSize = 0;
+            this.Save.BackColor = System.Drawing.Color.FloralWhite;
+            this.Save.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.Save.FlatAppearance.BorderSize = 2;
+            this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Save.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Save.Location = new System.Drawing.Point(15, 489);
+            this.Save.Location = new System.Drawing.Point(37, 479);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(88, 31);
             this.Save.TabIndex = 33;
@@ -252,11 +253,12 @@
             // 
             // cancel
             // 
-            this.cancel.BackColor = System.Drawing.Color.CadetBlue;
-            this.cancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
-            this.cancel.FlatAppearance.BorderSize = 0;
+            this.cancel.BackColor = System.Drawing.Color.FloralWhite;
+            this.cancel.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.cancel.FlatAppearance.BorderSize = 2;
+            this.cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancel.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cancel.Location = new System.Drawing.Point(116, 489);
+            this.cancel.Location = new System.Drawing.Point(138, 479);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(91, 31);
             this.cancel.TabIndex = 34;
@@ -268,7 +270,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(35, 99);
+            this.label13.Location = new System.Drawing.Point(50, 89);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(123, 16);
             this.label13.TabIndex = 35;
@@ -276,16 +278,16 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(38, 121);
+            this.textBox2.Location = new System.Drawing.Point(53, 111);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(244, 20);
+            this.textBox2.Size = new System.Drawing.Size(251, 20);
             this.textBox2.TabIndex = 36;
             // 
             // label15
             // 
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label15.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label15.Location = new System.Drawing.Point(79, 184);
+            this.label15.Location = new System.Drawing.Point(79, 174);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(203, 140);
             this.label15.TabIndex = 38;
@@ -294,11 +296,12 @@
             // 
             // delete
             // 
-            this.delete.BackColor = System.Drawing.Color.CadetBlue;
-            this.delete.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
-            this.delete.FlatAppearance.BorderSize = 0;
+            this.delete.BackColor = System.Drawing.Color.FloralWhite;
+            this.delete.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.delete.FlatAppearance.BorderSize = 2;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.delete.Location = new System.Drawing.Point(221, 489);
+            this.delete.Location = new System.Drawing.Point(243, 479);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(80, 31);
             this.delete.TabIndex = 39;
@@ -309,7 +312,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(288, 76);
+            this.pictureBox1.Location = new System.Drawing.Point(310, 66);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(19, 15);
             this.pictureBox1.TabIndex = 40;
@@ -318,7 +321,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(288, 121);
+            this.pictureBox2.Location = new System.Drawing.Point(310, 111);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(19, 15);
             this.pictureBox2.TabIndex = 40;
@@ -327,7 +330,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(185, 165);
+            this.pictureBox3.Location = new System.Drawing.Point(267, 155);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(19, 15);
             this.pictureBox3.TabIndex = 40;
@@ -336,7 +339,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(185, 214);
+            this.pictureBox4.Location = new System.Drawing.Point(267, 204);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(19, 15);
             this.pictureBox4.TabIndex = 40;
@@ -345,7 +348,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(185, 262);
+            this.pictureBox5.Location = new System.Drawing.Point(267, 252);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(19, 15);
             this.pictureBox5.TabIndex = 40;
@@ -354,7 +357,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(185, 313);
+            this.pictureBox6.Location = new System.Drawing.Point(267, 303);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(19, 15);
             this.pictureBox6.TabIndex = 40;
@@ -363,7 +366,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(185, 361);
+            this.pictureBox7.Location = new System.Drawing.Point(267, 351);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(19, 15);
             this.pictureBox7.TabIndex = 40;
@@ -372,7 +375,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(185, 409);
+            this.pictureBox8.Location = new System.Drawing.Point(267, 399);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(19, 15);
             this.pictureBox8.TabIndex = 40;
@@ -381,7 +384,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(185, 459);
+            this.pictureBox9.Location = new System.Drawing.Point(267, 449);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(19, 15);
             this.pictureBox9.TabIndex = 40;
@@ -407,7 +410,7 @@
             this.trackBar1.ElapsedInnerColor = System.Drawing.Color.Gainsboro;
             this.trackBar1.ElapsedOuterColor = System.Drawing.Color.Gainsboro;
             this.trackBar1.LargeChange = ((uint)(1u));
-            this.trackBar1.Location = new System.Drawing.Point(258, 40);
+            this.trackBar1.Location = new System.Drawing.Point(285, 24);
             this.trackBar1.Maximum = 1;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(33, 30);

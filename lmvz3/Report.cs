@@ -132,9 +132,6 @@ namespace lmvz3
                 cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
                 pdfTable.AddCell(cell);
             }
-
-            int ind = 1;
-
             //Adding DataRow
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
@@ -212,9 +209,7 @@ namespace lmvz3
 
         private void Report_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            HelpNavigator navigator = HelpNavigator.Topic;
-            HelpNavigator navigator1 = HelpNavigator.Index;
-            
+            HelpNavigator navigator = HelpNavigator.Topic;            
             Help.ShowHelp(this, IOClass.PathHelp, navigator, "report.html");
         }
     }

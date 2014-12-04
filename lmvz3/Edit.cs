@@ -51,6 +51,7 @@ namespace lmvz3
             comboBox2.SelectedItem = stud.Group;
             comboBox3.SelectedItem = stud.FormOfStudy;
             textBox2.Text = stud.Home;
+
         }
         public Edit()
         {
@@ -315,11 +316,6 @@ namespace lmvz3
             toolTip1.SetToolTip(this.pictureBox8, "Выберите форму обучения");
             toolTip1.SetToolTip(this.pictureBox9, "Введите номер телефона\nНапример: +38(066)123 4567");
         
-        }
-
-        private void Edit_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-           
         }
 
         private void Edit_HelpRequested(object sender, HelpEventArgs hlpevent)

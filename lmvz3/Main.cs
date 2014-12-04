@@ -25,22 +25,26 @@ namespace lmvz3
             studentBindingSource.Sort = "FIO";
             studentBindingSource.DataSource = StaticData.students;
             currentStud = StaticData.students;
-            dataGridView1.SelectionChanged += new System.EventHandler(select);
+            dataGridView1.Click += new System.EventHandler(select);
             Text = "main";
+            HideGrid();
         }
-
-
+        private void HideGrid() {
+            label15.Show();
+            label1.Hide();
+            dataGridView1.Hide();
+            textBox1.Hide();
+        }
+        private void ShowGrid() {
+            label15.Hide();
+            label1.Show();
+            dataGridView1.Show();
+            textBox1.Show();
+            DrawRadiusBorder();
+        }
         public void filter(object sender, TreeNodeMouseClickEventArgs e)
         {
-            /*
-            if (e.Button == MouseButtons.Left)
-            {
-                var n = e.Node;
-                if (n.Parent == null)
-                {
-                    MessageBox.Show(String.Format("Вы выбрали факультет - {0}", n.Text), "Click");
-                }
-            }*/
+            ShowGrid();
             currentNode = e.Node;
             if (e.Node.Parent == null && e.Node.Text == "Все факультеты")
             {
@@ -49,13 +53,13 @@ namespace lmvz3
             }
             else if (e.Node.Parent == null)
             {
-                label1.Text = string.Format("Студенты из факультета {0}", e.Node.Text);
+                label1.Text = string.Format("Студенты факультета {0}", e.Node.Text);
                 studentBindingSource.DataSource = IOClass.findByFaculty(StaticData.students,
                     new List<Faculty>() { new Faculty() { Title = e.Node.Text } });
             }
             else
             {
-                label1.Text = string.Format("Студенты из группы {0}", e.Node.Text);
+                label1.Text = string.Format("Студенты группы {0}", e.Node.Text);
                 studentBindingSource.DataSource = IOClass.findByGroup(StaticData.students,
                     new List<Group>() {new Group() { Title = e.Node.Text }});
             }
@@ -131,10 +135,6 @@ namespace lmvz3
             }
         }
 
-        private void Main_Paint(object sender, PaintEventArgs e)
-        {
-            DrawRadiusBorder();
-        }
 
         private void DrawRadiusBorder()
         {
@@ -145,15 +145,11 @@ namespace lmvz3
             g.DrawImage(lmvz3.Properties.Resources.border, textBox1.Location.X - 9, textBox1.Location.Y - 10, textBox1.Width + 20, textBox1.Height + 20);
         }
 
-        private void textBox1_MouseEnter(object sender, EventArgs e)
-        {
-            DrawRadiusBorder();
-        }
-
         private void Main_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             HelpNavigator navigator = HelpNavigator.Topic;
             Help.ShowHelp(this, IOClass.PathHelp, navigator, "Search.html");
         }
+
     }
 }
