@@ -179,5 +179,10 @@ namespace lmvz3
             MessageBox.Show("Все данные успешно сохранены", "Сохранение", MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
+        private void опрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new AboutBox1()).ShowDialog();
+        }
+
     }
 }

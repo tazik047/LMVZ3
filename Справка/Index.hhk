@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="&Ccedil;&agrave;&iuml;&oacute;&ntilde;&ecirc;">
+		<param name="Name" value="Запуск приложения">
+		<param name="Local" value="main.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="&Auml;&icirc;&aacute;&agrave;&acirc;&egrave;&ograve;&uuml;">
+		<param name="Name" value="Добавление новых данных">
+		<param name="Local" value="add.html">
+		<param name="Name" value="Добавление факультетов и групп">
+		<param name="Local" value="add fac.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="&Oacute;&auml;&agrave;&euml;&egrave;&ograve;&uuml;">
+		<param name="Name" value="Удаление данных">
+		<param name="Local" value="delete.html">
+		<param name="Name" value="Удаление факультетов и групп">
+		<param name="Local" value="del fac.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="&Iuml;&icirc;&egrave;&ntilde;&ecirc;">
+		<param name="Name" value="Редактирование данных">
+		<param name="Local" value="edit.html">
+		<param name="Name" value="Поиск">
+		<param name="Local" value="search.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="&Icirc;&ograve;&divide;&aring;&ograve;">
+		<param name="Name" value="Генерация отчетов">
+		<param name="Local" value="report.html">
+		</OBJECT>
+</UL>
+</BODY></HTML>

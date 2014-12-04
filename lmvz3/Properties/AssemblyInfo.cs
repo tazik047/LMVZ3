@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Управление общими сведениями о сборке осуществляется с помощью 
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("lmvz3")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Учет студентов")]
+[assembly: AssemblyDescription("Учебный процесс университета невозможен без четкой координации действий огромного количества учащихся. Для этого существует четкая структуризация учебных групп. Данная информационная система систематезирует все имеющиеся индивидуальные данные каждого учащегося и позволяет легко и быстро найти информацию о любом студенте. Так же, огромным бонусом является то, что вся внесенная вами информация моментально сохраняется и вам совсем не нужно беспокоиться об постоянном сохранении. За детальной информацией обращайтесь к справке продукта")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("lmvz3")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCompany("Валера&Стас")]
+[assembly: AssemblyProduct("Учет студентов")]
+[assembly: AssemblyCopyright("LabProduction ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

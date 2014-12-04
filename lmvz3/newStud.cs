@@ -194,7 +194,7 @@ namespace lmvz3
         private void newStud_Load(object sender, EventArgs e)
         {
             //ToolTip toolTip1 = new ToolTip();
-            toolTip1.SetToolTip(this.pictureBox1, "Введите ФИО\nНапример: Иванов Иван Иванович");
+            toolTip1.SetToolTip(this.pictureBox1, "Введите ФИО\nНапример: Задорожний Станислав Андрианович");
             toolTip1.SetToolTip(this.pictureBox2, "Введите адрес\nНапример: 61254, г.Харьков,\nул. Иванова, 23, кв.231");
             toolTip1.SetToolTip(this.pictureBox3, "Введите идентификационный номер\nНапример: 1234567890");
             toolTip1.SetToolTip(this.pictureBox4, "Введите номер пасспорта\nНапример: АВ123456");

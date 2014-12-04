@@ -1,0 +1,31 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=Справка.chm
+Contents file=Contents.hhc
+Default Font=Verdana,8,204
+Default Window=окно
+Default topic=add fac.html
+Display compile progress=No
+Enhanced decompilation=Yes
+Full-text search=Yes
+Index file=Index.hhk
+Language=0x419 Русский (Россия)
+
+[WINDOWS]
+окно=,"Contents.hhc","Index.hhk","index.html",,,,,,0x2520,,0x304e,[200,200,910,650],,,,,,,0
+
+
+[FILES]
+add fac.html
+add.html
+del fac.html
+delete.html
+edit.html
+fac.html
+index.html
+main.html
+report.html
+search.html
+
+[INFOTYPES]
+
