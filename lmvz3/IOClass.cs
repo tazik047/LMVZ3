@@ -54,7 +54,7 @@ namespace lmvz3
             PrepareBoforeStart();
             notebook = notebook.OrderBy(s => s.FIO).ToList();
             StaticData.students = notebook;
-            using (FileStream f = new FileStream(@"..\..\database.dat", FileMode.Create))
+            using (FileStream f = new FileStream(@"database.dat", FileMode.Create))
             {
                 BinaryFormatter b = new BinaryFormatter();
                 b.Serialize(f, notebook);
@@ -69,7 +69,7 @@ namespace lmvz3
         {
             try
             {
-                using (FileStream f = new FileStream(@"..\..\database.dat", FileMode.Open))
+                using (FileStream f = new FileStream(@"database.dat", FileMode.Open))
                 {
                     BinaryFormatter b = new BinaryFormatter();
                     var res =  b.Deserialize(f) as List<Student>;
@@ -83,7 +83,7 @@ namespace lmvz3
             }
             catch
             {
-                File.Create(@"..\..\database.dat").Close();
+                File.Create(@"database.dat").Close();
                 return new List<Student>();
             }
         }
@@ -100,7 +100,7 @@ namespace lmvz3
             {
                 f.Groups = f.Groups.OrderBy(g => g.Title).ToList();
             }
-            using (FileStream f = new FileStream(@"..\..\databaseFac.dat", FileMode.Create))
+            using (FileStream f = new FileStream(@"databaseFac.dat", FileMode.Create))
             {
                 BinaryFormatter b = new BinaryFormatter();
                 b.Serialize(f, notebook);
@@ -115,7 +115,7 @@ namespace lmvz3
         {
             try
             {
-                using (FileStream f = new FileStream(@"..\..\databaseFac.dat", FileMode.Open))
+                using (FileStream f = new FileStream(@"databaseFac.dat", FileMode.Open))
                 {
                     BinaryFormatter b = new BinaryFormatter();
                     return b.Deserialize(f) as List<Faculty>;
@@ -123,7 +123,7 @@ namespace lmvz3
             }
             catch
             {
-                File.Create(@"..\..\databaseFac.dat").Close();
+                File.Create(@"databaseFac.dat").Close();
                 return new List<Faculty>();
             }
         }
