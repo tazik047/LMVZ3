@@ -175,7 +175,8 @@ namespace lmvz3
                 string res = students.Select(s => s.Group.Title).Distinct().Aggregate("Список студентов из групп: ", (current, i) => current + (i + ", "));
                 res = res.Substring(0, res.Length - 2) + ".\n";
                 res += "Форма обучения: " + (radioButton1.Checked ? "любая.\n" : (radioButton2.Checked ? "контрактная.\n" : "бюджетная.\n"));
-                res += "Студенты старше: " + dateTimePicker1.Value.ToShortDateString() + "\n \n ";
+                res += "Студенты старше: " + dateTimePicker1.Value.ToShortDateString() + "\n";
+                res += "Поступившие раньше: " + dateTimePicker2.Value.ToShortDateString() + "\n \n";
                 
                 Paragraph p = new Paragraph(res, fgFont);
                 //pdfDoc.aDDP
